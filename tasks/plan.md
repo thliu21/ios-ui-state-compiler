@@ -52,7 +52,7 @@ P0 contracts
 ## Phase 1: Offline vertical slice
 
 - [x] Create SwiftPM library, CLI, and test targets.
-- [ ] Implement geometry types and tested coordinate transforms.
+- [x] Implement geometry types and tested coordinate transforms.
 - [ ] Decode a minimal schema-conforming state.
 - [ ] Parse one synthetic native XML fixture safely.
 - [ ] Render deterministic JSON and compact text.
@@ -126,7 +126,7 @@ No training task starts unless all four conditions are satisfied.
 
 | Risk | Impact | Mitigation |
 | --- | --- | --- |
-| Only 14 GiB local free space | Blocks datasets and runtimes | Approve cleanup or external artifact storage before P2 |
+| About 39 GiB local free space | Supports P1 but not the planned bulk dataset | Approve more cleanup or external artifact storage before P2 |
 | Nested app assets have unclear rights | Prevents public redistribution | Ledger every artifact; prefer synthetic fixtures |
 | Planner drift | Invalid paired comparison | Pin effective revision and manifests within each experiment |
 | Extra actions bias a condition | False representation gain | Separate privileged-capability experiments |

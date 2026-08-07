@@ -49,14 +49,14 @@ pixels, logical points, and optional normalized action coordinates.
 
 **Acceptance criteria:**
 
-- [ ] All four spaces are explicit in public types.
-- [ ] Vertical-origin conversion and nonuniform scale are covered.
-- [ ] Invalid viewport dimensions fail rather than silently converting.
+- [x] All four spaces are explicit in public types.
+- [x] Vertical-origin conversion and nonuniform scale are covered.
+- [x] Invalid viewport dimensions fail rather than silently converting.
 
 **Verification:**
 
-- [ ] Focused geometry tests pass.
-- [ ] Round-trip error meets the coordinate contract.
+- [x] Focused geometry tests pass.
+- [x] Round-trip error meets the coordinate contract.
 
 **Dependencies:** Task 2
 **Files likely touched:** two core files and one test file
