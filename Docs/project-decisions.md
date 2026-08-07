@@ -1,0 +1,65 @@
+# Project decisions
+
+Updated: 2026-08-06
+
+## D-001: Public research project
+
+The repository and research outputs are public. The work may inform future
+products, so dataset, model, dependency, screenshot, and asset rights are
+reviewed as if commercial compatibility may matter.
+
+## D-002: Initial platform and frameworks
+
+The first supported platform is iOS Simulator on Apple Silicon macOS. UIKit and
+SwiftUI are the initial framework priorities. Claims about Flutter, React Native,
+games, or custom-rendered interfaces require separate held-out evidence.
+
+## D-003: Compute
+
+Deterministic parsing, Apple Vision OCR, fusion, and Core ML inference run on the
+local M1 Pro Mac. A Linux RTX 4080 Super workstation is available only for an
+evidence-gated training experiment. GPU availability is not a reason to train a
+model before the P8 gate.
+
+## D-004: Planner
+
+Offline perception and representation metrics do not use a planner.
+
+The end-to-end benchmark uses a provider-neutral planner adapter. A planner must
+support screenshot input when required, structured action output, and a pinned
+configuration that can be replayed across paired conditions.
+
+Every run manifest records the provider, exact model identifier or revision,
+request date, prompt hash, tool-schema hash, inference configuration, image
+detail, and step budget. A floating alias or configuration must not change within
+a paired experiment.
+
+Cost-sensitive smoke tests may use a different planner, but results from
+different planners are reported separately and never pooled as paired evidence.
+The primary planner for final evaluation will be selected through a small pilot
+that measures task success, grounding consistency, latency, and cost.
+
+## D-005: Repository license
+
+Original code and documentation use Apache-2.0. External datasets, screenshots,
+app assets, trademarks, and model weights retain their own terms and require a
+license-ledger entry. An artifact is excluded when intended-use rights are
+ambiguous.
+
+## D-006: Simulator safety override
+
+The project owner explicitly removed the handoff's `simplease` prerequisite
+because that facility does not exist in this environment. The operational safety
+intent remains: select exact UDIDs, avoid global shutdown, do not interfere with
+unrelated devices, and record simulator provenance for every benchmark.
+
+## D-007: Human review
+
+The project owner is available for annotation and adjudication. Dataset work
+starts with a 50-screen pilot before committing to the 500-screen golden target.
+
+## D-008: Storage gate
+
+The local data volume had approximately 14 GiB available at project start. P0 can
+proceed, but bulk dataset collection, additional simulator runtimes, and model
+checkpoints require a separately approved cleanup or external storage plan.
