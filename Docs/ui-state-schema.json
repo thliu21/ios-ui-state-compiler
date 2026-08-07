@@ -1,0 +1,403 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/thliu21/ios-ui-state-compiler/blob/main/Docs/ui-state-schema.json",
+  "title": "iOS UI State",
+  "description": "Provider-neutral, evidence-carrying UI state for iOS agent research.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "screen",
+    "elements",
+    "relations",
+    "changes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "screen": {
+      "$ref": "#/$defs/screen"
+    },
+    "elements": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/element"
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/relation"
+      }
+    },
+    "changes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/change"
+      }
+    }
+  },
+  "$defs": {
+    "screen": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "captured_at",
+        "image_size_pixels",
+        "viewport_size_points",
+        "orientation",
+        "sources"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": ["string", "null"]
+        },
+        "captured_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "tree_captured_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "tree_age_ms": {
+          "type": ["number", "null"],
+          "minimum": 0
+        },
+        "image_size_pixels": {
+          "$ref": "#/$defs/size"
+        },
+        "viewport_size_points": {
+          "$ref": "#/$defs/size"
+        },
+        "orientation": {
+          "enum": [
+            "portrait",
+            "portrait_upside_down",
+            "landscape_left",
+            "landscape_right",
+            "unknown"
+          ]
+        },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/evidence_source"
+          }
+        }
+      }
+    },
+    "size": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["width", "height"],
+      "properties": {
+        "width": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "height": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      }
+    },
+    "point": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y", "coordinate_space"],
+      "properties": {
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        },
+        "coordinate_space": {
+          "$ref": "#/$defs/coordinate_space"
+        }
+      }
+    },
+    "rect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y", "width", "height", "coordinate_space"],
+      "properties": {
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        },
+        "width": {
+          "type": "number",
+          "minimum": 0
+        },
+        "height": {
+          "type": "number",
+          "minimum": 0
+        },
+        "coordinate_space": {
+          "$ref": "#/$defs/coordinate_space"
+        }
+      }
+    },
+    "coordinate_space": {
+      "enum": [
+        "vision_normalized",
+        "image_pixels",
+        "screen_points",
+        "action_1000"
+      ]
+    },
+    "evidence_source": {
+      "enum": [
+        "screenshot",
+        "ui_tree",
+        "ocr",
+        "geometry",
+        "detector",
+        "fusion",
+        "execution"
+      ]
+    },
+    "role": {
+      "enum": [
+        "unknown",
+        "static_text",
+        "heading",
+        "button",
+        "icon_button",
+        "text_field",
+        "secure_text_field",
+        "switch",
+        "checkbox",
+        "slider",
+        "segmented_control",
+        "tab_item",
+        "image",
+        "row",
+        "cell",
+        "list",
+        "table",
+        "section",
+        "navigation_bar",
+        "toolbar",
+        "dialog",
+        "sheet",
+        "keyboard",
+        "scroll_container",
+        "page_control"
+      ]
+    },
+    "element": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "role",
+        "frames",
+        "actions",
+        "provenance",
+        "confidence"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "$ref": "#/$defs/role"
+        },
+        "label": {
+          "type": ["string", "null"]
+        },
+        "value": {
+          "type": ["string", "null"]
+        },
+        "native_identifier": {
+          "type": ["string", "null"]
+        },
+        "frames": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/rect"
+          }
+        },
+        "visible": {
+          "type": ["boolean", "null"]
+        },
+        "enabled": {
+          "type": ["boolean", "null"]
+        },
+        "selected": {
+          "type": ["boolean", "null"]
+        },
+        "parent_id": {
+          "type": ["string", "null"]
+        },
+        "child_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/action"
+          }
+        },
+        "provenance": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/evidence_source"
+          }
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "snapshot_age_ms": {
+          "type": ["number", "null"],
+          "minimum": 0
+        }
+      }
+    },
+    "action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "confidence", "evidence", "verification"],
+      "properties": {
+        "type": {
+          "enum": [
+            "tap",
+            "type_text",
+            "swipe",
+            "long_press",
+            "drag",
+            "pinch",
+            "scroll"
+          ]
+        },
+        "target": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/point"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "verification": {
+          "enum": [
+            "tree_declared",
+            "visually_inferred",
+            "execution_verified"
+          ]
+        }
+      }
+    },
+    "relation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "element_id", "related_id", "confidence"],
+      "properties": {
+        "type": {
+          "enum": [
+            "contains",
+            "belongs_to_section",
+            "labels",
+            "value_for",
+            "controls",
+            "row_of",
+            "column_of",
+            "header_of",
+            "selected_tab",
+            "modal_over",
+            "scrolls_within",
+            "visually_obscures"
+          ]
+        },
+        "element_id": {
+          "type": "string"
+        },
+        "related_id": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "provenance": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/evidence_source"
+          }
+        }
+      }
+    },
+    "change": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "element_id", "confidence"],
+      "properties": {
+        "type": {
+          "enum": [
+            "added",
+            "removed",
+            "value_changed",
+            "selection_changed",
+            "focus_changed",
+            "visibility_changed",
+            "modal_opened",
+            "page_changed",
+            "scroll_position_changed"
+          ]
+        },
+        "element_id": {
+          "type": "string"
+        },
+        "previous_value": {
+          "type": ["string", "null"]
+        },
+        "current_value": {
+          "type": ["string", "null"]
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    }
+  }
+}
