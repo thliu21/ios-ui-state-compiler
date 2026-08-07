@@ -7,15 +7,15 @@ then create the initial public repository without implementation claims.
 
 **Acceptance criteria:**
 
-- [ ] JSON schema parses successfully.
-- [ ] Documentation contains no prohibited provider-specific content.
-- [ ] License, privacy, simulator, planner, and storage boundaries agree.
+- [x] JSON schema parses successfully.
+- [x] Documentation contains no prohibited provider-specific content.
+- [x] License, privacy, simulator, planner, and storage boundaries agree.
 
 **Verification:**
 
-- [ ] `python3 -m json.tool Docs/ui-state-schema.json`
-- [ ] `git diff --check`
-- [ ] Read back public repository visibility and default branch.
+- [x] `python3 -m json.tool Docs/ui-state-schema.json`
+- [x] `git diff --check`
+- [x] Read back public repository visibility and default branch.
 
 **Dependencies:** None
 **Files likely touched:** P0 documents and repository metadata
@@ -28,15 +28,15 @@ third-party dependencies.
 
 **Acceptance criteria:**
 
-- [ ] Package builds on the recorded Swift toolchain.
-- [ ] CLI exposes help and version output.
-- [ ] Test target executes at least one real test.
+- [x] Package builds on the recorded Swift toolchain.
+- [x] CLI exposes help and version output.
+- [x] Test target executes at least one real test.
 
 **Verification:**
 
-- [ ] `swift build`
-- [ ] `swift test`
-- [ ] `swift run ui-compiler --help`
+- [x] `swift build`
+- [x] `swift test`
+- [x] `swift run ui-compiler --help`
 
 **Dependencies:** Task 1
 **Files likely touched:** `Package.swift`, two source files, one test file

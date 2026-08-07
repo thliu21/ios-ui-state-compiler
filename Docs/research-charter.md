@@ -131,9 +131,9 @@ explicit coordinate-space names, and errors rather than silent fallback.
 
 ```swift
 public struct ScreenPoint: Codable, Equatable, Sendable {
-    public let x: Double
-    public let y: Double
-    public let coordinateSpace: CoordinateSpace
+  public let x: Double
+  public let y: Double
+  public let coordinateSpace: CoordinateSpace
 }
 ```
 

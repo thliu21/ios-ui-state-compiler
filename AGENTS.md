@@ -7,13 +7,15 @@ specific business application or require access to application source code.
 
 ## Current phase
 
-P0 freezes the research and evaluation contract. P1 may start only after the P0
-documents are internally consistent and reviewed in Git.
+P1 builds the first offline vertical slice. Keep it independent of simulators,
+network services, third-party dependencies, and paid planners.
 
 ## Commands
 
 - Check JSON syntax: `python3 -m json.tool Docs/ui-state-schema.json`
 - Check whitespace: `git diff --check`
+- Format Swift: `swift format --in-place --recursive Sources Tests Package.swift`
+- Lint Swift: `swift format lint --recursive --strict Sources Tests Package.swift`
 - P1 build: `swift build`
 - P1 tests: `swift test`
 

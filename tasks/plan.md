@@ -40,7 +40,7 @@ P0 contracts
 - [x] Define fair evaluation and action contract.
 - [x] Define dataset governance.
 - [x] Define versioned UI-state schema and coordinates.
-- [ ] Review P0 consistency and commit it.
+- [x] Review P0 consistency and commit it.
 
 ### Checkpoint P0
 
@@ -51,7 +51,7 @@ P0 contracts
 
 ## Phase 1: Offline vertical slice
 
-- [ ] Create SwiftPM library, CLI, and test targets.
+- [x] Create SwiftPM library, CLI, and test targets.
 - [ ] Implement geometry types and tested coordinate transforms.
 - [ ] Decode a minimal schema-conforming state.
 - [ ] Parse one synthetic native XML fixture safely.
