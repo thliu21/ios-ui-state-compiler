@@ -19,7 +19,8 @@ let package = Package(
     ),
     .testTarget(
       name: "UIStateCoreTests",
-      dependencies: ["UIStateCore"]
+      dependencies: ["UIStateCore"],
+      resources: [.process("Fixtures")]
     ),
   ]
 )

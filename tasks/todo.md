@@ -69,14 +69,14 @@ round-trip one minimal synthetic state.
 
 **Acceptance criteria:**
 
-- [ ] Required fields match the JSON schema.
-- [ ] Evidence levels and coordinate spaces survive round trip.
-- [ ] Unknown optional values remain unknown rather than becoming false.
+- [x] Required fields match the JSON schema.
+- [x] Evidence levels and coordinate spaces survive round trip.
+- [x] Unknown optional values remain unknown rather than becoming false.
 
 **Verification:**
 
-- [ ] Codable round-trip tests pass.
-- [ ] Produced fixture validates against the schema.
+- [x] Codable round-trip tests pass.
+- [x] Produced fixture validates against the schema.
 
 **Dependencies:** Task 3
 **Files likely touched:** two core files, one fixture, one test file

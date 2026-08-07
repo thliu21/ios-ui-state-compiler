@@ -1,0 +1,69 @@
+{
+  "schema_version": "0.1.0",
+  "screen": {
+    "id": "screen-001",
+    "title": null,
+    "captured_at": "2026-08-06T20:00:00Z",
+    "tree_captured_at": null,
+    "tree_age_ms": null,
+    "image_size_pixels": {
+      "width": 1170,
+      "height": 2532
+    },
+    "viewport_size_points": {
+      "width": 390,
+      "height": 844
+    },
+    "orientation": "portrait",
+    "sources": [
+      "screenshot",
+      "geometry"
+    ]
+  },
+  "elements": [
+    {
+      "id": "continue-button",
+      "role": "button",
+      "label": "Continue",
+      "value": null,
+      "native_identifier": null,
+      "frames": [
+        {
+          "x": 120,
+          "y": 700,
+          "width": 150,
+          "height": 44,
+          "coordinate_space": "screen_points"
+        }
+      ],
+      "visible": null,
+      "enabled": null,
+      "selected": null,
+      "parent_id": null,
+      "child_ids": [],
+      "actions": [
+        {
+          "type": "tap",
+          "target": {
+            "x": 195,
+            "y": 722,
+            "coordinate_space": "screen_points"
+          },
+          "confidence": 1,
+          "evidence": [
+            "native-frame"
+          ],
+          "verification": "tree_declared"
+        }
+      ],
+      "provenance": [
+        "ui_tree",
+        "geometry"
+      ],
+      "confidence": 1,
+      "snapshot_age_ms": null
+    }
+  ],
+  "relations": [],
+  "changes": []
+}
