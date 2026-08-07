@@ -55,8 +55,8 @@ P0 contracts
 - [x] Implement geometry types and tested coordinate transforms.
 - [x] Decode a minimal schema-conforming state.
 - [x] Parse one synthetic native XML fixture safely.
-- [ ] Render deterministic JSON and compact text.
-- [ ] Accept a saved PNG with an optional XML sidecar through the CLI.
+- [x] Render deterministic JSON and compact text.
+- [x] Accept a saved PNG with an optional XML sidecar through the CLI.
 
 ### Checkpoint P1
 
@@ -126,7 +126,7 @@ No training task starts unless all four conditions are satisfied.
 
 | Risk | Impact | Mitigation |
 | --- | --- | --- |
-| About 39 GiB local free space | Supports P1 but not the planned bulk dataset | Approve more cleanup or external artifact storage before P2 |
+| About 37–39 GiB local free space | Supports P1 but not the planned bulk dataset | Approve more cleanup or external artifact storage before P2 |
 | Nested app assets have unclear rights | Prevents public redistribution | Ledger every artifact; prefer synthetic fixtures |
 | Planner drift | Invalid paired comparison | Pin effective revision and manifests within each experiment |
 | Extra actions bias a condition | False representation gain | Separate privileged-capability experiments |

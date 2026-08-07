@@ -109,14 +109,14 @@ deterministic compact text, and a timing breakdown.
 
 **Acceptance criteria:**
 
-- [ ] All three input modes return schema-conforming output.
-- [ ] Screenshot-only returns useful metadata before OCR is implemented.
-- [ ] Timings separate image decode, XML parse, and serialization.
+- [x] All three input modes return schema-conforming output.
+- [x] Screenshot-only returns useful metadata before OCR is implemented.
+- [x] Timings separate image decode, XML parse, and serialization.
 
 **Verification:**
 
-- [ ] CLI integration tests pass on synthetic fixtures.
-- [ ] Repeated output is byte-for-byte deterministic except timestamps.
+- [x] CLI integration tests pass on synthetic fixtures.
+- [x] Repeated output is byte-for-byte deterministic except timestamps.
 
 **Dependencies:** Tasks 4 and 5
 **Files likely touched:** CLI, file adapter, renderer, fixtures, tests
@@ -124,7 +124,7 @@ deterministic compact text, and a timing breakdown.
 
 ## Checkpoint after Task 6
 
-- [ ] `swift build` passes.
-- [ ] `swift test` passes.
-- [ ] Offline prototype requires no simulator, network, or paid service.
+- [x] `swift build` passes.
+- [x] `swift test` passes.
+- [x] Offline prototype requires no simulator, network, or paid service.
 - [ ] Human review confirms the state remains readable and grounded.

@@ -17,9 +17,35 @@ cleaned XML, and existing interactive-element summaries?
 
 ## Status
 
-The project is in **P0: research-contract definition**. Performance thresholds
-in the research documents are hypotheses until measured. No model-training
-decision has been made.
+The project is in **P1: offline vertical slice**. The current Swift package can
+decode screenshot dimensions, safely normalize a synthetic native hierarchy,
+and emit canonical JSON or deterministic compact text. Screenshot OCR, visual
+layout inference, fusion, simulator capture, and planner evaluation are not yet
+implemented. Performance thresholds in the research documents remain
+hypotheses until measured.
+
+## Quick start
+
+```bash
+swift build
+swift test
+swift run ui-compiler --help
+```
+
+Tree-only example using the synthetic fixture:
+
+```bash
+swift run ui-compiler compile \
+  --tree Tests/UIStateCoreTests/Fixtures/native-tree.xml \
+  --image-size 1170x2532 \
+  --viewport-size 390x844 \
+  --format compact
+```
+
+For screenshot-only or hybrid input, pass `--screenshot <saved.png>` and an
+optional `--tree <saved.xml>`. Representation output is written to stdout;
+image-decode, XML-parse, serialization, and total timings are written as JSON to
+stderr. Use `--captured-at` and `--screen-id` for reproducible fixtures.
 
 ## Initial environment
 
@@ -44,9 +70,9 @@ decision has been made.
 
 - `Docs/` — research contract, data governance, schema, and research logs.
 - `tasks/` — implementation plan and verifiable task list.
-- `Sources/` — Swift packages and CLI, starting in P1.
+- `Sources/` — canonical state, geometry, safe XML parser, offline compiler, and CLI.
 - `Tests/` — unit and integration tests.
-- `Fixtures/` — redistributable synthetic and licensed fixtures.
+- `Tests/UIStateCoreTests/Fixtures/` — redistributable synthetic fixtures.
 - `Benchmarks/` — benchmark harnesses and reproducible measurement outputs.
 - `Models/` — model cards and conversion metadata; no unreviewed weights.
 

@@ -19,6 +19,20 @@ public enum CLIText {
       Usage:
         ui-compiler --help
         ui-compiler --version
+        ui-compiler compile (--screenshot <png> | --tree <xml>) --viewport-size <WxH> [options]
+
+      Compile options:
+        --screenshot <png>       Saved screenshot input
+        --tree <xml>             Optional native hierarchy input
+        --image-size <WxH>       Required for tree-only input
+        --viewport-size <WxH>    Logical viewport in points
+        --captured-at <ISO-8601> Capture timestamp; defaults to now
+        --tree-captured-at <ISO-8601> Optional native-tree timestamp
+        --screen-id <id>         Stable screen identifier; defaults to screen
+        --orientation <value>    Schema orientation; defaults to unknown
+        --format <json|compact>  Representation written to stdout
+
+      Timing JSON is written separately to stderr.
       """
     case .version:
       "ui-compiler 0.1.0-dev"
