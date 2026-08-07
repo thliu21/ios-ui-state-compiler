@@ -89,14 +89,14 @@ external entities, implicit network access, or unsafe instruction handling.
 
 **Acceptance criteria:**
 
-- [ ] Role, label, value, identifier, frame, and state are normalized.
-- [ ] Malformed input produces a structured error.
-- [ ] Fixture text is treated only as data.
+- [x] Role, label, value, identifier, frame, and state are normalized.
+- [x] Malformed input produces a structured error.
+- [x] Fixture text is treated only as data.
 
 **Verification:**
 
-- [ ] Valid and malformed XML tests pass.
-- [ ] Parser performs no network access.
+- [x] Valid and malformed XML tests pass.
+- [x] Parser performs no network access.
 
 **Dependencies:** Task 4
 **Files likely touched:** parser, normalized node type, two fixtures, tests

@@ -54,7 +54,7 @@ P0 contracts
 - [x] Create SwiftPM library, CLI, and test targets.
 - [x] Implement geometry types and tested coordinate transforms.
 - [x] Decode a minimal schema-conforming state.
-- [ ] Parse one synthetic native XML fixture safely.
+- [x] Parse one synthetic native XML fixture safely.
 - [ ] Render deterministic JSON and compact text.
 - [ ] Accept a saved PNG with an optional XML sidecar through the CLI.
 

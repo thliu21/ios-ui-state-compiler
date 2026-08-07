@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE XCUIElementTypeApplication [
+  <!ENTITY local-file SYSTEM "file:///etc/passwd">
+]>
+<XCUIElementTypeApplication
+  uid="app-root"
+  type="XCUIElementTypeApplication"
+  label="&local-file;" />
