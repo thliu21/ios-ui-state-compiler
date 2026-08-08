@@ -108,6 +108,21 @@ swift run ui-compiler compile \
   --format compact
 ```
 
+After building, compare both representations for one saved XCUITest tree:
+
+```bash
+Scripts/measure-tree-cleaning.sh \
+  --compiler "$(swift build --show-bin-path)/ui-compiler" \
+  --tree <saved-hierarchy.json> \
+  --image-size 1206x2622 \
+  --viewport-size 402x874 \
+  --captured-at <ISO-8601> \
+  --screen-id <stable-id>
+```
+
+The summary includes representation bytes and conservative retention gates.
+Single-run timings remain diagnostic and are not benchmark claims.
+
 For screenshot-only or hybrid input, pass `--screenshot <saved.png>` and an
 optional `--tree <saved-path>`. Representation output is written to stdout.
 Image decode, XML parse, XCUITest JSON parse, tree cleaning, serialization, and
