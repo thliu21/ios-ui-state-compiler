@@ -1,0 +1,187 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/thliu21/ios-ui-state-compiler/blob/main/Docs/pilot-manifest-schema.json",
+  "title": "iOS UI State Compiler P2 Pilot Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "manifest_id",
+    "status",
+    "created_at",
+    "annotation_guide_version",
+    "license_ledger_id",
+    "records",
+    "action_pairs"
+  ],
+  "properties": {
+    "schema_version": { "const": "0.1.0" },
+    "manifest_id": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["draft", "frozen"] },
+    "created_at": { "type": "string", "format": "date-time" },
+    "supersedes_manifest_id": { "type": ["string", "null"] },
+    "annotation_guide_version": { "const": "0.1.0" },
+    "license_ledger_id": { "type": "string", "minLength": 1 },
+    "records": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/record" }
+    },
+    "action_pairs": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/action_pair" }
+    }
+  },
+  "$defs": {
+    "size": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["width", "height"],
+      "properties": {
+        "width": { "type": "number", "exclusiveMinimum": 0 },
+        "height": { "type": "number", "exclusiveMinimum": 0 }
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "captured_at", "source"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "captured_at": { "type": "string", "format": "date-time" },
+        "source": {
+          "enum": ["synthetic_fixture", "self_captured_open_source_app"]
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reviewer", "reviewed_at", "state"],
+      "properties": {
+        "reviewer": { "type": "string", "minLength": 1 },
+        "reviewed_at": { "type": "string", "format": "date-time" },
+        "state": { "enum": ["single_review", "agreement", "adjudicated"] },
+        "notes": { "type": "string" }
+      }
+    },
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_id",
+        "app_id",
+        "app_family_id",
+        "app_name",
+        "repository_url",
+        "pinned_revision",
+        "framework",
+        "bundle_identifier",
+        "screenshot",
+        "tree",
+        "annotation_path",
+        "annotation_sha256",
+        "device_type",
+        "runtime",
+        "viewport_size_points",
+        "orientation",
+        "locale",
+        "appearance",
+        "dynamic_type",
+        "initial_state_recipe",
+        "split",
+        "near_duplicate_group",
+        "license_entry_ids",
+        "redistribution_status",
+        "review"
+      ],
+      "properties": {
+        "record_id": { "type": "string", "minLength": 1 },
+        "app_id": { "type": "string", "minLength": 1 },
+        "app_family_id": { "type": "string", "minLength": 1 },
+        "app_name": { "type": "string", "minLength": 1 },
+        "repository_url": { "type": "string", "minLength": 1 },
+        "pinned_revision": { "type": "string", "minLength": 1 },
+        "framework": { "enum": ["uikit", "swiftui", "mixed"] },
+        "bundle_identifier": { "type": "string", "minLength": 1 },
+        "screenshot": { "$ref": "#/$defs/artifact" },
+        "tree": {
+          "anyOf": [
+            { "$ref": "#/$defs/artifact" },
+            { "type": "null" }
+          ]
+        },
+        "annotation_path": { "type": "string", "minLength": 1 },
+        "annotation_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "device_type": { "type": "string", "minLength": 1 },
+        "runtime": { "type": "string", "minLength": 1 },
+        "viewport_size_points": { "$ref": "#/$defs/size" },
+        "orientation": {
+          "enum": [
+            "portrait",
+            "portrait_upside_down",
+            "landscape_left",
+            "landscape_right"
+          ]
+        },
+        "locale": { "type": "string", "minLength": 2 },
+        "appearance": { "enum": ["light", "dark"] },
+        "dynamic_type": { "type": "string", "minLength": 1 },
+        "initial_state_recipe": { "type": "string", "minLength": 1 },
+        "split": { "enum": ["development", "held_out"] },
+        "near_duplicate_group": { "type": "string", "minLength": 1 },
+        "license_entry_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "redistribution_status": {
+          "enum": ["allowed", "withheld", "excluded_pending_clarification"]
+        },
+        "review": { "$ref": "#/$defs/review" }
+      }
+    },
+    "point": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y", "coordinate_space"],
+      "properties": {
+        "x": { "type": "number" },
+        "y": { "type": "number" },
+        "coordinate_space": {
+          "enum": ["image_pixels", "screen_points", "action_1000"]
+        }
+      }
+    },
+    "action_pair": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pair_id",
+        "before_record_id",
+        "after_record_id",
+        "action_type",
+        "target",
+        "outcome",
+        "reviewer",
+        "verified_at"
+      ],
+      "properties": {
+        "pair_id": { "type": "string", "minLength": 1 },
+        "before_record_id": { "type": "string", "minLength": 1 },
+        "after_record_id": { "type": "string", "minLength": 1 },
+        "action_type": { "enum": ["tap", "type_text", "swipe", "wait"] },
+        "target": {
+          "anyOf": [
+            { "$ref": "#/$defs/point" },
+            { "type": "null" }
+          ]
+        },
+        "outcome": { "type": "string", "minLength": 1 },
+        "reviewer": { "type": "string", "minLength": 1 },
+        "verified_at": { "type": "string", "format": "date-time" }
+      }
+    }
+  }
+}

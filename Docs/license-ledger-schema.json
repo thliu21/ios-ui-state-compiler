@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/thliu21/ios-ui-state-compiler/blob/main/Docs/license-ledger-schema.json",
+  "title": "iOS UI State Compiler License Ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "ledger_id", "updated_at", "entries"],
+  "properties": {
+    "schema_version": { "const": "0.1.0" },
+    "ledger_id": { "type": "string", "minLength": 1 },
+    "updated_at": { "type": "string", "format": "date-time" },
+    "entries": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/entry" }
+    }
+  },
+  "$defs": {
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_id",
+        "artifact_type",
+        "name",
+        "source_url",
+        "pinned_revision_or_hash",
+        "source_code_license",
+        "data_or_asset_license",
+        "model_weight_license",
+        "copyright_or_trademark_notes",
+        "allowed_uses",
+        "redistribution_allowed",
+        "commercial_compatibility",
+        "reviewer",
+        "review_date",
+        "decision"
+      ],
+      "properties": {
+        "artifact_id": { "type": "string", "minLength": 1 },
+        "artifact_type": {
+          "enum": [
+            "source_code",
+            "screenshot",
+            "native_tree",
+            "annotation",
+            "asset",
+            "dataset",
+            "model_weight"
+          ]
+        },
+        "name": { "type": "string", "minLength": 1 },
+        "source_url": { "type": "string", "minLength": 1 },
+        "pinned_revision_or_hash": { "type": "string", "minLength": 1 },
+        "source_code_license": { "type": ["string", "null"] },
+        "data_or_asset_license": { "type": ["string", "null"] },
+        "model_weight_license": { "type": ["string", "null"] },
+        "copyright_or_trademark_notes": { "type": "string" },
+        "allowed_uses": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": ["research", "redistribution", "modification", "commercial"]
+          }
+        },
+        "redistribution_allowed": { "type": "boolean" },
+        "commercial_compatibility": {
+          "enum": ["compatible", "incompatible", "unclear", "not_applicable"]
+        },
+        "reviewer": { "type": "string", "minLength": 1 },
+        "review_date": { "type": "string", "format": "date" },
+        "decision": {
+          "enum": [
+            "allowed_main_pipeline",
+            "research_only_isolated",
+            "excluded_pending_clarification",
+            "excluded"
+          ]
+        }
+      }
+    }
+  }
+}

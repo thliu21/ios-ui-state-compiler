@@ -1,6 +1,6 @@
 # Project decisions
 
-Updated: 2026-08-06
+Updated: 2026-08-08
 
 ## D-001: Public research project
 
@@ -60,6 +60,11 @@ starts with a 50-screen pilot before committing to the 500-screen golden target.
 
 ## D-008: Storage gate
 
-The local data volume had approximately 14 GiB available at project start. P0 can
-proceed, but bulk dataset collection, additional simulator runtimes, and model
-checkpoints require a separately approved cleanup or external storage plan.
+The local data volume had approximately 14 GiB available at project start and
+116 GiB available at the 2026-08-08 P2 preflight. The pilot keeps a 30 GiB local
+reserve. Collection beyond 50 screens requires a fresh estimate and either at
+least 80 GiB free after the estimate or an approved external artifact root.
+
+The Linux workstation may provide artifact storage, but GPU work remains blocked
+by the evidence gate in D-003. Remote storage is inventoried read-only before the
+project writes or mirrors artifacts there.

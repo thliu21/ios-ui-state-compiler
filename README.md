@@ -17,12 +17,12 @@ cleaned XML, and existing interactive-element summaries?
 
 ## Status
 
-The project is in **P1: offline vertical slice**. The current Swift package can
+The project is in **P2: dataset pilot and baselines**. The current Swift package can
 decode screenshot dimensions, safely normalize a synthetic native hierarchy,
 and emit canonical JSON or deterministic compact text. Screenshot OCR, visual
 layout inference, fusion, simulator capture, and planner evaluation are not yet
-implemented. Performance thresholds in the research documents remain
-hypotheses until measured.
+implemented. P2 begins with a versioned 50-screen pilot contract and human review.
+Performance thresholds in the research documents remain hypotheses until measured.
 
 ## Quick start
 

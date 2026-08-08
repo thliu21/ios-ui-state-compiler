@@ -7,12 +7,14 @@ specific business application or require access to application source code.
 
 ## Current phase
 
-P1 builds the first offline vertical slice. Keep it independent of simulators,
-network services, third-party dependencies, and paid planners.
+P2 builds the dataset pilot and deterministic baselines. Keep schema and fixture
+validation independent of simulators, network services, third-party dependencies,
+and paid planners. Simulator collection begins only with explicit UDIDs and a
+passing capacity gate.
 
 ## Commands
 
-- Check JSON syntax: `python3 -m json.tool Docs/ui-state-schema.json`
+- Check JSON syntax: `for file in Docs/*-schema.json; do python3 -m json.tool "$file" >/dev/null; done`
 - Check whitespace: `git diff --check`
 - Format Swift: `swift format --in-place --recursive Sources Tests Package.swift`
 - Lint Swift: `swift format lint --recursive --strict Sources Tests Package.swift`

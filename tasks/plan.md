@@ -1,6 +1,6 @@
 # Implementation plan: iOS UI State Compiler
 
-Updated: 2026-08-06
+Updated: 2026-08-08
 
 ## Overview
 
@@ -67,7 +67,8 @@ P0 contracts
 
 ## Phase 2: Dataset pilot and baselines
 
-- [ ] Define annotation guide and manifest schema.
+- [x] Define annotation guide and manifest schema.
+- [ ] Implement manifest and license-ledger semantic validation.
 - [ ] Build a 50-screen UIKit/SwiftUI pilot.
 - [ ] Freeze app-disjoint pilot splits and license ledger.
 - [ ] Implement B0–B6 representation generation.
@@ -126,7 +127,7 @@ No training task starts unless all four conditions are satisfied.
 
 | Risk | Impact | Mitigation |
 | --- | --- | --- |
-| About 37–39 GiB local free space | Supports P1 but not the planned bulk dataset | Approve more cleanup or external artifact storage before P2 |
+| Capacity estimate becomes stale | Collection can fill the system volume | Recheck before each run; keep 30 GiB reserve; require 80 GiB post-estimate for work beyond the pilot |
 | Nested app assets have unclear rights | Prevents public redistribution | Ledger every artifact; prefer synthetic fixtures |
 | Planner drift | Invalid paired comparison | Pin effective revision and manifests within each experiment |
 | Extra actions bias a condition | False representation gain | Separate privileged-capability experiments |
@@ -136,6 +137,7 @@ No training task starts unless all four conditions are satisfied.
 
 ## Current open work
 
-- Determine a safe disk-capacity plan before bulk artifacts.
+- Validate the Linux workstation as an optional artifact root using read-only checks.
 - Select and license-review the UIKit pilot applications.
-- Define the annotation tool after schema feedback from the first fixtures.
+- Trial the annotation contract on five synthetic UIKit/SwiftUI fixtures before
+  selecting an annotation tool.
