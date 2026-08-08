@@ -139,15 +139,15 @@ semantic coverage checks before collecting third-party artifacts.
 - [x] Manifest and ledger schemas are versioned and syntactically valid.
 - [x] Annotation decisions distinguish screenshot evidence from native-tree evidence.
 - [x] Frozen-pilot coverage and app-disjoint split requirements are explicit.
-- [ ] Valid sample manifest and ledger pass semantic validation.
-- [ ] Duplicate IDs, cross-split app leakage, broken references, and unapproved
+- [x] Valid sample manifest and ledger pass semantic validation.
+- [x] Duplicate IDs, cross-split app leakage, broken references, and unapproved
   redistribution fail with specific errors.
 
 **Verification:**
 
-- [ ] All JSON schemas parse.
-- [ ] Focused manifest-validation tests pass.
-- [ ] Full Swift test suite and strict format lint pass.
+- [x] All JSON schemas parse.
+- [x] Focused manifest-validation tests pass.
+- [x] Full Swift test suite and strict format lint pass.
 
 **Dependencies:** Task 6
 **Files likely touched:** P2 documents, schemas, manifest types, fixtures, tests

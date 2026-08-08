@@ -68,7 +68,7 @@ P0 contracts
 ## Phase 2: Dataset pilot and baselines
 
 - [x] Define annotation guide and manifest schema.
-- [ ] Implement manifest and license-ledger semantic validation.
+- [x] Implement manifest and license-ledger semantic validation.
 - [ ] Build a 50-screen UIKit/SwiftUI pilot.
 - [ ] Freeze app-disjoint pilot splits and license ledger.
 - [ ] Implement B0–B6 representation generation.

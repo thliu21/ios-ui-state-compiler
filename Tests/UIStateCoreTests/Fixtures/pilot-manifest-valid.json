@@ -1,0 +1,134 @@
+{
+  "schema_version": "0.1.0",
+  "manifest_id": "pilot-draft-example",
+  "status": "draft",
+  "created_at": "2026-08-08T12:00:00Z",
+  "supersedes_manifest_id": null,
+  "annotation_guide_version": "0.1.0",
+  "license_ledger_id": "pilot-license-example",
+  "records": [
+    {
+      "record_id": "record-uikit-001",
+      "app_id": "uikit-fixture",
+      "app_family_id": "uikit-fixture-family",
+      "app_name": "Synthetic UIKit Fixture",
+      "repository_url": "https://example.invalid/uikit-fixture",
+      "pinned_revision": "1111111111111111111111111111111111111111",
+      "framework": "uikit",
+      "bundle_identifier": "org.example.uikit-fixture",
+      "screenshot": {
+        "path": "Artifacts/record-uikit-001.png",
+        "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+        "captured_at": "2026-08-08T12:00:00Z",
+        "source": "synthetic_fixture"
+      },
+      "tree": null,
+      "annotation_path": "Annotations/record-uikit-001.json",
+      "annotation_sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "device_type": "Synthetic Phone A",
+      "runtime": "Synthetic Runtime 1",
+      "viewport_size_points": { "width": 390, "height": 844 },
+      "orientation": "portrait",
+      "locale": "en-US",
+      "appearance": "light",
+      "dynamic_type": "large",
+      "initial_state_recipe": "Launch the seeded fixture at screen one.",
+      "split": "development",
+      "near_duplicate_group": "uikit-screen-one",
+      "license_entry_ids": ["license-uikit"],
+      "redistribution_status": "allowed",
+      "review": {
+        "reviewer": "pilot-reviewer",
+        "reviewed_at": "2026-08-08T12:30:00Z",
+        "state": "single_review",
+        "notes": "Synthetic contract fixture."
+      }
+    },
+    {
+      "record_id": "record-swiftui-001",
+      "app_id": "swiftui-fixture",
+      "app_family_id": "swiftui-fixture-family",
+      "app_name": "Synthetic SwiftUI Fixture",
+      "repository_url": "https://example.invalid/swiftui-fixture",
+      "pinned_revision": "3333333333333333333333333333333333333333",
+      "framework": "swiftui",
+      "bundle_identifier": "org.example.swiftui-fixture",
+      "screenshot": {
+        "path": "Artifacts/record-swiftui-001.png",
+        "sha256": "3333333333333333333333333333333333333333333333333333333333333333",
+        "captured_at": "2026-08-08T13:00:00Z",
+        "source": "synthetic_fixture"
+      },
+      "tree": null,
+      "annotation_path": "Annotations/record-swiftui-001.json",
+      "annotation_sha256": "4444444444444444444444444444444444444444444444444444444444444444",
+      "device_type": "Synthetic Phone B",
+      "runtime": "Synthetic Runtime 1",
+      "viewport_size_points": { "width": 430, "height": 932 },
+      "orientation": "portrait",
+      "locale": "zh-Hans",
+      "appearance": "dark",
+      "dynamic_type": "large",
+      "initial_state_recipe": "Launch the seeded fixture at screen two.",
+      "split": "held_out",
+      "near_duplicate_group": "swiftui-screen-two",
+      "license_entry_ids": ["license-swiftui"],
+      "redistribution_status": "allowed",
+      "review": {
+        "reviewer": "pilot-reviewer",
+        "reviewed_at": "2026-08-08T13:30:00Z",
+        "state": "agreement",
+        "notes": "Synthetic contract fixture."
+      }
+    },
+    {
+      "record_id": "record-uikit-002",
+      "app_id": "uikit-fixture",
+      "app_family_id": "uikit-fixture-family",
+      "app_name": "Synthetic UIKit Fixture",
+      "repository_url": "https://example.invalid/uikit-fixture",
+      "pinned_revision": "1111111111111111111111111111111111111111",
+      "framework": "uikit",
+      "bundle_identifier": "org.example.uikit-fixture",
+      "screenshot": {
+        "path": "Artifacts/record-uikit-002.png",
+        "sha256": "5555555555555555555555555555555555555555555555555555555555555555",
+        "captured_at": "2026-08-08T12:01:00Z",
+        "source": "synthetic_fixture"
+      },
+      "tree": null,
+      "annotation_path": "Annotations/record-uikit-002.json",
+      "annotation_sha256": "6666666666666666666666666666666666666666666666666666666666666666",
+      "device_type": "Synthetic Phone A",
+      "runtime": "Synthetic Runtime 1",
+      "viewport_size_points": { "width": 390, "height": 844 },
+      "orientation": "portrait",
+      "locale": "en-US",
+      "appearance": "light",
+      "dynamic_type": "large",
+      "initial_state_recipe": "Launch the seeded fixture at screen one.",
+      "split": "development",
+      "near_duplicate_group": "uikit-screen-two",
+      "license_entry_ids": ["license-uikit"],
+      "redistribution_status": "allowed",
+      "review": {
+        "reviewer": "pilot-reviewer",
+        "reviewed_at": "2026-08-08T12:31:00Z",
+        "state": "single_review",
+        "notes": "Synthetic after-state contract fixture."
+      }
+    }
+  ],
+  "action_pairs": [
+    {
+      "pair_id": "pair-001",
+      "before_record_id": "record-uikit-001",
+      "after_record_id": "record-uikit-002",
+      "action_type": "tap",
+      "target": { "x": 195, "y": 422, "coordinate_space": "screen_points" },
+      "outcome": "Synthetic transition verified.",
+      "reviewer": "pilot-reviewer",
+      "verified_at": "2026-08-08T12:45:00Z"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": "0.1.0",
+  "ledger_id": "pilot-license-example",
+  "updated_at": "2026-08-08T14:00:00Z",
+  "entries": [
+    {
+      "artifact_id": "license-uikit",
+      "artifact_type": "screenshot",
+      "name": "Synthetic UIKit fixture artifacts",
+      "source_url": "https://example.invalid/uikit-fixture",
+      "pinned_revision_or_hash": "1111111111111111111111111111111111111111",
+      "source_code_license": "Apache-2.0",
+      "data_or_asset_license": "Apache-2.0",
+      "model_weight_license": null,
+      "copyright_or_trademark_notes": "No third-party marks or assets.",
+      "allowed_uses": ["research", "redistribution", "modification", "commercial"],
+      "redistribution_allowed": true,
+      "commercial_compatibility": "compatible",
+      "reviewer": "pilot-reviewer",
+      "review_date": "2026-08-08",
+      "decision": "allowed_main_pipeline"
+    },
+    {
+      "artifact_id": "license-swiftui",
+      "artifact_type": "screenshot",
+      "name": "Synthetic SwiftUI fixture artifacts",
+      "source_url": "https://example.invalid/swiftui-fixture",
+      "pinned_revision_or_hash": "3333333333333333333333333333333333333333",
+      "source_code_license": "Apache-2.0",
+      "data_or_asset_license": "Apache-2.0",
+      "model_weight_license": null,
+      "copyright_or_trademark_notes": "No third-party marks or assets.",
+      "allowed_uses": ["research", "redistribution", "modification", "commercial"],
+      "redistribution_allowed": true,
+      "commercial_compatibility": "compatible",
+      "reviewer": "pilot-reviewer",
+      "review_date": "2026-08-08",
+      "decision": "allowed_main_pipeline"
+    }
+  ]
+}

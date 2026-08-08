@@ -24,6 +24,10 @@ layout inference, fusion, simulator capture, and planner evaluation are not yet
 implemented. P2 begins with a versioned 50-screen pilot contract and human review.
 Performance thresholds in the research documents remain hypotheses until measured.
 
+The pilot manifest and license ledger have offline decoding and semantic checks
+for app-disjoint splits, references, redistribution approval, and frozen-pilot
+coverage.
+
 ## Quick start
 
 ```bash
