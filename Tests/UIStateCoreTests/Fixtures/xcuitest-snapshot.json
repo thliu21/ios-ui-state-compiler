@@ -1,0 +1,47 @@
+{
+  "children": [
+    {
+      "children": [
+        {
+          "elementType": 48,
+          "enabled": true,
+          "frame": {
+            "Height": 20,
+            "Width": 120,
+            "X": 24,
+            "Y": 180
+          },
+          "identifier": "",
+          "label": "Synthetic detail",
+          "selected": false,
+          "title": ""
+        }
+      ],
+      "elementType": 9,
+      "enabled": true,
+      "frame": {
+        "Height": 52,
+        "Width": 370,
+        "X": 16,
+        "Y": 382.5
+      },
+      "identifier": "fixture.home.open-detail",
+      "label": "Open record detail",
+      "selected": false,
+      "title": "",
+      "value": "Ready"
+    }
+  ],
+  "elementType": 2,
+  "enabled": true,
+  "frame": {
+    "Height": 874,
+    "Width": 402,
+    "X": 0,
+    "Y": 0
+  },
+  "identifier": "fixture.application",
+  "label": "",
+  "selected": false,
+  "title": ""
+}

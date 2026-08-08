@@ -109,7 +109,8 @@ stderr. Use `--captured-at` and `--screen-id` for reproducible fixtures.
 
 - `Docs/` — research contract, data governance, schema, and research logs.
 - `tasks/` — implementation plan and verifiable task list.
-- `Sources/` — canonical state, geometry, safe XML parser, offline compiler, and CLI.
+- `Sources/` — canonical state, geometry, bounded XML and XCUITest JSON parsers,
+  offline compiler, and CLI.
 - `Tests/` — unit and integration tests.
 - `Fixtures/PilotApps/` — matched, self-authored UIKit and SwiftUI applications.
 - `Fixtures/PilotApps/SwiftUIFixtureUITests/` — exact-element hierarchy and action evidence.

@@ -95,6 +95,14 @@ revision, device, runtime, viewport, orientation, locale, appearance, Dynamic
 Type, and split match across the action pair. The selected simulator was
 restored to its prior shutdown state after the run.
 
+A bounded `XCUITestSnapshotParser` now converts the structured JSON attachments
+into the same flattened native-node model used by the synthetic XML baseline.
+It enforces byte, node, and depth limits, uses deterministic tree-path node IDs,
+preserves accessibility identifiers separately, and leaves unknown numeric
+element types as `unknown`. It does not infer visibility or visual truth from
+accessibility geometry. The parser read the exact before and after attachments
+as 43 and 32 nodes, matching the capture harness counts.
+
 ## Public artifact decision
 
 The application code and fictional content are project-authored and covered by
@@ -121,6 +129,10 @@ Primary materials reviewed:
 
 - Both Xcode targets built for the exact simulator destination.
 - The shared Swift package built and all tests passed after the fixture work.
+- The structured snapshot parser's focused red/green cycle passed three tests
+  covering normalization, malformed input, invalid fields, and resource limits;
+  both exact action attachments also parsed successfully outside the test
+  fixture.
 - The committed test suite decodes the draft manifest, ledger, and all ten
   paired canonical states plus the action after-state, then runs semantic
   validation over all 11 records and the action pair.
@@ -153,8 +165,9 @@ Primary materials reviewed:
 - The 11 canonical states have metadata and empty element arrays; they are not
   completed manual annotations. The XCUITest dictionaries remain raw evidence
   and are not yet normalized compiler output or visual truth.
-- The structured XCUITest dictionary format does not yet have a production
-  parser/adapter in `UIStateCore`.
+- The structured parser is available in `UIStateCore`, but the offline compile
+  request and CLI still accept only XML tree input. Wrapper removal,
+  deduplication, and XCUITest JSON end-to-end compilation remain open.
 - Owner review of native-tree evidence, element annotations, and compact states
   remains pending.
 

@@ -139,8 +139,8 @@ No training task starts unless all four conditions are satisfied.
 
 ## Current open work
 
-- Normalize structured XCUITest dictionaries into the compiler's native-tree
-  model without treating accessibility evidence as visual truth.
+- Wire the bounded structured XCUITest parser into the offline compiler and CLI
+  with an explicit input-format contract.
 - Extend structured hierarchy capture to the remaining SwiftUI states and the
   UIKit fixture after the adapter contract is tested.
 - Complete owner review of representative trees and compact states before
