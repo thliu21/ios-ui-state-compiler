@@ -212,6 +212,31 @@ from their hash-verified external trees with that exact compiler revision; every
 capture passed all seven gates. The lower reduction percentages above are the
 cost of preserving the previously lost multiplicity.
 
+## Human grounding review packet
+
+The public `Docs/human-grounding-review-protocol.md` defines seven explicit
+human criteria, a review-record shape, conflict handling, and a fail-closed
+acceptance rule. A redistribution-withheld packet applies it to eight
+representative records: UIKit and SwiftUI home, detail after the verified
+action, long list, and modal. It includes the screenshot, source hierarchy,
+raw and conservative canonical and compact states, telemetry, measurement,
+review template, and hashes for each record.
+
+The verified Linux packet is at artifact-root-relative path
+`pilot/grounding-review-20260808-89c9858-v2`. It contains 107 files, its root
+manifest covers 106 files, all eight per-record manifests pass, and the root
+manifest SHA-256 is
+`f7f1ebc7414a71f682ad3a5a51ca44b1c8e4c3f4d0fd6a4669b81b72807d86d0`.
+Its packet manifest records eight pending records, both action pairs, project
+revision `89c98586d290625cce4adb5b180ebea4e00cddf0`, compiler revision
+`67a4987033887cbd97b238da388d4cdefb127843`, and `withheld` redistribution.
+
+The first mirror omitted portable root paths: its root checksum file referred
+to local absolute `/tmp` paths. That directory was preserved without overwrite
+or deletion and now has a `SUPERSEDED-BY-v2.txt` marker. It is not acceptance
+evidence. No review template in v2 has been completed, so the packet does not
+change human-grounding status.
+
 ## Public artifact decision
 
 The application code and fictional content are project-authored and covered by
@@ -268,6 +293,9 @@ Primary materials reviewed:
 - Local and Linux read-back SHA-256 digests matched for all 104 files in the
   UIKit result bundle and exported-attachment directory. Its Linux directory
   was also verified absent before creation.
+- The withheld human-review v2 packet passed its 106-entry root checksum and
+  all eight per-record checksums after Linux copying; every review remains
+  explicitly pending.
 - The structured action hashes are:
   - before hierarchy:
     `e00f3b134e5686d4f1e05f2f9a25a42353d61c044e067a1f45c1e9003692ca9b`

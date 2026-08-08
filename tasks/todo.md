@@ -201,6 +201,8 @@ trial the P2 capture and annotation contract.
 - [x] Counterexamples prove unique-set gates miss multiplicity loss; the
   semantic-empty-only policy and all 12 real captures pass multiset and
   normalized semantic parent-child gates.
+- [x] A public fail-closed human-grounding protocol and hash-verified withheld
+  eight-record review packet are prepared without marking any review complete.
 
 **Dependencies:** Task 7
 **Files likely touched:** fixture specification, shared support module and tests,

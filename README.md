@@ -43,6 +43,11 @@ semantic, and normalized semantic parent-child retention gates under the pinned
 conservative cleaner. This is structural evidence only; child order, visual
 grounding, and task success still require separate evaluation.
 
+Representative owner review follows the public
+[human grounding review protocol](Docs/human-grounding-review-protocol.md).
+Its redistribution-withheld packet remains outside Git and is explicitly
+pending human decisions.
+
 ## Quick start
 
 ```bash
