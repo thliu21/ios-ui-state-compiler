@@ -1,8 +1,8 @@
 {
   "schema_version": "0.1.0",
   "screen": {
-    "id": "paired-uikit-long-list",
-    "captured_at": "2026-08-08T23:31:07.190Z",
+    "id": "paired-uikit-detail-after-home-action",
+    "captured_at": "2026-08-08T23:31:01.146Z",
     "image_size_pixels": { "width": 1206, "height": 2622 },
     "viewport_size_points": { "width": 402, "height": 874 },
     "orientation": "portrait",

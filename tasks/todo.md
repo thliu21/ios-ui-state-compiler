@@ -167,8 +167,8 @@ trial the P2 capture and annotation contract.
 - [x] Both targets build and run on the explicitly selected simulator UDID.
 - [x] English, Simplified Chinese, light, and dark records are represented.
 - [x] Owner review confirms screenshot semantic pairing and appearance coverage.
-- [x] Ten paired records plus one action after-state and one verified action pair
-  pass manifest and ledger checks.
+- [x] Ten paired initial-state records plus two action after-states and two
+  verified action pairs pass manifest and ledger checks.
 - [ ] Human review confirms screenshot, tree, and compact-state grounding.
 
 **Verification:**
@@ -193,8 +193,10 @@ trial the P2 capture and annotation contract.
   aggregate preserves all three retention sets and withholds raw artifacts.
 - [x] A shared UIKit scheme and symmetric five-test UI-test target pass
   `build-for-testing` on the exact destination.
-- [ ] Execute the UIKit tests, inspect and hash their artifacts, and admit only
-  verified evidence into the manifest and isolated artifact store.
+- [x] The UIKit tests pass 5/5; 17 attachments are inspected, hashed, mirrored,
+  and admitted as five initial records plus one verified action after-state.
+- [x] Six UIKit trees compile in raw and conservative modes; all three
+  retention sets remain equal and the public aggregate withholds raw artifacts.
 
 **Dependencies:** Task 7
 **Files likely touched:** fixture specification, shared support module and tests,

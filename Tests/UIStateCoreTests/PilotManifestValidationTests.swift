@@ -106,8 +106,8 @@ struct PilotManifestValidationTests {
     #expect(PilotManifestValidator.validate(manifest: manifest, licenseLedger: ledger).isEmpty)
 
     let object = try #require(JSONSerialization.jsonObject(with: manifestData) as? [String: Any])
-    #expect((object["records"] as? [[String: Any]])?.count == 11)
-    #expect((object["action_pairs"] as? [[String: Any]])?.count == 1)
+    #expect((object["records"] as? [[String: Any]])?.count == 12)
+    #expect((object["action_pairs"] as? [[String: Any]])?.count == 2)
 
     for annotation in [
       "paired-swiftui-home",
@@ -118,6 +118,7 @@ struct PilotManifestValidationTests {
       "paired-swiftui-long-list",
       "paired-uikit-home",
       "paired-uikit-detail",
+      "paired-uikit-detail-after-home-action",
       "paired-uikit-form",
       "paired-uikit-modal",
       "paired-uikit-long-list",

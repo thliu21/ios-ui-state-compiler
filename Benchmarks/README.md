@@ -32,3 +32,8 @@ comparison to direct detail, form, modal, and long-list captures. The exact
 device tests passed 4/4, all external files matched their Linux mirror, and all
 three retention gates passed for every state. The file still does not establish
 token, latency, reading-order, relation, visual-grounding, or task-success gains.
+
+`uikit-state-tree-cleaning-2026-08-08.json` records the symmetric UIKit
+five-state matrix plus the verified action's after-detail capture. The exact
+device tests passed 5/5 and all six raw-versus-conservative comparisons passed
+the same three retention gates. The same diagnostic-only limitations apply.

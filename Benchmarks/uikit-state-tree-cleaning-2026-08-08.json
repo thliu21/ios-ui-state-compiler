@@ -1,0 +1,364 @@
+{
+  "schema_version": "0.1.0",
+  "status": "diagnostic_six_capture_matrix",
+  "generated_at": "2026-08-08T23:35:12Z",
+  "compiler_revision": "fdf29a1c831c45250825718ad16d25500ece4eeb",
+  "fixture_revision": "fdf29a1c831c45250825718ad16d25500ece4eeb",
+  "toolchain": {
+    "xcode": "26.5 (17F42)",
+    "swift": "6.3.2",
+    "host": "Apple M1 Pro"
+  },
+  "scope": {
+    "initial_states": 5,
+    "captures": 6,
+    "verified_action_pairs": 1,
+    "input_format": "xcuitest-json",
+    "raw_is_default": true,
+    "timings_are_diagnostic_only": true,
+    "token_counts_available": false,
+    "human_grounding_review_complete": false,
+    "exact_device_tests_passed": 5,
+    "exact_device_tests_failed": 0,
+    "external_artifact_directory": "pilot/uikit-matrix-20260808-fdf29a1",
+    "external_artifact_files": 104,
+    "external_artifact_hashes_match": true
+  },
+  "aggregate": {
+    "raw_nodes": 263,
+    "conservative_nodes": 194,
+    "node_reduction_percent": 26.24,
+    "collapsed_wrapper_count": 49,
+    "removed_duplicate_subtree_count": 10,
+    "removed_duplicate_node_count": 20,
+    "raw_canonical_json_bytes": 160104,
+    "conservative_canonical_json_bytes": 123784,
+    "canonical_json_reduction_percent": 22.69,
+    "raw_compact_bytes": 63733,
+    "conservative_compact_bytes": 49184,
+    "compact_reduction_percent": 22.83,
+    "all_action_signatures_equal": true,
+    "all_native_identifiers_equal": true,
+    "all_semantic_signature_sets_equal": true
+  },
+  "records": [
+    {
+      "screen_id": "uikit-detail-zh-Hans-light",
+      "source_tree_sha256": "87e950b21db31a732161dfb2b50bcc6de8cad3e485110dfaa9a1eabb1ab48cbe",
+      "raw": {
+        "canonical_json": {
+          "bytes": 20249,
+          "element_count": 34,
+          "action_count": 2,
+          "native_identifier_count": 4,
+          "semantic_signature_count": 15
+        },
+        "compact_bytes": 8254,
+        "timings_ms": {
+          "image_decode_ms": 0.0002500019036233425,
+          "xml_parse_ms": 0,
+          "xcuitest_json_parse_ms": 0.8110833296086639,
+          "tree_cleaning_ms": 0,
+          "serialization_ms": 5.367999983718619,
+          "total_ms": 6.2622500117868185
+        }
+      },
+      "conservative": {
+        "canonical_json": {
+          "bytes": 14992,
+          "element_count": 24,
+          "action_count": 2,
+          "native_identifier_count": 4,
+          "semantic_signature_count": 15
+        },
+        "compact_bytes": 6177,
+        "timings_ms": {
+          "image_decode_ms": 0.00016667763702571392,
+          "xml_parse_ms": 0,
+          "xcuitest_json_parse_ms": 0.7473749865312129,
+          "tree_cleaning_ms": 0.24970833328552544,
+          "serialization_ms": 4.05241665430367,
+          "total_ms": 5.105583317345008
+        },
+        "tree_cleaning": {
+          "mode": "conservative",
+          "input_node_count": 34,
+          "output_node_count": 24,
+          "collapsed_wrapper_count": 6,
+          "removed_duplicate_subtree_count": 2,
+          "removed_duplicate_node_count": 4
+        }
+      },
+      "retention": {
+        "action_signatures_equal": true,
+        "native_identifiers_equal": true,
+        "semantic_signature_sets_equal": true
+      }
+    },
+    {
+      "screen_id": "uikit-form-en-dark",
+      "source_tree_sha256": "3d5ad06de8722573cd0e5819f00d5be055cd271acca862ae0290c973f280b056",
+      "raw": {
+        "canonical_json": {
+          "bytes": 21830,
+          "element_count": 35,
+          "action_count": 5,
+          "native_identifier_count": 7,
+          "semantic_signature_count": 18
+        },
+        "compact_bytes": 8427,
+        "timings_ms": {
+          "image_decode_ms": 0.0002500019036233425,
+          "xml_parse_ms": 0,
+          "xcuitest_json_parse_ms": 1.7564166919328272,
+          "tree_cleaning_ms": 0,
+          "serialization_ms": 6.407874985598028,
+          "total_ms": 8.336291677551344
+        }
+      },
+      "conservative": {
+        "canonical_json": {
+          "bytes": 16559,
+          "element_count": 25,
+          "action_count": 5,
+          "native_identifier_count": 7,
+          "semantic_signature_count": 18
+        },
+        "compact_bytes": 6336,
+        "timings_ms": {
+          "image_decode_ms": 0.0002500019036233425,
+          "xml_parse_ms": 0,
+          "xcuitest_json_parse_ms": 0.8689999813213944,
+          "tree_cleaning_ms": 0.24233333533629775,
+          "serialization_ms": 6.260208348976448,
+          "total_ms": 7.432416692608967
+        },
+        "tree_cleaning": {
+          "mode": "conservative",
+          "input_node_count": 35,
+          "output_node_count": 25,
+          "collapsed_wrapper_count": 6,
+          "removed_duplicate_subtree_count": 2,
+          "removed_duplicate_node_count": 4
+        }
+      },
+      "retention": {
+        "action_signatures_equal": true,
+        "native_identifiers_equal": true,
+        "semantic_signature_sets_equal": true
+      }
+    },
+    {
+      "screen_id": "paired-uikit-home",
+      "source_tree_sha256": "f220ffc5390499029560c9d1ba9364471cede8bac9292b3accdfc5d9c57e4087",
+      "raw": {
+        "canonical_json": {
+          "bytes": 25955,
+          "element_count": 42,
+          "action_count": 4,
+          "native_identifier_count": 7,
+          "semantic_signature_count": 22
+        },
+        "compact_bytes": 10529,
+        "timings_ms": {
+          "image_decode_ms": 0.0002500019036233425,
+          "xml_parse_ms": 0,
+          "xcuitest_json_parse_ms": 0.965000013820827,
+          "tree_cleaning_ms": 0,
+          "serialization_ms": 6.52629166143015,
+          "total_ms": 7.570916670374572
+        }
+      },
+      "conservative": {
+        "canonical_json": {
+          "bytes": 20684,
+          "element_count": 32,
+          "action_count": 4,
+          "native_identifier_count": 7,
+          "semantic_signature_count": 22
+        },
+        "compact_bytes": 8438,
+        "timings_ms": {
+          "image_decode_ms": 0.00029164948500692844,
+          "xml_parse_ms": 0,
+          "xcuitest_json_parse_ms": 1.2453333474695683,
+          "tree_cleaning_ms": 0.43995832675136626,
+          "serialization_ms": 6.435041665099561,
+          "total_ms": 8.249458333011717
+        },
+        "tree_cleaning": {
+          "mode": "conservative",
+          "input_node_count": 42,
+          "output_node_count": 32,
+          "collapsed_wrapper_count": 6,
+          "removed_duplicate_subtree_count": 2,
+          "removed_duplicate_node_count": 4
+        }
+      },
+      "retention": {
+        "action_signatures_equal": true,
+        "native_identifiers_equal": true,
+        "semantic_signature_sets_equal": true
+      }
+    },
+    {
+      "screen_id": "paired-uikit-detail-after-home-action",
+      "source_tree_sha256": "a878293bcfc8ab49ff28653155beb8b6f1ff6e50ab008a412486e8e68c7502e2",
+      "raw": {
+        "canonical_json": {
+          "bytes": 20305,
+          "element_count": 34,
+          "action_count": 2,
+          "native_identifier_count": 4,
+          "semantic_signature_count": 15
+        },
+        "compact_bytes": 8290,
+        "timings_ms": {
+          "image_decode_ms": 0.00016667763702571392,
+          "xml_parse_ms": 0,
+          "xcuitest_json_parse_ms": 1.7412500164937228,
+          "tree_cleaning_ms": 0,
+          "serialization_ms": 5.640249990392476,
+          "total_ms": 7.568166678538546
+        }
+      },
+      "conservative": {
+        "canonical_json": {
+          "bytes": 15034,
+          "element_count": 24,
+          "action_count": 2,
+          "native_identifier_count": 4,
+          "semantic_signature_count": 15
+        },
+        "compact_bytes": 6199,
+        "timings_ms": {
+          "image_decode_ms": 0.0002500019036233425,
+          "xml_parse_ms": 0,
+          "xcuitest_json_parse_ms": 0.8728333341423422,
+          "tree_cleaning_ms": 0.2489583275746554,
+          "serialization_ms": 6.0468333249446005,
+          "total_ms": 7.232791656861082
+        },
+        "tree_cleaning": {
+          "mode": "conservative",
+          "input_node_count": 34,
+          "output_node_count": 24,
+          "collapsed_wrapper_count": 6,
+          "removed_duplicate_subtree_count": 2,
+          "removed_duplicate_node_count": 4
+        }
+      },
+      "retention": {
+        "action_signatures_equal": true,
+        "native_identifiers_equal": true,
+        "semantic_signature_sets_equal": true
+      }
+    },
+    {
+      "screen_id": "uikit-long-list-en-light",
+      "source_tree_sha256": "06454030f55177be03c836cc088876792e3f4ddc7361d52e3f4ba269c8d3d6e9",
+      "raw": {
+        "canonical_json": {
+          "bytes": 55510,
+          "element_count": 90,
+          "action_count": 13,
+          "native_identifier_count": 15,
+          "semantic_signature_count": 43
+        },
+        "compact_bytes": 21647,
+        "timings_ms": {
+          "image_decode_ms": 0.0002500019036233425,
+          "xml_parse_ms": 0,
+          "xcuitest_json_parse_ms": 7.801625004503876,
+          "tree_cleaning_ms": 0,
+          "serialization_ms": 15.609041671268642,
+          "total_ms": 23.54858335456811
+        }
+      },
+      "conservative": {
+        "canonical_json": {
+          "bytes": 46126,
+          "element_count": 72,
+          "action_count": 13,
+          "native_identifier_count": 15,
+          "semantic_signature_count": 43
+        },
+        "compact_bytes": 17825,
+        "timings_ms": {
+          "image_decode_ms": 0.00037500285543501377,
+          "xml_parse_ms": 0,
+          "xcuitest_json_parse_ms": 1.8898749840445817,
+          "tree_cleaning_ms": 0.4642500134650618,
+          "serialization_ms": 15.962958335876465,
+          "total_ms": 18.42554163886234
+        },
+        "tree_cleaning": {
+          "mode": "conservative",
+          "input_node_count": 90,
+          "output_node_count": 72,
+          "collapsed_wrapper_count": 18,
+          "removed_duplicate_subtree_count": 0,
+          "removed_duplicate_node_count": 0
+        }
+      },
+      "retention": {
+        "action_signatures_equal": true,
+        "native_identifiers_equal": true,
+        "semantic_signature_sets_equal": true
+      }
+    },
+    {
+      "screen_id": "uikit-modal-zh-Hans-dark",
+      "source_tree_sha256": "5ad5dec24b52eccbdcadcd66c1a13b6cb4e5f49c0be05b231197d5e4766817c0",
+      "raw": {
+        "canonical_json": {
+          "bytes": 16255,
+          "element_count": 28,
+          "action_count": 1,
+          "native_identifier_count": 3,
+          "semantic_signature_count": 10
+        },
+        "compact_bytes": 6586,
+        "timings_ms": {
+          "image_decode_ms": 0.00016667763702571392,
+          "xml_parse_ms": 0,
+          "xcuitest_json_parse_ms": 0.7236666569951922,
+          "tree_cleaning_ms": 0,
+          "serialization_ms": 5.370208353269845,
+          "total_ms": 6.164291640743613
+        }
+      },
+      "conservative": {
+        "canonical_json": {
+          "bytes": 10389,
+          "element_count": 17,
+          "action_count": 1,
+          "native_identifier_count": 3,
+          "semantic_signature_count": 10
+        },
+        "compact_bytes": 4209,
+        "timings_ms": {
+          "image_decode_ms": 0.00020832521840929985,
+          "xml_parse_ms": 0,
+          "xcuitest_json_parse_ms": 0.7252916693687439,
+          "tree_cleaning_ms": 0.35200000274926424,
+          "serialization_ms": 6.383583327988163,
+          "total_ms": 7.518041675211862
+        },
+        "tree_cleaning": {
+          "mode": "conservative",
+          "input_node_count": 28,
+          "output_node_count": 17,
+          "collapsed_wrapper_count": 7,
+          "removed_duplicate_subtree_count": 2,
+          "removed_duplicate_node_count": 4
+        }
+      },
+      "retention": {
+        "action_signatures_equal": true,
+        "native_identifiers_equal": true,
+        "semantic_signature_sets_equal": true
+      }
+    }
+  ]
+}

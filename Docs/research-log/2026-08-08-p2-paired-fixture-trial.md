@@ -13,10 +13,12 @@ applications are collected?
 
 - Paired screenshot source revision:
   `54e545e5e4bed74302472fa6639e5fc411e18f07`.
-- Structured action source revision:
+- SwiftUI structured action source revision:
   `6bece16d4afaa099ba3cf068472ffee07ebadc50`.
-- Direct-state matrix source revision:
+- SwiftUI direct-state matrix source revision:
   `26d88823410a2c5486950fb5632e73eda636783f`.
+- UIKit structured matrix source revision:
+  `fdf29a1c831c45250825718ad16d25500ece4eeb`.
 - Toolchain: Xcode 26.5 (17F42), Swift 6.3.2, iOS Simulator 26.5.
 - Device: iPhone 17 Pro, viewport 402 by 874 points at scale 3.
 - Selected device UDID: `3BC2ABB5-651E-429E-8983-8CDBEC035388`.
@@ -40,13 +42,20 @@ exported attachments for detail, form, modal, and long list. The Linux target
 was absent before creation; all 87 files in the result bundle and attachment
 directory matched local SHA-256 digests after copying.
 
+The five-test UIKit run is in
+`pilot/uikit-matrix-20260808-fdf29a1`. It contains the result bundle and 17
+exported attachments for the five direct states plus the home-to-detail action
+after-state. The Linux target was absent before creation; all 104 files in the
+result bundle and attachment directory matched local SHA-256 digests after
+copying.
+
 ## Implemented trial
 
 The two independent application targets render `home`, `detail`, `form`,
 `modal`, and `long_list` from the same tested state catalog. Both accept an
 explicit screen and appearance launch argument, use one English and Simplified
-Chinese string catalog, and give matching controls matching accessibility
-identifiers.
+Chinese string catalog, and give matching controls shared accessibility
+identifiers across frameworks.
 
 The final matrix contains ten records:
 
@@ -97,8 +106,9 @@ center target was `(201, 408.83333333333337)` screen points. The after root
 appeared, and both screenshots were visually checked for the expected English,
 light-appearance home and detail states.
 
-The action run adds one transition after-state to the manifest, for 11 records
-total, and one verified action pair. The initial-state recipe, app, source
+The SwiftUI action run added one transition after-state to the manifest, for 11
+records at that stage, and one verified action pair. The initial-state recipe,
+app, source
 revision, device, runtime, viewport, orientation, locale, appearance, Dynamic
 Type, and split match across the action pair. The selected simulator was
 restored to its prior shutdown state after the run.
@@ -159,6 +169,33 @@ native-identifier, and unique-semantic-signature sets were equal in all four
 comparisons. These single-run measurements still do not establish token,
 latency, relation, reading-order, visual-grounding, or task-success gains.
 
+## Structured UIKit initial-state matrix
+
+The symmetric UIKit target ran five exact-destination tests with zero failures.
+It exported one structured snapshot, one lossless 1206 by 2622 screenshot, and
+one capture metadata record for each direct initial state. The home-to-detail
+test also exported the after screenshot and hierarchy plus a verified action
+record, for 17 attachments total. Direct detail, form, home, action-after
+detail, long list, and modal snapshots contained 34, 35, 42, 34, 90, and 28
+nodes respectively.
+
+The home action resolved `fixture.home.open-detail` at frame 16 by 331.3333 by
+370 by 34.3333 points. Its recorded center target was `(201, 348.5)`, and the
+test required `fixture.detail.root` after the tap. Screenshot inspection found
+the expected screens, content, locale, and appearance without blank screens,
+crashes, cropping, or overlap. The English detail layout has tight spacing
+between the `Source` label and `Synthetic fixture` value; this is retained as a
+minor readability observation rather than treated as a capture failure.
+
+Across all six UIKit trees, conservative cleaning changed 263 raw nodes to 194
+nodes, collapsed 49 exact wrappers, and removed ten exact duplicate unknown
+subtrees containing 20 nodes. Canonical JSON decreased from 160,104 to 123,784
+bytes (22.69%), and compact UTF-8 decreased from 63,733 to 49,184 bytes
+(22.83%). Action-signature, native-identifier, and unique-semantic-signature
+sets were equal in every comparison. The measurements are single-run
+diagnostics and do not establish multiplicity, relation, reading-order, token,
+latency, visual-grounding, or task-success gains.
+
 ## Public artifact decision
 
 The application code and fictional content are project-authored and covered by
@@ -168,8 +205,8 @@ property ownership, trademark use, software-license restrictions, and a rights
 request channel, but do not provide a sufficiently explicit basis to relicense
 these rendered captures as public Apache-2.0 dataset assets.
 
-The ledger therefore records both screenshot families, the action trial, and
-the direct SwiftUI matrix screenshots and native trees as
+The ledger therefore records both screenshot families, both action trials, and
+the direct SwiftUI and UIKit matrix screenshots and native trees as
 `research_only_isolated`, permits research use only, marks commercial
 compatibility unclear, and withholds public redistribution. This is a
 conservative project decision, not legal advice.
@@ -188,6 +225,8 @@ Primary materials reviewed:
 - The four direct-state SwiftUI XCUITests passed 4/4 on the exact destination,
   exported 12 attachments, and left the selected simulator in its prior
   shutdown state.
+- The five UIKit XCUITests passed 5/5 on the exact destination, exported 17
+  attachments, and left the selected simulator in its prior shutdown state.
 - The shared Swift package built and all tests passed after the fixture work.
 - The structured snapshot parser's focused red/green cycle passed three tests
   covering normalization, malformed input, invalid fields, and resource limits;
@@ -199,8 +238,8 @@ Primary materials reviewed:
   `(201, 408.8333333333333)`. The one-run parse timing is diagnostic evidence,
   not a performance result.
 - The committed test suite decodes the draft manifest, ledger, and all ten
-  paired canonical states plus the action after-state, then runs semantic
-  validation over all 11 records and the action pair.
+  paired canonical states plus both action after-states, then runs semantic
+  validation over all 12 records and both action pairs.
 - Local and Linux read-back SHA-256 digests matched for all ten PNG files and
   both capture metadata files.
 - Local and Linux read-back SHA-256 digests also matched for the five exported
@@ -210,6 +249,9 @@ Primary materials reviewed:
 - Local and Linux read-back SHA-256 digests matched for all 87 files in the
   direct-state result bundle and exported-attachment directory. Its Linux
   directory was also verified absent before creation.
+- Local and Linux read-back SHA-256 digests matched for all 104 files in the
+  UIKit result bundle and exported-attachment directory. Its Linux directory
+  was also verified absent before creation.
 - The structured action hashes are:
   - before hierarchy:
     `e00f3b134e5686d4f1e05f2f9a25a42353d61c044e067a1f45c1e9003692ca9b`
@@ -221,29 +263,40 @@ Primary materials reviewed:
     `a34e08a42d1e119747bc9ea31bd403b638c4bbac3b37426cf71dca0dbbb1216f`
   - action record:
     `05c0bb28f10c6dd37c5e83c54f56f741bf407ee22df3253a70533d69a7ed32e8`
+- The structured UIKit action hashes are:
+  - before hierarchy:
+    `f220ffc5390499029560c9d1ba9364471cede8bac9292b3accdfc5d9c57e4087`
+  - before screenshot:
+    `815b338e204ce00880033db9fb01d8913adb7fa37309acfb3d250e778df90d30`
+  - after hierarchy:
+    `a878293bcfc8ab49ff28653155beb8b6f1ff6e50ab008a412486e8e68c7502e2`
+  - after screenshot:
+    `1eaf5380a976e07785194c3de35f850c2d07ad56d925dcfb1a757628bc590bd4`
+  - action record:
+    `0e8afb7b6f522dce63de5894591eae1652f109aa1aa87af5e46a96a9d5447d45`
+  - exported-attachment manifest:
+    `9713d869f71ec19b78f9f5365397a00b17b1e3f8051682a3d3b21a81be16e687`
 - JSON syntax, property-list syntax, project syntax, shell syntax, strict Swift
   formatting, whitespace checks, and the prohibited provider-content scan
   passed.
 
 ## Known gaps
 
-- All five initial SwiftUI records now have structured native hierarchy
-  evidence, and the action trial adds a second detail capture after a verified
-  transition. A symmetric UIKit UI-test target builds on the exact destination,
-  but its five records still have null trees until the tests execute and their
-  artifacts pass the same admission checks.
-- The 11 committed annotation files still have empty element arrays; they are
+- All five initial records in each framework now have structured native
+  hierarchy evidence. Each framework also has a second detail capture after a
+  verified home-to-detail transition.
+- The 12 committed annotation files still have empty element arrays; they are
   not completed manual annotations. Offline compilation now produces normalized
-  elements from six structured SwiftUI captures, but those outputs have not
-  been reviewed and backfilled into the annotations. The raw dictionaries
-  remain evidence, not visual truth.
-- Cleaning has two synthetic unit fixtures and six real SwiftUI captures across
-  five states. UIKit coverage, multiplicity and relation retention, compact
-  readability review, and token measurements remain open. Raw output is
-  retained for every paired comparison.
+  elements from 12 structured captures across both frameworks, but those
+  outputs have not been reviewed and backfilled into the annotations. The raw
+  dictionaries remain evidence, not visual truth.
+- Cleaning has two synthetic unit fixtures and 12 real captures across both
+  frameworks and five initial states. Multiplicity and relation retention,
+  compact readability review, and token measurements remain open. Raw output
+  is retained for every paired comparison.
 - Owner review of native-tree evidence, element annotations, and compact states
   remains pending.
 
 The trial now proves the paired build, launch, screenshot, storage, hash,
-structured hierarchy, one verified action, and draft-manifest path. It does not
-yet satisfy human grounding acceptance or the P2 checkpoint.
+structured hierarchy, two verified actions, and draft-manifest path. It does
+not yet satisfy human grounding acceptance or the P2 checkpoint.

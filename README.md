@@ -31,11 +31,12 @@ The pilot manifest and license ledger have offline decoding and semantic checks
 for app-disjoint splits, references, redistribution approval, and frozen-pilot
 coverage.
 
-The exact-device SwiftUI hierarchy matrix now covers all five initial states.
-The four direct-state tests passed 4/4 on the pinned iPhone 17 Pro simulator;
-their raw screenshots, trees, and result bundle remain outside Git under the
-withheld redistribution decision. UIKit structured hierarchy coverage and human
-tree/compact grounding review remain open.
+The exact-device hierarchy matrix now covers all five initial states in both
+SwiftUI and UIKit, plus one verified home-to-detail action per framework. The
+SwiftUI direct-state tests passed 4/4 and the UIKit matrix passed 5/5 on the
+pinned iPhone 17 Pro simulator. Raw screenshots, trees, and result bundles
+remain outside Git under the withheld redistribution decision. Human
+tree/compact grounding review remains open.
 
 ## Quick start
 
@@ -79,10 +80,9 @@ xcodebuild test \
 Omit `-only-testing` to execute the full five-state SwiftUI hierarchy matrix on
 an explicitly selected destination.
 
-The shared `UIKitFixture` scheme now has a symmetric five-test UI-test target
-with UIKit artifact prefixes and identifiers. Its exact-destination
-`build-for-testing` passes; exact-device execution and evidence admission are
-still pending.
+The shared `UIKitFixture` scheme has a symmetric five-test UI-test target with
+UIKit artifact prefixes and identifiers. Its exact-destination matrix has been
+executed and admitted under the same artifact and license boundaries.
 
 Export the attachments with `xcrun xcresulttool export attachments`. Raw
 screenshots and trees remain outside Git until the license ledger explicitly
