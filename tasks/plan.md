@@ -140,8 +140,9 @@ No training task starts unless all four conditions are satisfied.
 
 ## Current open work
 
-- Add symmetric structured hierarchy capture for the UIKit fixture; all five
-  initial SwiftUI states now have exact-device XCUITest evidence.
+- Execute and admit the symmetric UIKit structured hierarchy matrix; its
+  five-test target builds, while all five initial SwiftUI states already have
+  exact-device XCUITest evidence.
 - Add multiplicity- and relation-aware retention checks before expanding the
   cleaner policy beyond exact wrappers and duplicate unknown subtrees.
 - Complete owner review of representative trees and compact states before

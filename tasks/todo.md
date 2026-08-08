@@ -191,6 +191,10 @@ trial the P2 capture and annotation contract.
   prior shutdown state.
 - [x] All four direct trees compile in raw and conservative modes; the public
   aggregate preserves all three retention sets and withholds raw artifacts.
+- [x] A shared UIKit scheme and symmetric five-test UI-test target pass
+  `build-for-testing` on the exact destination.
+- [ ] Execute the UIKit tests, inspect and hash their artifacts, and admit only
+  verified evidence into the manifest and isolated artifact store.
 
 **Dependencies:** Task 7
 **Files likely touched:** fixture specification, shared support module and tests,

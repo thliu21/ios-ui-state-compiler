@@ -229,7 +229,9 @@ Primary materials reviewed:
 
 - All five initial SwiftUI records now have structured native hierarchy
   evidence, and the action trial adds a second detail capture after a verified
-  transition. The five UIKit records still have null trees.
+  transition. A symmetric UIKit UI-test target builds on the exact destination,
+  but its five records still have null trees until the tests execute and their
+  artifacts pass the same admission checks.
 - The 11 committed annotation files still have empty element arrays; they are
   not completed manual annotations. Offline compilation now produces normalized
   elements from six structured SwiftUI captures, but those outputs have not

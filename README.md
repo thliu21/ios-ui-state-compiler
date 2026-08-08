@@ -79,6 +79,11 @@ xcodebuild test \
 Omit `-only-testing` to execute the full five-state SwiftUI hierarchy matrix on
 an explicitly selected destination.
 
+The shared `UIKitFixture` scheme now has a symmetric five-test UI-test target
+with UIKit artifact prefixes and identifiers. Its exact-destination
+`build-for-testing` passes; exact-device execution and evidence admission are
+still pending.
+
 Export the attachments with `xcrun xcresulttool export attachments`. Raw
 screenshots and trees remain outside Git until the license ledger explicitly
 permits redistribution.
