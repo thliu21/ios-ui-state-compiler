@@ -69,6 +69,8 @@ P0 contracts
 
 - [x] Define annotation guide and manifest schema.
 - [x] Implement manifest and license-ledger semantic validation.
+- [ ] Trial five matched synthetic states in UIKit and SwiftUI.
+- [ ] Review the ten paired fixture records and one verified action pair.
 - [ ] Build a 50-screen UIKit/SwiftUI pilot.
 - [ ] Freeze app-disjoint pilot splits and license ledger.
 - [ ] Implement B0–B6 representation generation.
@@ -137,7 +139,7 @@ No training task starts unless all four conditions are satisfied.
 
 ## Current open work
 
-- Validate the Linux workstation as an optional artifact root using read-only checks.
-- Select and license-review the UIKit pilot applications.
-- Trial the annotation contract on five synthetic UIKit/SwiftUI fixtures before
-  selecting an annotation tool.
+- Implement the shared five-state fixture contract and launch parser.
+- Build the independent SwiftUI and UIKit fixture applications.
+- Capture and review the ten paired synthetic records before selecting an
+  annotation tool or admitting third-party applications.

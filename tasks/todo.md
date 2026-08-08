@@ -152,3 +152,31 @@ semantic coverage checks before collecting third-party artifacts.
 **Dependencies:** Task 6
 **Files likely touched:** P2 documents, schemas, manifest types, fixtures, tests
 **Estimated scope:** Medium
+
+## Task 8: Trial paired UIKit and SwiftUI fixtures
+
+**Description:** Build independent UIKit and SwiftUI applications that expose
+the same five deterministic synthetic states, then use their ten observations to
+trial the P2 capture and annotation contract.
+
+**Acceptance criteria:**
+
+- [ ] A tested shared catalog defines exactly five stable screen identities.
+- [ ] Both application targets accept the same direct-launch screen argument.
+- [ ] Matching elements have matching accessibility identifiers.
+- [ ] Both targets build and run on the explicitly selected simulator UDID.
+- [ ] English, Simplified Chinese, light, and dark records are represented.
+- [ ] Ten records and one verified action pair pass manifest and ledger checks.
+- [ ] Human review confirms screenshot, tree, and compact-state grounding.
+
+**Verification:**
+
+- [ ] Focused fixture-support tests pass.
+- [ ] Full Swift build, tests, and strict format lint pass.
+- [ ] Each Xcode target builds for the selected simulator destination.
+- [ ] Capture verification operates only the selected simulator UDID.
+
+**Dependencies:** Task 7
+**Files likely touched:** fixture specification, shared support module and tests,
+two application targets, shared string catalog, pilot records
+**Estimated scope:** Large, delivered in small commits
