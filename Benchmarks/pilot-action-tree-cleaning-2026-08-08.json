@@ -1,8 +1,8 @@
 {
   "schema_version": "0.1.0",
   "status": "diagnostic_two_state_trial",
-  "generated_at": "2026-08-08T23:10:43Z",
-  "compiler_revision": "84811fbcd22838b251c8d28047eab7b029242b1c",
+  "generated_at": "2026-08-08T23:49:13Z",
+  "compiler_revision": "67a4987033887cbd97b238da388d4cdefb127843",
   "fixture_revision": "6bece16d4afaa099ba3cf068472ffee07ebadc50",
   "toolchain": {
     "xcode": "26.5 (17F42)",
@@ -18,122 +18,158 @@
     "human_grounding_review_complete": false
   },
   "aggregate": {
+    "raw_nodes": 75,
+    "conservative_nodes": 55,
+    "node_reduction_percent": 26.67,
+    "collapsed_wrapper_count": 20,
+    "removed_duplicate_subtree_count": 0,
+    "removed_duplicate_node_count": 0,
     "raw_canonical_json_bytes": 46291,
-    "conservative_canonical_json_bytes": 33698,
-    "canonical_json_reduction_percent": 27.20,
+    "conservative_canonical_json_bytes": 36079,
+    "canonical_json_reduction_percent": 22.06,
     "raw_compact_bytes": 19137,
-    "conservative_compact_bytes": 14053,
-    "compact_reduction_percent": 26.57,
+    "conservative_compact_bytes": 15105,
+    "compact_reduction_percent": 21.07,
     "all_action_signatures_equal": true,
     "all_native_identifiers_equal": true,
-    "all_semantic_signature_sets_equal": true
+    "all_semantic_signature_sets_equal": true,
+    "all_action_signature_multisets_equal": true,
+    "all_native_identifier_multisets_equal": true,
+    "all_semantic_signature_multisets_equal": true,
+    "all_semantic_parent_child_relation_multisets_equal": true
   },
   "records": [
     {
-      "screen_id": "paired-swiftui-home",
-      "source_tree_sha256": "e00f3b134e5686d4f1e05f2f9a25a42353d61c044e067a1f45c1e9003692ca9b",
+      "conservative": {
+        "canonical_json": {
+          "action_count": 4,
+          "bytes": 21950,
+          "element_count": 33,
+          "native_identifier_count": 10,
+          "native_identifier_occurrence_count": 10,
+          "semantic_element_count": 24,
+          "semantic_parent_child_relation_count": 24,
+          "semantic_signature_count": 23,
+          "unique_semantic_parent_child_relation_count": 23
+        },
+        "compact_bytes": 9178,
+        "timings_ms": {
+          "image_decode_ms": 0.0002500019036233425,
+          "serialization_ms": 5.203208333114162,
+          "total_ms": 6.776374997571111,
+          "tree_cleaning_ms": 0.3372083301655948,
+          "xcuitest_json_parse_ms": 1.1555416567716748,
+          "xml_parse_ms": 0
+        },
+        "tree_cleaning": {
+          "collapsed_wrapper_count": 10,
+          "input_node_count": 43,
+          "mode": "conservative",
+          "output_node_count": 33,
+          "removed_duplicate_node_count": 0,
+          "removed_duplicate_subtree_count": 0
+        }
+      },
       "raw": {
         "canonical_json": {
+          "action_count": 4,
           "bytes": 27056,
           "element_count": 43,
-          "action_count": 4,
           "native_identifier_count": 10,
-          "semantic_signature_count": 23
+          "native_identifier_occurrence_count": 10,
+          "semantic_element_count": 24,
+          "semantic_parent_child_relation_count": 24,
+          "semantic_signature_count": 23,
+          "unique_semantic_parent_child_relation_count": 23
         },
         "compact_bytes": 11194,
         "timings_ms": {
-          "image_decode_ms": 0.00016667763702571392,
-          "xml_parse_ms": 0,
-          "xcuitest_json_parse_ms": 1.5004583401605487,
+          "image_decode_ms": 0.00020832521840929985,
+          "serialization_ms": 6.947250018129125,
+          "total_ms": 24.91404168540612,
           "tree_cleaning_ms": 0,
-          "serialization_ms": 6.759708339814097,
-          "total_ms": 8.371458359761164
-        }
-      },
-      "conservative": {
-        "canonical_json": {
-          "bytes": 20774,
-          "element_count": 31,
-          "action_count": 4,
-          "native_identifier_count": 10,
-          "semantic_signature_count": 23
-        },
-        "compact_bytes": 8665,
-        "timings_ms": {
-          "image_decode_ms": 0.00012500095181167126,
-          "xml_parse_ms": 0,
-          "xcuitest_json_parse_ms": 0.8936249942053109,
-          "tree_cleaning_ms": 0.23624999448657036,
-          "serialization_ms": 4.884375026449561,
-          "total_ms": 6.071458337828517
-        },
-        "tree_cleaning": {
-          "mode": "conservative",
-          "input_node_count": 43,
-          "output_node_count": 31,
-          "collapsed_wrapper_count": 10,
-          "removed_duplicate_subtree_count": 1,
-          "removed_duplicate_node_count": 2
+          "xcuitest_json_parse_ms": 17.866416659671813,
+          "xml_parse_ms": 0
         }
       },
       "retention": {
+        "action_signature_multisets_equal": true,
         "action_signatures_equal": true,
+        "native_identifier_multisets_equal": true,
         "native_identifiers_equal": true,
+        "semantic_parent_child_relation_multisets_equal": true,
+        "semantic_signature_multisets_equal": true,
         "semantic_signature_sets_equal": true
-      }
+      },
+      "schema_version": "0.1.0",
+      "screen_id": "paired-swiftui-home",
+      "source_tree_sha256": "e00f3b134e5686d4f1e05f2f9a25a42353d61c044e067a1f45c1e9003692ca9b"
     },
     {
-      "screen_id": "paired-swiftui-detail-after-home-action",
-      "source_tree_sha256": "bc4ff5d1a2f4abc68a0171c84ae854f7f4754b3b522f81527dd7fc8435339b2d",
+      "conservative": {
+        "canonical_json": {
+          "action_count": 2,
+          "bytes": 14129,
+          "element_count": 22,
+          "native_identifier_count": 4,
+          "native_identifier_occurrence_count": 4,
+          "semantic_element_count": 13,
+          "semantic_parent_child_relation_count": 13,
+          "semantic_signature_count": 12,
+          "unique_semantic_parent_child_relation_count": 12
+        },
+        "compact_bytes": 5927,
+        "timings_ms": {
+          "image_decode_ms": 0.0002916785888373852,
+          "serialization_ms": 3.4528750111348927,
+          "total_ms": 4.3956250010523945,
+          "tree_cleaning_ms": 0.17962499987334013,
+          "xcuitest_json_parse_ms": 0.7121666567400098,
+          "xml_parse_ms": 0
+        },
+        "tree_cleaning": {
+          "collapsed_wrapper_count": 10,
+          "input_node_count": 32,
+          "mode": "conservative",
+          "output_node_count": 22,
+          "removed_duplicate_node_count": 0,
+          "removed_duplicate_subtree_count": 0
+        }
+      },
       "raw": {
         "canonical_json": {
+          "action_count": 2,
           "bytes": 19235,
           "element_count": 32,
-          "action_count": 2,
           "native_identifier_count": 4,
-          "semantic_signature_count": 12
+          "native_identifier_occurrence_count": 4,
+          "semantic_element_count": 13,
+          "semantic_parent_child_relation_count": 13,
+          "semantic_signature_count": 12,
+          "unique_semantic_parent_child_relation_count": 12
         },
         "compact_bytes": 7943,
         "timings_ms": {
-          "image_decode_ms": 0.00012500095181167126,
-          "xml_parse_ms": 0,
-          "xcuitest_json_parse_ms": 1.0222500131931156,
+          "image_decode_ms": 0.0002500019036233425,
+          "serialization_ms": 4.680499987443909,
+          "total_ms": 5.484624998643994,
           "tree_cleaning_ms": 0,
-          "serialization_ms": 4.879583313595504,
-          "total_ms": 5.9654583455994725
-        }
-      },
-      "conservative": {
-        "canonical_json": {
-          "bytes": 12924,
-          "element_count": 20,
-          "action_count": 2,
-          "native_identifier_count": 4,
-          "semantic_signature_count": 12
-        },
-        "compact_bytes": 5388,
-        "timings_ms": {
-          "image_decode_ms": 0.00012500095181167126,
-          "xml_parse_ms": 0,
-          "xcuitest_json_parse_ms": 0.7232500065583736,
-          "tree_cleaning_ms": 0.19225000869482756,
-          "serialization_ms": 3.281416662503034,
-          "total_ms": 4.248749988619238
-        },
-        "tree_cleaning": {
-          "mode": "conservative",
-          "input_node_count": 32,
-          "output_node_count": 20,
-          "collapsed_wrapper_count": 10,
-          "removed_duplicate_subtree_count": 1,
-          "removed_duplicate_node_count": 2
+          "xcuitest_json_parse_ms": 0.7355833367910236,
+          "xml_parse_ms": 0
         }
       },
       "retention": {
+        "action_signature_multisets_equal": true,
         "action_signatures_equal": true,
+        "native_identifier_multisets_equal": true,
         "native_identifiers_equal": true,
+        "semantic_parent_child_relation_multisets_equal": true,
+        "semantic_signature_multisets_equal": true,
         "semantic_signature_sets_equal": true
-      }
+      },
+      "schema_version": "0.1.0",
+      "screen_id": "paired-swiftui-detail-after-home-action",
+      "source_tree_sha256": "bc4ff5d1a2f4abc68a0171c84ae854f7f4754b3b522f81527dd7fc8435339b2d"
     }
   ]
 }

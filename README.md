@@ -38,6 +38,11 @@ pinned iPhone 17 Pro simulator. Raw screenshots, trees, and result bundles
 remain outside Git under the withheld redistribution decision. Human
 tree/compact grounding review remains open.
 
+All 12 real structured captures pass unique and multiset action, identifier,
+semantic, and normalized semantic parent-child retention gates under the pinned
+conservative cleaner. This is structural evidence only; child order, visual
+grounding, and task success still require separate evaluation.
+
 ## Quick start
 
 ```bash

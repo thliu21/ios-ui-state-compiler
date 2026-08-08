@@ -141,7 +141,5 @@ No training task starts unless all four conditions are satisfied.
 
 ## Current open work
 
-- Add multiplicity- and relation-aware retention checks to the now-complete
-  five-state UIKit and SwiftUI structured hierarchy matrices.
 - Complete owner review of representative trees and compact states before
   accepting the fixture trial or admitting third-party apps.

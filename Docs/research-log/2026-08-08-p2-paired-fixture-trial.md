@@ -141,33 +141,34 @@ An optional `conservative` cleaning mode now provides the first paired cleaned
 tree baseline while `raw` remains the default. It collapses only unknown-role,
 semantic-empty, single-child wrappers when wrapper and child frames are exactly
 equal. It deduplicates only exact sibling subtrees made entirely of unknown-role
-nodes without native identifiers. Each run reports input/output nodes, collapsed
-wrappers, removed duplicate subtrees and nodes, plus separate cleaning time.
+nodes without labels, values, native identifiers, or meaningful state. Each run
+reports input/output nodes, collapsed wrappers, removed duplicate subtrees and
+nodes, plus separate cleaning time.
 
-On the exact action evidence, home changed from 43 to 31 nodes and detail from
-32 to 20 nodes. Each state collapsed 10 wrappers and removed one duplicate
-two-node subtree. The home action target stayed at
+On the exact action evidence, home changed from 43 to 33 nodes and detail from
+32 to 22 nodes. Each state collapsed 10 wrappers and removed no duplicate
+subtree. The home action target stayed at
 `(201, 408.8333333333333)`, and the detail primary action remained at
 `(83.5, 358.5)`. These two states demonstrate deterministic behavior; they do
 not establish recall, token, latency, or task-success improvement.
 
 The committed two-state measurement reports canonical JSON decreasing from
-46,291 to 33,698 bytes (27.20%) and compact UTF-8 decreasing from 19,137 to
-14,053 bytes (26.57%). Action signatures, native-identifier sets, and unique
-semantic-signature sets were equal in both paired comparisons. Exact timings
-are retained as raw diagnostic measurements, but two warm invocations are not a
-latency benchmark. Token counts remain unavailable until a tokenizer is pinned,
-and set equality does not replace multiplicity, relation, visual, or human
-grounding review.
+46,291 to 36,079 bytes (22.06%) and compact UTF-8 decreasing from 19,137 to
+15,105 bytes (21.07%). Unique and multiset action signatures, native
+identifiers, semantic signatures, and nearest-semantic parent-child relation
+multisets were equal in both comparisons. Exact timings are retained as raw
+diagnostic measurements, but two warm invocations are not a latency benchmark.
+Token counts remain unavailable until a tokenizer is pinned, and the structural
+gates do not replace child-order, visual, or human grounding review.
 
 The four direct initial-state trees add a broader diagnostic comparison.
-Conservative cleaning changed 248 raw nodes to 149 nodes, collapsed 91 exact
-wrappers, and removed five exact duplicate unknown subtrees containing eight
-nodes. Canonical JSON decreased from 152,842 to 98,782 bytes (35.37%), and
-compact UTF-8 decreased from 63,775 to 40,521 bytes (36.46%). Action-signature,
-native-identifier, and unique-semantic-signature sets were equal in all four
-comparisons. These single-run measurements still do not establish token,
-latency, relation, reading-order, visual-grounding, or task-success gains.
+Conservative cleaning changed 248 raw nodes to 155 nodes, collapsed 91 exact
+wrappers, and removed two exact semantic-empty duplicate subtrees containing
+two nodes. Canonical JSON decreased from 152,862 to 102,393 bytes (33.02%), and
+compact UTF-8 decreased from 63,775 to 42,116 bytes (33.96%). All seven unique,
+multiset, and normalized relation gates passed in all four comparisons. These
+single-run measurements still do not establish token, latency, child-order,
+reading-order, visual-grounding, or task-success gains.
 
 ## Structured UIKit initial-state matrix
 
@@ -187,14 +188,29 @@ crashes, cropping, or overlap. The English detail layout has tight spacing
 between the `Source` label and `Synthetic fixture` value; this is retained as a
 minor readability observation rather than treated as a capture failure.
 
-Across all six UIKit trees, conservative cleaning changed 263 raw nodes to 194
-nodes, collapsed 49 exact wrappers, and removed ten exact duplicate unknown
-subtrees containing 20 nodes. Canonical JSON decreased from 160,104 to 123,784
-bytes (22.69%), and compact UTF-8 decreased from 63,733 to 49,184 bytes
-(22.83%). Action-signature, native-identifier, and unique-semantic-signature
-sets were equal in every comparison. The measurements are single-run
-diagnostics and do not establish multiplicity, relation, reading-order, token,
+Across all six UIKit trees, conservative cleaning changed 263 raw nodes to 214
+nodes, collapsed 49 exact wrappers, and removed no duplicate subtree. Canonical
+JSON decreased from 160,104 to 135,189 bytes (15.56%), and compact UTF-8
+decreased from 63,733 to 53,959 bytes (15.34%). All seven unique, multiset, and
+normalized relation gates passed in every comparison. The measurements are
+single-run diagnostics and do not establish child-order, reading-order, token,
 latency, visual-grounding, or task-success gains.
+
+## Multiplicity failure and policy correction
+
+The first multiset red test reproduced a concrete weakness in the earlier
+cleaner: two identical labelled scrollbar subtrees became one while the three
+unique-set gates all remained true. On the committed integration fixture, the
+old policy changed seven nodes to four; semantic-signature multiplicity and
+nearest-semantic parent-child multiplicity both failed.
+
+Revision `67a4987033887cbd97b238da388d4cdefb127843` narrows duplicate removal to
+semantic-empty subtrees. The same integration fixture now changes seven nodes to
+six by collapsing one wrapper, preserves both labelled scrollbar instances, and
+passes all seven gates. All 12 real SwiftUI and UIKit captures were then rerun
+from their hash-verified external trees with that exact compiler revision; every
+capture passed all seven gates. The lower reduction percentages above are the
+cost of preserving the previously lost multiplicity.
 
 ## Public artifact decision
 
@@ -290,10 +306,10 @@ Primary materials reviewed:
   elements from 12 structured captures across both frameworks, but those
   outputs have not been reviewed and backfilled into the annotations. The raw
   dictionaries remain evidence, not visual truth.
-- Cleaning has two synthetic unit fixtures and 12 real captures across both
-  frameworks and five initial states. Multiplicity and relation retention,
-  compact readability review, and token measurements remain open. Raw output
-  is retained for every paired comparison.
+- Cleaning has synthetic counterexamples and 12 real captures across both
+  frameworks and five initial states. All seven structural gates pass, while
+  child-order validation, compact readability review, and token measurements
+  remain open. Raw output is retained for every paired comparison.
 - Owner review of native-tree evidence, element annotations, and compact states
   remains pending.
 

@@ -184,19 +184,23 @@ trial the P2 capture and annotation contract.
 - [x] Raw remains the default; conservative cleaning reports node removals and
   preserves the recorded home action and detail primary-action centers.
 - [x] A public two-state aggregate records exact source hashes, JSON/compact
-  bytes, raw diagnostic timings, and three passing retention gates without raw
+  bytes, raw diagnostic timings, and seven passing retention gates without raw
   screenshots or hierarchies.
 - [x] Four direct SwiftUI initial-state tests execute on the exact destination
   with zero failures, attach 12 artifacts, and restore the simulator to its
   prior shutdown state.
 - [x] All four direct trees compile in raw and conservative modes; the public
-  aggregate preserves all three retention sets and withholds raw artifacts.
+  aggregate preserves all seven retention structures and withholds raw artifacts.
 - [x] A shared UIKit scheme and symmetric five-test UI-test target pass
   `build-for-testing` on the exact destination.
 - [x] The UIKit tests pass 5/5; 17 attachments are inspected, hashed, mirrored,
   and admitted as five initial records plus one verified action after-state.
-- [x] Six UIKit trees compile in raw and conservative modes; all three
-  retention sets remain equal and the public aggregate withholds raw artifacts.
+- [x] Six UIKit trees compile in raw and conservative modes; all seven
+  retention structures remain equal and the public aggregate withholds raw
+  artifacts.
+- [x] Counterexamples prove unique-set gates miss multiplicity loss; the
+  semantic-empty-only policy and all 12 real captures pass multiset and
+  normalized semantic parent-child gates.
 
 **Dependencies:** Task 7
 **Files likely touched:** fixture specification, shared support module and tests,

@@ -1,8 +1,8 @@
 {
   "schema_version": "0.1.0",
   "status": "diagnostic_six_capture_matrix",
-  "generated_at": "2026-08-08T23:35:12Z",
-  "compiler_revision": "fdf29a1c831c45250825718ad16d25500ece4eeb",
+  "generated_at": "2026-08-08T23:49:13Z",
+  "compiler_revision": "67a4987033887cbd97b238da388d4cdefb127843",
   "fixture_revision": "fdf29a1c831c45250825718ad16d25500ece4eeb",
   "toolchain": {
     "xcode": "26.5 (17F42)",
@@ -26,339 +26,421 @@
   },
   "aggregate": {
     "raw_nodes": 263,
-    "conservative_nodes": 194,
-    "node_reduction_percent": 26.24,
+    "conservative_nodes": 214,
+    "node_reduction_percent": 18.63,
     "collapsed_wrapper_count": 49,
-    "removed_duplicate_subtree_count": 10,
-    "removed_duplicate_node_count": 20,
+    "removed_duplicate_subtree_count": 0,
+    "removed_duplicate_node_count": 0,
     "raw_canonical_json_bytes": 160104,
-    "conservative_canonical_json_bytes": 123784,
-    "canonical_json_reduction_percent": 22.69,
+    "conservative_canonical_json_bytes": 135189,
+    "canonical_json_reduction_percent": 15.56,
     "raw_compact_bytes": 63733,
-    "conservative_compact_bytes": 49184,
-    "compact_reduction_percent": 22.83,
+    "conservative_compact_bytes": 53959,
+    "compact_reduction_percent": 15.34,
     "all_action_signatures_equal": true,
     "all_native_identifiers_equal": true,
-    "all_semantic_signature_sets_equal": true
+    "all_semantic_signature_sets_equal": true,
+    "all_action_signature_multisets_equal": true,
+    "all_native_identifier_multisets_equal": true,
+    "all_semantic_signature_multisets_equal": true,
+    "all_semantic_parent_child_relation_multisets_equal": true
   },
   "records": [
     {
-      "screen_id": "uikit-detail-zh-Hans-light",
-      "source_tree_sha256": "87e950b21db31a732161dfb2b50bcc6de8cad3e485110dfaa9a1eabb1ab48cbe",
+      "conservative": {
+        "canonical_json": {
+          "action_count": 2,
+          "bytes": 17255,
+          "element_count": 28,
+          "native_identifier_count": 4,
+          "native_identifier_occurrence_count": 4,
+          "semantic_element_count": 17,
+          "semantic_parent_child_relation_count": 17,
+          "semantic_signature_count": 15,
+          "unique_semantic_parent_child_relation_count": 15
+        },
+        "compact_bytes": 7114,
+        "timings_ms": {
+          "image_decode_ms": 0.00020832521840929985,
+          "serialization_ms": 4.327416681917384,
+          "total_ms": 5.324375000782311,
+          "tree_cleaning_ms": 0.2165833138860762,
+          "xcuitest_json_parse_ms": 0.7255833188537508,
+          "xml_parse_ms": 0
+        },
+        "tree_cleaning": {
+          "collapsed_wrapper_count": 6,
+          "input_node_count": 34,
+          "mode": "conservative",
+          "output_node_count": 28,
+          "removed_duplicate_node_count": 0,
+          "removed_duplicate_subtree_count": 0
+        }
+      },
       "raw": {
         "canonical_json": {
+          "action_count": 2,
           "bytes": 20249,
           "element_count": 34,
-          "action_count": 2,
           "native_identifier_count": 4,
-          "semantic_signature_count": 15
+          "native_identifier_occurrence_count": 4,
+          "semantic_element_count": 17,
+          "semantic_parent_child_relation_count": 17,
+          "semantic_signature_count": 15,
+          "unique_semantic_parent_child_relation_count": 15
         },
         "compact_bytes": 8254,
         "timings_ms": {
-          "image_decode_ms": 0.0002500019036233425,
-          "xml_parse_ms": 0,
-          "xcuitest_json_parse_ms": 0.8110833296086639,
+          "image_decode_ms": 0.00029164948500692844,
+          "serialization_ms": 5.03000000026077,
+          "total_ms": 5.849916691659018,
           "tree_cleaning_ms": 0,
-          "serialization_ms": 5.367999983718619,
-          "total_ms": 6.2622500117868185
-        }
-      },
-      "conservative": {
-        "canonical_json": {
-          "bytes": 14992,
-          "element_count": 24,
-          "action_count": 2,
-          "native_identifier_count": 4,
-          "semantic_signature_count": 15
-        },
-        "compact_bytes": 6177,
-        "timings_ms": {
-          "image_decode_ms": 0.00016667763702571392,
-          "xml_parse_ms": 0,
-          "xcuitest_json_parse_ms": 0.7473749865312129,
-          "tree_cleaning_ms": 0.24970833328552544,
-          "serialization_ms": 4.05241665430367,
-          "total_ms": 5.105583317345008
-        },
-        "tree_cleaning": {
-          "mode": "conservative",
-          "input_node_count": 34,
-          "output_node_count": 24,
-          "collapsed_wrapper_count": 6,
-          "removed_duplicate_subtree_count": 2,
-          "removed_duplicate_node_count": 4
+          "xcuitest_json_parse_ms": 0.7524166721850634,
+          "xml_parse_ms": 0
         }
       },
       "retention": {
+        "action_signature_multisets_equal": true,
         "action_signatures_equal": true,
+        "native_identifier_multisets_equal": true,
         "native_identifiers_equal": true,
+        "semantic_parent_child_relation_multisets_equal": true,
+        "semantic_signature_multisets_equal": true,
         "semantic_signature_sets_equal": true
-      }
+      },
+      "schema_version": "0.1.0",
+      "screen_id": "uikit-detail-zh-Hans-light",
+      "source_tree_sha256": "87e950b21db31a732161dfb2b50bcc6de8cad3e485110dfaa9a1eabb1ab48cbe"
     },
     {
-      "screen_id": "uikit-form-en-dark",
-      "source_tree_sha256": "3d5ad06de8722573cd0e5819f00d5be055cd271acca862ae0290c973f280b056",
+      "conservative": {
+        "canonical_json": {
+          "action_count": 5,
+          "bytes": 18836,
+          "element_count": 29,
+          "native_identifier_count": 7,
+          "native_identifier_occurrence_count": 7,
+          "semantic_element_count": 20,
+          "semantic_parent_child_relation_count": 20,
+          "semantic_signature_count": 18,
+          "unique_semantic_parent_child_relation_count": 18
+        },
+        "compact_bytes": 7287,
+        "timings_ms": {
+          "image_decode_ms": 0.0002500019036233425,
+          "serialization_ms": 4.837374988710508,
+          "total_ms": 5.946000019321218,
+          "tree_cleaning_ms": 0.22558335331268609,
+          "xcuitest_json_parse_ms": 0.8217916474677622,
+          "xml_parse_ms": 0
+        },
+        "tree_cleaning": {
+          "collapsed_wrapper_count": 6,
+          "input_node_count": 35,
+          "mode": "conservative",
+          "output_node_count": 29,
+          "removed_duplicate_node_count": 0,
+          "removed_duplicate_subtree_count": 0
+        }
+      },
       "raw": {
         "canonical_json": {
+          "action_count": 5,
           "bytes": 21830,
           "element_count": 35,
-          "action_count": 5,
           "native_identifier_count": 7,
-          "semantic_signature_count": 18
+          "native_identifier_occurrence_count": 7,
+          "semantic_element_count": 20,
+          "semantic_parent_child_relation_count": 20,
+          "semantic_signature_count": 18,
+          "unique_semantic_parent_child_relation_count": 18
         },
         "compact_bytes": 8427,
         "timings_ms": {
-          "image_decode_ms": 0.0002500019036233425,
-          "xml_parse_ms": 0,
-          "xcuitest_json_parse_ms": 1.7564166919328272,
+          "image_decode_ms": 0.00020832521840929985,
+          "serialization_ms": 5.461749999085441,
+          "total_ms": 6.398708326742053,
           "tree_cleaning_ms": 0,
-          "serialization_ms": 6.407874985598028,
-          "total_ms": 8.336291677551344
-        }
-      },
-      "conservative": {
-        "canonical_json": {
-          "bytes": 16559,
-          "element_count": 25,
-          "action_count": 5,
-          "native_identifier_count": 7,
-          "semantic_signature_count": 18
-        },
-        "compact_bytes": 6336,
-        "timings_ms": {
-          "image_decode_ms": 0.0002500019036233425,
-          "xml_parse_ms": 0,
-          "xcuitest_json_parse_ms": 0.8689999813213944,
-          "tree_cleaning_ms": 0.24233333533629775,
-          "serialization_ms": 6.260208348976448,
-          "total_ms": 7.432416692608967
-        },
-        "tree_cleaning": {
-          "mode": "conservative",
-          "input_node_count": 35,
-          "output_node_count": 25,
-          "collapsed_wrapper_count": 6,
-          "removed_duplicate_subtree_count": 2,
-          "removed_duplicate_node_count": 4
+          "xcuitest_json_parse_ms": 0.8613749814685434,
+          "xml_parse_ms": 0
         }
       },
       "retention": {
+        "action_signature_multisets_equal": true,
         "action_signatures_equal": true,
+        "native_identifier_multisets_equal": true,
         "native_identifiers_equal": true,
+        "semantic_parent_child_relation_multisets_equal": true,
+        "semantic_signature_multisets_equal": true,
         "semantic_signature_sets_equal": true
-      }
+      },
+      "schema_version": "0.1.0",
+      "screen_id": "uikit-form-en-dark",
+      "source_tree_sha256": "3d5ad06de8722573cd0e5819f00d5be055cd271acca862ae0290c973f280b056"
     },
     {
-      "screen_id": "paired-uikit-home",
-      "source_tree_sha256": "f220ffc5390499029560c9d1ba9364471cede8bac9292b3accdfc5d9c57e4087",
+      "conservative": {
+        "canonical_json": {
+          "action_count": 4,
+          "bytes": 22961,
+          "element_count": 36,
+          "native_identifier_count": 7,
+          "native_identifier_occurrence_count": 7,
+          "semantic_element_count": 24,
+          "semantic_parent_child_relation_count": 24,
+          "semantic_signature_count": 22,
+          "unique_semantic_parent_child_relation_count": 22
+        },
+        "compact_bytes": 9389,
+        "timings_ms": {
+          "image_decode_ms": 0.00020832521840929985,
+          "serialization_ms": 5.475624988321215,
+          "total_ms": 6.70237498707138,
+          "tree_cleaning_ms": 0.2629999944474548,
+          "xcuitest_json_parse_ms": 0.9017916745506227,
+          "xml_parse_ms": 0
+        },
+        "tree_cleaning": {
+          "collapsed_wrapper_count": 6,
+          "input_node_count": 42,
+          "mode": "conservative",
+          "output_node_count": 36,
+          "removed_duplicate_node_count": 0,
+          "removed_duplicate_subtree_count": 0
+        }
+      },
       "raw": {
         "canonical_json": {
+          "action_count": 4,
           "bytes": 25955,
           "element_count": 42,
-          "action_count": 4,
           "native_identifier_count": 7,
-          "semantic_signature_count": 22
+          "native_identifier_occurrence_count": 7,
+          "semantic_element_count": 24,
+          "semantic_parent_child_relation_count": 24,
+          "semantic_signature_count": 22,
+          "unique_semantic_parent_child_relation_count": 22
         },
         "compact_bytes": 10529,
         "timings_ms": {
           "image_decode_ms": 0.0002500019036233425,
-          "xml_parse_ms": 0,
-          "xcuitest_json_parse_ms": 0.965000013820827,
+          "serialization_ms": 6.1590833065565675,
+          "total_ms": 7.123249990399927,
           "tree_cleaning_ms": 0,
-          "serialization_ms": 6.52629166143015,
-          "total_ms": 7.570916670374572
-        }
-      },
-      "conservative": {
-        "canonical_json": {
-          "bytes": 20684,
-          "element_count": 32,
-          "action_count": 4,
-          "native_identifier_count": 7,
-          "semantic_signature_count": 22
-        },
-        "compact_bytes": 8438,
-        "timings_ms": {
-          "image_decode_ms": 0.00029164948500692844,
-          "xml_parse_ms": 0,
-          "xcuitest_json_parse_ms": 1.2453333474695683,
-          "tree_cleaning_ms": 0.43995832675136626,
-          "serialization_ms": 6.435041665099561,
-          "total_ms": 8.249458333011717
-        },
-        "tree_cleaning": {
-          "mode": "conservative",
-          "input_node_count": 42,
-          "output_node_count": 32,
-          "collapsed_wrapper_count": 6,
-          "removed_duplicate_subtree_count": 2,
-          "removed_duplicate_node_count": 4
+          "xcuitest_json_parse_ms": 0.8928333118092269,
+          "xml_parse_ms": 0
         }
       },
       "retention": {
+        "action_signature_multisets_equal": true,
         "action_signatures_equal": true,
+        "native_identifier_multisets_equal": true,
         "native_identifiers_equal": true,
+        "semantic_parent_child_relation_multisets_equal": true,
+        "semantic_signature_multisets_equal": true,
         "semantic_signature_sets_equal": true
-      }
+      },
+      "schema_version": "0.1.0",
+      "screen_id": "paired-uikit-home",
+      "source_tree_sha256": "f220ffc5390499029560c9d1ba9364471cede8bac9292b3accdfc5d9c57e4087"
     },
     {
-      "screen_id": "paired-uikit-detail-after-home-action",
-      "source_tree_sha256": "a878293bcfc8ab49ff28653155beb8b6f1ff6e50ab008a412486e8e68c7502e2",
+      "conservative": {
+        "canonical_json": {
+          "action_count": 2,
+          "bytes": 17311,
+          "element_count": 28,
+          "native_identifier_count": 4,
+          "native_identifier_occurrence_count": 4,
+          "semantic_element_count": 17,
+          "semantic_parent_child_relation_count": 17,
+          "semantic_signature_count": 15,
+          "unique_semantic_parent_child_relation_count": 15
+        },
+        "compact_bytes": 7150,
+        "timings_ms": {
+          "image_decode_ms": 0.0002500019036233425,
+          "serialization_ms": 4.399333352921531,
+          "total_ms": 5.467249982757494,
+          "tree_cleaning_ms": 0.23283332120627165,
+          "xcuitest_json_parse_ms": 0.7752916717436165,
+          "xml_parse_ms": 0
+        },
+        "tree_cleaning": {
+          "collapsed_wrapper_count": 6,
+          "input_node_count": 34,
+          "mode": "conservative",
+          "output_node_count": 28,
+          "removed_duplicate_node_count": 0,
+          "removed_duplicate_subtree_count": 0
+        }
+      },
       "raw": {
         "canonical_json": {
+          "action_count": 2,
           "bytes": 20305,
           "element_count": 34,
-          "action_count": 2,
           "native_identifier_count": 4,
-          "semantic_signature_count": 15
+          "native_identifier_occurrence_count": 4,
+          "semantic_element_count": 17,
+          "semantic_parent_child_relation_count": 17,
+          "semantic_signature_count": 15,
+          "unique_semantic_parent_child_relation_count": 15
         },
         "compact_bytes": 8290,
         "timings_ms": {
-          "image_decode_ms": 0.00016667763702571392,
-          "xml_parse_ms": 0,
-          "xcuitest_json_parse_ms": 1.7412500164937228,
-          "tree_cleaning_ms": 0,
-          "serialization_ms": 5.640249990392476,
-          "total_ms": 7.568166678538546
-        }
-      },
-      "conservative": {
-        "canonical_json": {
-          "bytes": 15034,
-          "element_count": 24,
-          "action_count": 2,
-          "native_identifier_count": 4,
-          "semantic_signature_count": 15
-        },
-        "compact_bytes": 6199,
-        "timings_ms": {
           "image_decode_ms": 0.0002500019036233425,
-          "xml_parse_ms": 0,
-          "xcuitest_json_parse_ms": 0.8728333341423422,
-          "tree_cleaning_ms": 0.2489583275746554,
-          "serialization_ms": 6.0468333249446005,
-          "total_ms": 7.232791656861082
-        },
-        "tree_cleaning": {
-          "mode": "conservative",
-          "input_node_count": 34,
-          "output_node_count": 24,
-          "collapsed_wrapper_count": 6,
-          "removed_duplicate_subtree_count": 2,
-          "removed_duplicate_node_count": 4
+          "serialization_ms": 4.942875006236136,
+          "total_ms": 5.762416665675119,
+          "tree_cleaning_ms": 0,
+          "xcuitest_json_parse_ms": 0.751791667426005,
+          "xml_parse_ms": 0
         }
       },
       "retention": {
+        "action_signature_multisets_equal": true,
         "action_signatures_equal": true,
+        "native_identifier_multisets_equal": true,
         "native_identifiers_equal": true,
+        "semantic_parent_child_relation_multisets_equal": true,
+        "semantic_signature_multisets_equal": true,
         "semantic_signature_sets_equal": true
-      }
+      },
+      "schema_version": "0.1.0",
+      "screen_id": "paired-uikit-detail-after-home-action",
+      "source_tree_sha256": "a878293bcfc8ab49ff28653155beb8b6f1ff6e50ab008a412486e8e68c7502e2"
     },
     {
-      "screen_id": "uikit-long-list-en-light",
-      "source_tree_sha256": "06454030f55177be03c836cc088876792e3f4ddc7361d52e3f4ba269c8d3d6e9",
+      "conservative": {
+        "canonical_json": {
+          "action_count": 13,
+          "bytes": 46126,
+          "element_count": 72,
+          "native_identifier_count": 15,
+          "native_identifier_occurrence_count": 15,
+          "semantic_element_count": 43,
+          "semantic_parent_child_relation_count": 43,
+          "semantic_signature_count": 43,
+          "unique_semantic_parent_child_relation_count": 43
+        },
+        "compact_bytes": 17825,
+        "timings_ms": {
+          "image_decode_ms": 0.00020832521840929985,
+          "serialization_ms": 10.615083330776542,
+          "total_ms": 12.800666649127379,
+          "tree_cleaning_ms": 0.4096666525583714,
+          "xcuitest_json_parse_ms": 1.6859166789799929,
+          "xml_parse_ms": 0
+        },
+        "tree_cleaning": {
+          "collapsed_wrapper_count": 18,
+          "input_node_count": 90,
+          "mode": "conservative",
+          "output_node_count": 72,
+          "removed_duplicate_node_count": 0,
+          "removed_duplicate_subtree_count": 0
+        }
+      },
       "raw": {
         "canonical_json": {
+          "action_count": 13,
           "bytes": 55510,
           "element_count": 90,
-          "action_count": 13,
           "native_identifier_count": 15,
-          "semantic_signature_count": 43
+          "native_identifier_occurrence_count": 15,
+          "semantic_element_count": 43,
+          "semantic_parent_child_relation_count": 43,
+          "semantic_signature_count": 43,
+          "unique_semantic_parent_child_relation_count": 43
         },
         "compact_bytes": 21647,
         "timings_ms": {
           "image_decode_ms": 0.0002500019036233425,
-          "xml_parse_ms": 0,
-          "xcuitest_json_parse_ms": 7.801625004503876,
+          "serialization_ms": 12.581541639519855,
+          "total_ms": 14.261291682487354,
           "tree_cleaning_ms": 0,
-          "serialization_ms": 15.609041671268642,
-          "total_ms": 23.54858335456811
-        }
-      },
-      "conservative": {
-        "canonical_json": {
-          "bytes": 46126,
-          "element_count": 72,
-          "action_count": 13,
-          "native_identifier_count": 15,
-          "semantic_signature_count": 43
-        },
-        "compact_bytes": 17825,
-        "timings_ms": {
-          "image_decode_ms": 0.00037500285543501377,
-          "xml_parse_ms": 0,
-          "xcuitest_json_parse_ms": 1.8898749840445817,
-          "tree_cleaning_ms": 0.4642500134650618,
-          "serialization_ms": 15.962958335876465,
-          "total_ms": 18.42554163886234
-        },
-        "tree_cleaning": {
-          "mode": "conservative",
-          "input_node_count": 90,
-          "output_node_count": 72,
-          "collapsed_wrapper_count": 18,
-          "removed_duplicate_subtree_count": 0,
-          "removed_duplicate_node_count": 0
+          "xcuitest_json_parse_ms": 1.5710000006947666,
+          "xml_parse_ms": 0
         }
       },
       "retention": {
+        "action_signature_multisets_equal": true,
         "action_signatures_equal": true,
+        "native_identifier_multisets_equal": true,
         "native_identifiers_equal": true,
+        "semantic_parent_child_relation_multisets_equal": true,
+        "semantic_signature_multisets_equal": true,
         "semantic_signature_sets_equal": true
-      }
+      },
+      "schema_version": "0.1.0",
+      "screen_id": "uikit-long-list-en-light",
+      "source_tree_sha256": "06454030f55177be03c836cc088876792e3f4ddc7361d52e3f4ba269c8d3d6e9"
     },
     {
-      "screen_id": "uikit-modal-zh-Hans-dark",
-      "source_tree_sha256": "5ad5dec24b52eccbdcadcd66c1a13b6cb4e5f49c0be05b231197d5e4766817c0",
+      "conservative": {
+        "canonical_json": {
+          "action_count": 1,
+          "bytes": 12700,
+          "element_count": 21,
+          "native_identifier_count": 3,
+          "native_identifier_occurrence_count": 3,
+          "semantic_element_count": 12,
+          "semantic_parent_child_relation_count": 12,
+          "semantic_signature_count": 10,
+          "unique_semantic_parent_child_relation_count": 10
+        },
+        "compact_bytes": 5194,
+        "timings_ms": {
+          "image_decode_ms": 0.00020832521840929985,
+          "serialization_ms": 3.362083312822506,
+          "total_ms": 4.238083347445354,
+          "tree_cleaning_ms": 0.18808332970365882,
+          "xcuitest_json_parse_ms": 0.6369166658259928,
+          "xml_parse_ms": 0
+        },
+        "tree_cleaning": {
+          "collapsed_wrapper_count": 7,
+          "input_node_count": 28,
+          "mode": "conservative",
+          "output_node_count": 21,
+          "removed_duplicate_node_count": 0,
+          "removed_duplicate_subtree_count": 0
+        }
+      },
       "raw": {
         "canonical_json": {
+          "action_count": 1,
           "bytes": 16255,
           "element_count": 28,
-          "action_count": 1,
           "native_identifier_count": 3,
-          "semantic_signature_count": 10
+          "native_identifier_occurrence_count": 3,
+          "semantic_element_count": 12,
+          "semantic_parent_child_relation_count": 12,
+          "semantic_signature_count": 10,
+          "unique_semantic_parent_child_relation_count": 10
         },
         "compact_bytes": 6586,
         "timings_ms": {
-          "image_decode_ms": 0.00016667763702571392,
-          "xml_parse_ms": 0,
-          "xcuitest_json_parse_ms": 0.7236666569951922,
+          "image_decode_ms": 0.0002500019036233425,
+          "serialization_ms": 4.199124989099801,
+          "total_ms": 4.939083330100402,
           "tree_cleaning_ms": 0,
-          "serialization_ms": 5.370208353269845,
-          "total_ms": 6.164291640743613
-        }
-      },
-      "conservative": {
-        "canonical_json": {
-          "bytes": 10389,
-          "element_count": 17,
-          "action_count": 1,
-          "native_identifier_count": 3,
-          "semantic_signature_count": 10
-        },
-        "compact_bytes": 4209,
-        "timings_ms": {
-          "image_decode_ms": 0.00020832521840929985,
-          "xml_parse_ms": 0,
-          "xcuitest_json_parse_ms": 0.7252916693687439,
-          "tree_cleaning_ms": 0.35200000274926424,
-          "serialization_ms": 6.383583327988163,
-          "total_ms": 7.518041675211862
-        },
-        "tree_cleaning": {
-          "mode": "conservative",
-          "input_node_count": 28,
-          "output_node_count": 17,
-          "collapsed_wrapper_count": 7,
-          "removed_duplicate_subtree_count": 2,
-          "removed_duplicate_node_count": 4
+          "xcuitest_json_parse_ms": 0.6770000036340207,
+          "xml_parse_ms": 0
         }
       },
       "retention": {
+        "action_signature_multisets_equal": true,
         "action_signatures_equal": true,
+        "native_identifier_multisets_equal": true,
         "native_identifiers_equal": true,
+        "semantic_parent_child_relation_multisets_equal": true,
+        "semantic_signature_multisets_equal": true,
         "semantic_signature_sets_equal": true
-      }
+      },
+      "schema_version": "0.1.0",
+      "screen_id": "uikit-modal-zh-Hans-dark",
+      "source_tree_sha256": "5ad5dec24b52eccbdcadcd66c1a13b6cb4e5f49c0be05b231197d5e4766817c0"
     }
   ]
 }
