@@ -13,8 +13,8 @@ privileged actions, initial-state differences, and hidden information.
 | ID | Observation | Purpose |
 | --- | --- | --- |
 | B0 | Raw screenshot | Visual baseline |
-| B1 | Raw native XML | Structural baseline |
-| B2 | Screenshot and raw XML | Naive multimodal baseline |
+| B1 | Raw native hierarchy (XML or structured JSON) | Structural baseline |
+| B2 | Screenshot and raw native hierarchy | Naive multimodal baseline |
 | B3 | Existing cleaned accessibility tree | Strong structural baseline |
 | B4 | Existing interactive-element summary | Strong compact baseline |
 | B5 | OCR text without structural processing | Text-only visual baseline |
@@ -119,6 +119,8 @@ capture_ms
 decode_ms
 tree_snapshot_ms
 xml_parse_ms
+xcuitest_json_parse_ms
+tree_cleaning_ms
 geometry_ms
 ocr_ms
 detector_ms

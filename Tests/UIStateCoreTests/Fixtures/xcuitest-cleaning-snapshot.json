@@ -1,0 +1,66 @@
+{
+  "children": [
+    {
+      "children": [
+        {
+          "elementType": 9,
+          "enabled": true,
+          "frame": { "Height": 874, "Width": 402, "X": 0, "Y": 0 },
+          "identifier": "fixture.continue",
+          "label": "Continue",
+          "selected": false
+        }
+      ],
+      "elementType": 1,
+      "enabled": true,
+      "frame": { "Height": 874, "Width": 402, "X": 0, "Y": 0 },
+      "identifier": "",
+      "label": "",
+      "selected": false
+    },
+    {
+      "children": [
+        {
+          "elementType": 1,
+          "enabled": true,
+          "frame": { "Height": 489, "Width": 3, "X": 396, "Y": 320 },
+          "identifier": "",
+          "label": "",
+          "selected": false
+        }
+      ],
+      "elementType": 1,
+      "enabled": true,
+      "frame": { "Height": 696, "Width": 30, "X": 369, "Y": 116 },
+      "identifier": "",
+      "label": "Vertical scroll bar, 1 page",
+      "selected": false,
+      "value": "0%"
+    },
+    {
+      "children": [
+        {
+          "elementType": 1,
+          "enabled": true,
+          "frame": { "Height": 489, "Width": 3, "X": 396, "Y": 320 },
+          "identifier": "",
+          "label": "",
+          "selected": false
+        }
+      ],
+      "elementType": 1,
+      "enabled": true,
+      "frame": { "Height": 696, "Width": 30, "X": 369, "Y": 116 },
+      "identifier": "",
+      "label": "Vertical scroll bar, 1 page",
+      "selected": false,
+      "value": "0%"
+    }
+  ],
+  "elementType": 2,
+  "enabled": true,
+  "frame": { "Height": 874, "Width": 402, "X": 0, "Y": 0 },
+  "identifier": "",
+  "label": "Synthetic app",
+  "selected": false
+}

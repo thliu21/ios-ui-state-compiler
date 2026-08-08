@@ -103,6 +103,20 @@ element types as `unknown`. It does not infer visibility or visual truth from
 accessibility geometry. The parser read the exact before and after attachments
 as 43 and 32 nodes, matching the capture harness counts.
 
+An optional `conservative` cleaning mode now provides the first paired cleaned
+tree baseline while `raw` remains the default. It collapses only unknown-role,
+semantic-empty, single-child wrappers when wrapper and child frames are exactly
+equal. It deduplicates only exact sibling subtrees made entirely of unknown-role
+nodes without native identifiers. Each run reports input/output nodes, collapsed
+wrappers, removed duplicate subtrees and nodes, plus separate cleaning time.
+
+On the exact action evidence, home changed from 43 to 31 nodes and detail from
+32 to 20 nodes. Each state collapsed 10 wrappers and removed one duplicate
+two-node subtree. The home action target stayed at
+`(201, 408.8333333333333)`, and the detail primary action remained at
+`(83.5, 358.5)`. These two states demonstrate deterministic behavior; they do
+not establish recall, token, latency, or task-success improvement.
+
 ## Public artifact decision
 
 The application code and fictional content are project-authored and covered by
@@ -172,9 +186,10 @@ Primary materials reviewed:
   elements from the two action trees, but those outputs have not been reviewed
   and backfilled into the annotations. The raw dictionaries remain evidence,
   not visual truth.
-- Wrapper removal and structural deduplication remain open. The raw 43-node and
-  32-node states are deliberately retained as the comparison baseline before
-  any cleaning policy is introduced.
+- Cleaning has only two synthetic unit fixtures and two real SwiftUI states.
+  UIKit coverage, broader semantic-recall checks, compact readability review,
+  and representation byte/token measurements remain open. Raw output is
+  retained for every paired comparison.
 - Owner review of native-tree evidence, element annotations, and compact states
   remains pending.
 

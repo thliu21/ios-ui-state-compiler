@@ -10,8 +10,9 @@ optional native accessibility hierarchy, an optional task, and an optional
 previous state into a compact, grounded UI state for an agent.
 
 The project succeeds only if the compiled state provides measurable value beyond
-raw screenshots, raw XML, cleaned XML, and existing interactive-element
-summaries on held-out applications under fair action and planner conditions.
+raw screenshots, raw native hierarchies, cleaned native hierarchies, and
+existing interactive-element summaries on held-out applications under fair
+action and planner conditions.
 
 ## Users
 
@@ -50,7 +51,7 @@ remain useful when an image is unavailable.
 
 A deterministic tree compiler can reduce tokens while retaining task-critical
 elements, semantic relationships, and usable coordinates. It must beat the
-strongest existing compact tree baseline, not only raw XML.
+strongest existing compact tree baseline, not only a raw hierarchy.
 
 ### H2: Visual fusion fills hierarchy gaps
 

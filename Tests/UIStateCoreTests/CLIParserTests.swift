@@ -30,6 +30,7 @@ struct CLIParserTests {
           --screenshot <png>       Saved screenshot input
           --tree <path>            Optional native hierarchy input
           --tree-format <value>    xml (default) or xcuitest-json
+          --tree-cleaning <value>  raw (default) or conservative
           --image-size <WxH>       Required for tree-only input
           --viewport-size <WxH>    Logical viewport in points
           --captured-at <ISO-8601> Capture timestamp; defaults to now

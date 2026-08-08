@@ -139,9 +139,9 @@ No training task starts unless all four conditions are satisfied.
 
 ## Current open work
 
-- Implement a conservative wrapper-removal and structural-deduplication baseline
-  while retaining raw XCUITest JSON output for paired comparison.
 - Extend structured hierarchy capture to the remaining SwiftUI states and the
   UIKit fixture after the adapter contract is tested.
+- Measure raw versus conservative JSON/compact bytes and semantic-node retention
+  on the two action states before expanding the cleaner policy.
 - Complete owner review of representative trees and compact states before
   accepting the fixture trial or admitting third-party apps.

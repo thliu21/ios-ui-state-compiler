@@ -108,13 +108,57 @@ struct OfflineCompilerTests {
     #expect(timing.imageDecodeMS == 1)
     #expect(timing.xmlParseMS == 2)
     #expect(timing.xcuiTestJSONParseMS == 0)
+    #expect(timing.treeCleaningMS == 0)
     #expect(timing.serializationMS == 3)
     #expect(timing.totalMS == 6)
   }
 
+  @Test("Conservative cleaning is explicit and reports every removed node")
+  func conservativeCleaningIsMeasured() throws {
+    let data = try fixture(named: "xcuitest-cleaning-snapshot")
+    let raw = try OfflineCompiler().compile(
+      OfflineCompileRequest(
+        screenID: "raw-tree",
+        capturedAt: Date(timeIntervalSince1970: 0),
+        xcuiTestSnapshotJSON: data,
+        imageSizePixels: UIStateSize(width: 1_206, height: 2_622),
+        viewportSizePoints: UIStateSize(width: 402, height: 874)
+      )
+    )
+    let cleaned = try OfflineCompiler().compile(
+      OfflineCompileRequest(
+        screenID: "cleaned-tree",
+        capturedAt: Date(timeIntervalSince1970: 0),
+        xcuiTestSnapshotJSON: data,
+        imageSizePixels: UIStateSize(width: 1_206, height: 2_622),
+        viewportSizePoints: UIStateSize(width: 402, height: 874),
+        nativeTreeCleaning: .conservative
+      )
+    )
+
+    #expect(raw.state.elements.count == 7)
+    #expect(raw.treeCleaning.mode == .raw)
+    #expect(raw.treeCleaning.inputNodeCount == 7)
+    #expect(raw.treeCleaning.outputNodeCount == 7)
+    #expect(raw.timings.treeCleaningMS == 0)
+
+    #expect(cleaned.state.elements.count == 4)
+    #expect(cleaned.treeCleaning.mode == .conservative)
+    #expect(cleaned.treeCleaning.inputNodeCount == 7)
+    #expect(cleaned.treeCleaning.outputNodeCount == 4)
+    #expect(cleaned.treeCleaning.collapsedWrapperCount == 1)
+    #expect(cleaned.treeCleaning.removedDuplicateSubtreeCount == 1)
+    #expect(cleaned.treeCleaning.removedDuplicateNodeCount == 2)
+    #expect(cleaned.timings.treeCleaningMS >= 0)
+  }
+
   private func snapshotFixture() throws -> Data {
+    try fixture(named: "xcuitest-snapshot")
+  }
+
+  private func fixture(named name: String) throws -> Data {
     let url = try #require(
-      Bundle.module.url(forResource: "xcuitest-snapshot", withExtension: "json")
+      Bundle.module.url(forResource: name, withExtension: "json")
     )
     return try Data(contentsOf: url)
   }

@@ -13,7 +13,8 @@ The project studies three input modes:
 
 Can a local compiler reduce agent input tokens and latency while preserving or
 improving grounding and task success compared with raw screenshots, raw XML,
-cleaned XML, and existing interactive-element summaries?
+structured XCUITest JSON, cleaned trees, and existing interactive-element
+summaries?
 
 ## Status
 
@@ -94,11 +95,26 @@ swift run ui-compiler compile \
   --format compact
 ```
 
+Raw trees remain the default baseline. The optional conservative cleaner reports
+every collapsed wrapper and removed exact duplicate subtree:
+
+```bash
+swift run ui-compiler compile \
+  --tree Tests/UIStateCoreTests/Fixtures/xcuitest-cleaning-snapshot.json \
+  --tree-format xcuitest-json \
+  --tree-cleaning conservative \
+  --image-size 1206x2622 \
+  --viewport-size 402x874 \
+  --format compact
+```
+
 For screenshot-only or hybrid input, pass `--screenshot <saved.png>` and an
 optional `--tree <saved-path>`. Representation output is written to stdout.
-Image decode, XML parse, XCUITest JSON parse, serialization, and total timings
-are separate JSON fields on stderr. Use `--captured-at`, including fractional
-ISO-8601 seconds from capture tools, and `--screen-id` for reproducible fixtures.
+Image decode, XML parse, XCUITest JSON parse, tree cleaning, serialization, and
+total timings are separate JSON fields on stderr. Cleaning mode and input/output
+node counts are emitted in the same telemetry object. Use `--captured-at`,
+including fractional ISO-8601 seconds from capture tools, and `--screen-id` for
+reproducible fixtures.
 
 ## Initial environment
 

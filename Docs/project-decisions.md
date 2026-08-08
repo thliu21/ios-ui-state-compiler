@@ -85,3 +85,17 @@ has a known canonical role, and unknown values remain `unknown`. Accessibility
 structure is evidence, not visual truth: the adapter does not infer visibility
 from frames. XML and XCUITest JSON parse timings remain separate, and older XML
 timing records remain decodable.
+
+## D-010: Raw-default conservative tree cleaning
+
+Native-tree cleaning is opt-in through `--tree-cleaning conservative`; `raw` is
+the default and remains the comparison baseline. A wrapper is collapsed only
+when it has unknown role, no label, value, or native identifier, no disabling or
+selected state, exactly one child, and an exactly equal frame. Deduplication is
+limited to exact sibling subtrees composed entirely of unknown-role nodes with
+no native identifiers.
+
+Every run reports the mode, input and output node counts, collapsed wrappers,
+removed duplicate subtrees and nodes, and cleaning time. These rules are a
+deterministic baseline, not evidence of semantic or task-success improvement;
+that claim requires the accepted evaluation metrics and human grounding review.

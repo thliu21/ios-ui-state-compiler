@@ -31,6 +31,7 @@ struct UICompilerCLI {
           xcuiTestSnapshotJSON: options.treeFormat == .xcuiTestJSON ? treeData : nil,
           imageSizePixels: options.imageSize,
           viewportSizePoints: try options.requiredViewportSize,
+          nativeTreeCleaning: options.treeCleaning,
           orientation: options.orientation,
           treeCapturedAt: treeData == nil ? nil : options.treeCapturedAt ?? options.capturedAt
         ))
@@ -48,7 +49,15 @@ struct UICompilerCLI {
 
       let timingEncoder = JSONEncoder()
       timingEncoder.outputFormatting = [.sortedKeys]
-      write(try timingEncoder.encode(result.timings), to: .standardError)
+      write(
+        try timingEncoder.encode(
+          CompileTelemetry(
+            timings: result.timings,
+            treeCleaning: result.treeCleaning
+          )
+        ),
+        to: .standardError
+      )
       write(Data("\n".utf8), to: .standardError)
     } catch let error as CompileArgumentError {
       fail("invalid arguments: \(error.message)")
@@ -94,6 +103,7 @@ private struct CompileOptions {
   var orientation = ScreenOrientation.unknown
   var format = OutputFormat.json
   var treeFormat = TreeFormat.xml
+  var treeCleaning = NativeTreeCleaningMode.raw
 
   var requiredViewportSize: UIStateSize {
     get throws {
@@ -122,6 +132,11 @@ private struct CompileOptions {
           throw CompileArgumentError("tree format must be xml or xcuitest-json")
         }
         options.treeFormat = format
+      case "--tree-cleaning":
+        guard let mode = NativeTreeCleaningMode(rawValue: value) else {
+          throw CompileArgumentError("tree cleaning must be raw or conservative")
+        }
+        options.treeCleaning = mode
       case "--image-size":
         options.imageSize = try parseSize(value)
       case "--viewport-size":
@@ -211,5 +226,31 @@ private struct CompileArgumentError: Error {
 
   init(_ message: String) {
     self.message = message
+  }
+}
+
+private struct CompileTelemetry: Encodable {
+  let timings: OfflineCompileTimings
+  let treeCleaning: NativeTreeCleaningMetrics
+
+  func encode(to encoder: Encoder) throws {
+    var values = encoder.container(keyedBy: CodingKeys.self)
+    try values.encode(timings.imageDecodeMS, forKey: .imageDecodeMS)
+    try values.encode(timings.xmlParseMS, forKey: .xmlParseMS)
+    try values.encode(timings.xcuiTestJSONParseMS, forKey: .xcuiTestJSONParseMS)
+    try values.encode(timings.treeCleaningMS, forKey: .treeCleaningMS)
+    try values.encode(timings.serializationMS, forKey: .serializationMS)
+    try values.encode(timings.totalMS, forKey: .totalMS)
+    try values.encode(treeCleaning, forKey: .treeCleaning)
+  }
+
+  private enum CodingKeys: String, CodingKey {
+    case imageDecodeMS = "image_decode_ms"
+    case xmlParseMS = "xml_parse_ms"
+    case xcuiTestJSONParseMS = "xcuitest_json_parse_ms"
+    case treeCleaningMS = "tree_cleaning_ms"
+    case serializationMS = "serialization_ms"
+    case totalMS = "total_ms"
+    case treeCleaning = "tree_cleaning"
   }
 }

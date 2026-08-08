@@ -11,6 +11,54 @@ public enum OfflineCompilerError: Error, Equatable, Sendable {
   case invalidScreenMetadata
 }
 
+public enum NativeTreeCleaningMode: String, Codable, Sendable {
+  case raw
+  case conservative
+}
+
+public struct NativeTreeCleaningMetrics: Equatable, Codable, Sendable {
+  public static let emptyRaw = NativeTreeCleaningMetrics(
+    mode: .raw,
+    inputNodeCount: 0,
+    outputNodeCount: 0,
+    collapsedWrapperCount: 0,
+    removedDuplicateSubtreeCount: 0,
+    removedDuplicateNodeCount: 0
+  )
+
+  public let mode: NativeTreeCleaningMode
+  public let inputNodeCount: Int
+  public let outputNodeCount: Int
+  public let collapsedWrapperCount: Int
+  public let removedDuplicateSubtreeCount: Int
+  public let removedDuplicateNodeCount: Int
+
+  public init(
+    mode: NativeTreeCleaningMode,
+    inputNodeCount: Int,
+    outputNodeCount: Int,
+    collapsedWrapperCount: Int,
+    removedDuplicateSubtreeCount: Int,
+    removedDuplicateNodeCount: Int
+  ) {
+    self.mode = mode
+    self.inputNodeCount = inputNodeCount
+    self.outputNodeCount = outputNodeCount
+    self.collapsedWrapperCount = collapsedWrapperCount
+    self.removedDuplicateSubtreeCount = removedDuplicateSubtreeCount
+    self.removedDuplicateNodeCount = removedDuplicateNodeCount
+  }
+
+  private enum CodingKeys: String, CodingKey {
+    case mode
+    case inputNodeCount = "input_node_count"
+    case outputNodeCount = "output_node_count"
+    case collapsedWrapperCount = "collapsed_wrapper_count"
+    case removedDuplicateSubtreeCount = "removed_duplicate_subtree_count"
+    case removedDuplicateNodeCount = "removed_duplicate_node_count"
+  }
+}
+
 /// Resource ceilings applied before decoding screenshot pixels.
 public struct OfflineCompilerLimits: Equatable, Sendable {
   public static let `default` = OfflineCompilerLimits(
@@ -37,6 +85,7 @@ public struct OfflineCompileRequest: Sendable {
   public let xcuiTestSnapshotJSON: Data?
   public let imageSizePixels: UIStateSize?
   public let viewportSizePoints: UIStateSize
+  public let nativeTreeCleaning: NativeTreeCleaningMode
   public let orientation: ScreenOrientation
 
   public init(
@@ -47,6 +96,7 @@ public struct OfflineCompileRequest: Sendable {
     xcuiTestSnapshotJSON: Data? = nil,
     imageSizePixels: UIStateSize? = nil,
     viewportSizePoints: UIStateSize,
+    nativeTreeCleaning: NativeTreeCleaningMode = .raw,
     orientation: ScreenOrientation = .unknown,
     treeCapturedAt: Date? = nil
   ) {
@@ -58,6 +108,7 @@ public struct OfflineCompileRequest: Sendable {
     self.xcuiTestSnapshotJSON = xcuiTestSnapshotJSON
     self.imageSizePixels = imageSizePixels
     self.viewportSizePoints = viewportSizePoints
+    self.nativeTreeCleaning = nativeTreeCleaning
     self.orientation = orientation
   }
 }
@@ -67,6 +118,7 @@ public struct OfflineCompileTimings: Equatable, Codable, Sendable {
   public let imageDecodeMS: Double
   public let xmlParseMS: Double
   public let xcuiTestJSONParseMS: Double
+  public let treeCleaningMS: Double
   public let serializationMS: Double
   public let totalMS: Double
 
@@ -74,12 +126,14 @@ public struct OfflineCompileTimings: Equatable, Codable, Sendable {
     imageDecodeMS: Double,
     xmlParseMS: Double,
     xcuiTestJSONParseMS: Double = 0,
+    treeCleaningMS: Double = 0,
     serializationMS: Double,
     totalMS: Double
   ) {
     self.imageDecodeMS = imageDecodeMS
     self.xmlParseMS = xmlParseMS
     self.xcuiTestJSONParseMS = xcuiTestJSONParseMS
+    self.treeCleaningMS = treeCleaningMS
     self.serializationMS = serializationMS
     self.totalMS = totalMS
   }
@@ -90,6 +144,7 @@ public struct OfflineCompileTimings: Equatable, Codable, Sendable {
     xmlParseMS = try values.decode(Double.self, forKey: .xmlParseMS)
     xcuiTestJSONParseMS =
       try values.decodeIfPresent(Double.self, forKey: .xcuiTestJSONParseMS) ?? 0
+    treeCleaningMS = try values.decodeIfPresent(Double.self, forKey: .treeCleaningMS) ?? 0
     serializationMS = try values.decode(Double.self, forKey: .serializationMS)
     totalMS = try values.decode(Double.self, forKey: .totalMS)
   }
@@ -98,6 +153,7 @@ public struct OfflineCompileTimings: Equatable, Codable, Sendable {
     case imageDecodeMS = "image_decode_ms"
     case xmlParseMS = "xml_parse_ms"
     case xcuiTestJSONParseMS = "xcuitest_json_parse_ms"
+    case treeCleaningMS = "tree_cleaning_ms"
     case serializationMS = "serialization_ms"
     case totalMS = "total_ms"
   }
@@ -109,17 +165,20 @@ public struct OfflineCompileResult: Sendable {
   public let json: Data
   public let compactText: String
   public let timings: OfflineCompileTimings
+  public let treeCleaning: NativeTreeCleaningMetrics
 
   public init(
     state: UIState,
     json: Data,
     compactText: String,
-    timings: OfflineCompileTimings
+    timings: OfflineCompileTimings,
+    treeCleaning: NativeTreeCleaningMetrics = .emptyRaw
   ) {
     self.state = state
     self.json = json
     self.compactText = compactText
     self.timings = timings
+    self.treeCleaning = treeCleaning
   }
 }
 
@@ -171,7 +230,33 @@ public struct OfflineCompiler: Sendable {
     let xcuiTestJSONParseMS =
       request.xcuiTestSnapshotJSON == nil
       ? 0 : elapsedMilliseconds(since: xcuiTestJSONParseStart)
-    let nativeNodes = xmlNodes + xcuiTestNodes
+    let rawNativeNodes = xmlNodes + xcuiTestNodes
+
+    let treeCleaningStart = ProcessInfo.processInfo.systemUptime
+    let cleaningResult: NativeTreeCleaningResult
+    switch request.nativeTreeCleaning {
+    case .raw:
+      cleaningResult = NativeTreeCleaningResult(
+        nodes: rawNativeNodes,
+        collapsedWrapperCount: 0,
+        removedDuplicateSubtreeCount: 0,
+        removedDuplicateNodeCount: 0
+      )
+    case .conservative:
+      cleaningResult = NativeTreeCleaner().clean(rawNativeNodes)
+    }
+    let treeCleaningMS =
+      request.nativeTreeCleaning == .raw
+      ? 0 : elapsedMilliseconds(since: treeCleaningStart)
+    let nativeNodes = cleaningResult.nodes
+    let treeCleaning = NativeTreeCleaningMetrics(
+      mode: request.nativeTreeCleaning,
+      inputNodeCount: rawNativeNodes.count,
+      outputNodeCount: nativeNodes.count,
+      collapsedWrapperCount: cleaningResult.collapsedWrapperCount,
+      removedDuplicateSubtreeCount: cleaningResult.removedDuplicateSubtreeCount,
+      removedDuplicateNodeCount: cleaningResult.removedDuplicateNodeCount
+    )
 
     let sources = evidenceSources(request)
     let state = UIState(
@@ -196,6 +281,7 @@ public struct OfflineCompiler: Sendable {
       imageDecodeMS: imageDecodeMS,
       xmlParseMS: xmlParseMS,
       xcuiTestJSONParseMS: xcuiTestJSONParseMS,
+      treeCleaningMS: treeCleaningMS,
       serializationMS: serializationMS,
       totalMS: elapsedMilliseconds(since: totalStart)
     )
@@ -204,7 +290,8 @@ public struct OfflineCompiler: Sendable {
       state: state,
       json: json,
       compactText: compactText,
-      timings: timings
+      timings: timings,
+      treeCleaning: treeCleaning
     )
   }
 

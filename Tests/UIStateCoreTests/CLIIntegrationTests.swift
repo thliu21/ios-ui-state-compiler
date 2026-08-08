@@ -132,6 +132,36 @@ struct CLIIntegrationTests {
     )
     #expect(result.standardOutput.isEmpty)
   }
+
+  @Test("Conservative cleaning is explicit and emits auditable counts")
+  func conservativeCleaningEmitsMetrics() throws {
+    let tree = try fixtureURL(named: "xcuitest-cleaning-snapshot", extension: "json")
+    let result = try runCLI(
+      commonCompileArguments(screenID: "conservative-cleaning") + [
+        "--tree", tree.path,
+        "--tree-format", "xcuitest-json",
+        "--tree-cleaning", "conservative",
+        "--image-size", "1206x2622",
+      ]
+    )
+    try #require(result.status == 0, "\(result.standardError)")
+
+    let state = try UIStateCodec.decode(Data(result.standardOutput.utf8))
+    let telemetry = try #require(
+      JSONSerialization.jsonObject(with: Data(result.standardError.utf8))
+        as? [String: Any]
+    )
+    let cleaning = try #require(telemetry["tree_cleaning"] as? [String: Any])
+
+    #expect(state.elements.count == 4)
+    #expect(cleaning["mode"] as? String == "conservative")
+    #expect(cleaning["input_node_count"] as? Int == 7)
+    #expect(cleaning["output_node_count"] as? Int == 4)
+    #expect(cleaning["collapsed_wrapper_count"] as? Int == 1)
+    #expect(cleaning["removed_duplicate_subtree_count"] as? Int == 1)
+    #expect(cleaning["removed_duplicate_node_count"] as? Int == 2)
+    #expect(telemetry["tree_cleaning_ms"] as? Double ?? -1 >= 0)
+  }
 }
 
 private struct CLIResult {
