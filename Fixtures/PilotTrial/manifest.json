@@ -58,18 +58,23 @@
       "app_family_id": "paired-native-fixture-family",
       "app_name": "Paired SwiftUI Fixture",
       "repository_url": "https://github.com/thliu21/ios-ui-state-compiler",
-      "pinned_revision": "54e545e5e4bed74302472fa6639e5fc411e18f07",
+      "pinned_revision": "26d88823410a2c5486950fb5632e73eda636783f",
       "framework": "swiftui",
       "bundle_identifier": "org.thliu21.uistatecompiler.swiftuifixture",
       "screenshot": {
-        "path": "pilot/paired-fixture-20260808/swiftui/detail.png",
-        "sha256": "d24f73b98e7649ab80e872cca490cea54fa890976dd8c9a537cacfcb058cbd49",
-        "captured_at": "2026-08-08T22:12:03Z",
-        "source": "synthetic_fixture"
+        "path": "pilot/swiftui-matrix-20260808-26d8882/ios-ui-state-compiler-swiftui-matrix-26d8882-20260808T231553Z-attachments-host/835D1AA0-5D77-42DE-B664-6A790CE2E08C.png",
+        "sha256": "8cc25893bf2603ef0723da76dd460aa0b22a65f862355e02a1b310ffc6126d81",
+        "captured_at": "2026-08-08T23:16:42.061Z",
+        "source": "xcuitest_attachment"
       },
-      "tree": null,
+      "tree": {
+        "path": "pilot/swiftui-matrix-20260808-26d8882/ios-ui-state-compiler-swiftui-matrix-26d8882-20260808T231553Z-attachments-host/97C4174E-7BFF-4046-9F8B-E6BE9F93655D.json",
+        "sha256": "f031f6acc634c5c8a75c5fcaa7ece703c47860cc755778c37f237cd996fa2a4c",
+        "captured_at": "2026-08-08T23:16:41.923Z",
+        "source": "xcuitest_snapshot"
+      },
       "annotation_path": "Fixtures/PilotTrial/Annotations/paired-swiftui-detail.json",
-      "annotation_sha256": "414b0f207776ff329118707dfe8acb9a8765ab9b628c1412a3105bfed7a92ca7",
+      "annotation_sha256": "0d9c37a20a0980bb6d544f923c0a270138f100c40ac7dd74fa35d9f6679296f7",
       "device_type": "iPhone 17 Pro",
       "runtime": "iOS 26.5",
       "viewport_size_points": { "width": 402, "height": 874 },
@@ -80,13 +85,16 @@
       "initial_state_recipe": "Launch with --fixture-screen detail --fixture-appearance light and -AppleLanguages (zh-Hans).",
       "split": "development",
       "near_duplicate_group": "paired-detail",
-      "license_entry_ids": ["paired-fixture-swiftui-screenshots"],
+      "license_entry_ids": [
+        "paired-fixture-swiftui-matrix-screenshots",
+        "paired-fixture-swiftui-matrix-trees"
+      ],
       "redistribution_status": "withheld",
       "review": {
-        "reviewer": "owner-screenshot-review",
-        "reviewed_at": "2026-08-08T22:32:32Z",
-        "state": "single_review",
-        "notes": "Owner confirmed semantic equivalence and matching requested appearance; framework-specific style and interaction differences remain visible, with SwiftUI appearing more modern. Native-tree, element-annotation, and compact-state review remain pending."
+        "reviewer": "xcuitest-matrix-harness",
+        "reviewed_at": "2026-08-08T23:19:51Z",
+        "state": "execution_verified",
+        "notes": "XCUITest verified the direct detail root; screenshot inspection found the expected Chinese light state without blank, crash, crop, or overlap. Owner semantic-pair review applies to the fixture state; native-tree, element-annotation, and compact-state review remain pending."
       }
     },
     {
@@ -95,18 +103,23 @@
       "app_family_id": "paired-native-fixture-family",
       "app_name": "Paired SwiftUI Fixture",
       "repository_url": "https://github.com/thliu21/ios-ui-state-compiler",
-      "pinned_revision": "54e545e5e4bed74302472fa6639e5fc411e18f07",
+      "pinned_revision": "26d88823410a2c5486950fb5632e73eda636783f",
       "framework": "swiftui",
       "bundle_identifier": "org.thliu21.uistatecompiler.swiftuifixture",
       "screenshot": {
-        "path": "pilot/paired-fixture-20260808/swiftui/form.png",
-        "sha256": "59f58274e6e1e79218e210efab53d0eb52dec4b6caede43862de71eb457b7ed0",
-        "captured_at": "2026-08-08T22:12:15Z",
-        "source": "synthetic_fixture"
+        "path": "pilot/swiftui-matrix-20260808-26d8882/ios-ui-state-compiler-swiftui-matrix-26d8882-20260808T231553Z-attachments-host/58BE8D28-0E84-494D-AF8A-5420C95C4B95.png",
+        "sha256": "49a40362de568613231e0f91e5845579711d3d3628c15a2c20fe026357b8668b",
+        "captured_at": "2026-08-08T23:16:47.595Z",
+        "source": "xcuitest_attachment"
       },
-      "tree": null,
+      "tree": {
+        "path": "pilot/swiftui-matrix-20260808-26d8882/ios-ui-state-compiler-swiftui-matrix-26d8882-20260808T231553Z-attachments-host/BBA9BFEA-B40B-4D8B-9351-4EEB51CC7CEB.json",
+        "sha256": "f36dd9030f37a5f1a3305f0553a4611c5bbe4716d9b48e8253d09b096c176ddb",
+        "captured_at": "2026-08-08T23:16:47.470Z",
+        "source": "xcuitest_snapshot"
+      },
       "annotation_path": "Fixtures/PilotTrial/Annotations/paired-swiftui-form.json",
-      "annotation_sha256": "ca49005ac0b96bb052ff755430ca7e105d470b898bd9040d9ef1ff2bededb718",
+      "annotation_sha256": "02bbe9e3fb9042173d14a5468535df9d7107ad42fe8b62a9de80141d84fec612",
       "device_type": "iPhone 17 Pro",
       "runtime": "iOS 26.5",
       "viewport_size_points": { "width": 402, "height": 874 },
@@ -117,13 +130,16 @@
       "initial_state_recipe": "Launch with --fixture-screen form --fixture-appearance dark and -AppleLanguages (en).",
       "split": "development",
       "near_duplicate_group": "paired-form",
-      "license_entry_ids": ["paired-fixture-swiftui-screenshots"],
+      "license_entry_ids": [
+        "paired-fixture-swiftui-matrix-screenshots",
+        "paired-fixture-swiftui-matrix-trees"
+      ],
       "redistribution_status": "withheld",
       "review": {
-        "reviewer": "owner-screenshot-review",
-        "reviewed_at": "2026-08-08T22:32:32Z",
-        "state": "single_review",
-        "notes": "Owner confirmed semantic equivalence and matching requested appearance; framework-specific style and interaction differences remain visible, with SwiftUI appearing more modern. Native-tree, element-annotation, and compact-state review remain pending."
+        "reviewer": "xcuitest-matrix-harness",
+        "reviewed_at": "2026-08-08T23:19:51Z",
+        "state": "execution_verified",
+        "notes": "XCUITest verified the direct form root; screenshot inspection found the expected English dark state without blank, crash, crop, or overlap. Owner semantic-pair review applies to the fixture state; native-tree, element-annotation, and compact-state review remain pending."
       }
     },
     {
@@ -132,18 +148,23 @@
       "app_family_id": "paired-native-fixture-family",
       "app_name": "Paired SwiftUI Fixture",
       "repository_url": "https://github.com/thliu21/ios-ui-state-compiler",
-      "pinned_revision": "54e545e5e4bed74302472fa6639e5fc411e18f07",
+      "pinned_revision": "26d88823410a2c5486950fb5632e73eda636783f",
       "framework": "swiftui",
       "bundle_identifier": "org.thliu21.uistatecompiler.swiftuifixture",
       "screenshot": {
-        "path": "pilot/paired-fixture-20260808/swiftui/modal.png",
-        "sha256": "cb979ffca3cae6ecd54a42d4efdf2da63fe1abf4033e38561f2fb6cd4b177be0",
-        "captured_at": "2026-08-08T22:12:19Z",
-        "source": "synthetic_fixture"
+        "path": "pilot/swiftui-matrix-20260808-26d8882/ios-ui-state-compiler-swiftui-matrix-26d8882-20260808T231553Z-attachments-host/537F4B92-DEAD-424E-B7D5-37364C3184A7.png",
+        "sha256": "14b2d6bf4b6ba37f7ba07d81b74bd6b6ba9977b76ffcdcf7a25410930b2b02d6",
+        "captured_at": "2026-08-08T23:16:58.537Z",
+        "source": "xcuitest_attachment"
       },
-      "tree": null,
+      "tree": {
+        "path": "pilot/swiftui-matrix-20260808-26d8882/ios-ui-state-compiler-swiftui-matrix-26d8882-20260808T231553Z-attachments-host/2FB0AB63-68C2-43A1-8BEC-DA402DEA5746.json",
+        "sha256": "9f1cefd046b852b95abd0ca3d7f61e3fed3fdab6918d1d76a0b9c9f3b7fdb14e",
+        "captured_at": "2026-08-08T23:16:58.423Z",
+        "source": "xcuitest_snapshot"
+      },
       "annotation_path": "Fixtures/PilotTrial/Annotations/paired-swiftui-modal.json",
-      "annotation_sha256": "b3d3d7798391e15f1aadf14c0fc36fef790b75a59ecf60a5ae45ce24c7a5b50e",
+      "annotation_sha256": "609e09f69eba40b202f54e5148e002727b688fa270e3f1c21604f7d21f33cbe8",
       "device_type": "iPhone 17 Pro",
       "runtime": "iOS 26.5",
       "viewport_size_points": { "width": 402, "height": 874 },
@@ -154,13 +175,16 @@
       "initial_state_recipe": "Launch with --fixture-screen modal --fixture-appearance dark and -AppleLanguages (zh-Hans).",
       "split": "development",
       "near_duplicate_group": "paired-modal",
-      "license_entry_ids": ["paired-fixture-swiftui-screenshots"],
+      "license_entry_ids": [
+        "paired-fixture-swiftui-matrix-screenshots",
+        "paired-fixture-swiftui-matrix-trees"
+      ],
       "redistribution_status": "withheld",
       "review": {
-        "reviewer": "owner-screenshot-review",
-        "reviewed_at": "2026-08-08T22:32:32Z",
-        "state": "single_review",
-        "notes": "Owner confirmed semantic equivalence and matching requested appearance; framework-specific style and interaction differences remain visible, with SwiftUI appearing more modern. Native-tree, element-annotation, and compact-state review remain pending."
+        "reviewer": "xcuitest-matrix-harness",
+        "reviewed_at": "2026-08-08T23:19:51Z",
+        "state": "execution_verified",
+        "notes": "XCUITest verified the direct modal root; screenshot inspection found the expected Chinese dark state without blank, crash, crop, or overlap. Owner semantic-pair review applies to the fixture state; native-tree, element-annotation, and compact-state review remain pending."
       }
     },
     {
@@ -169,18 +193,23 @@
       "app_family_id": "paired-native-fixture-family",
       "app_name": "Paired SwiftUI Fixture",
       "repository_url": "https://github.com/thliu21/ios-ui-state-compiler",
-      "pinned_revision": "54e545e5e4bed74302472fa6639e5fc411e18f07",
+      "pinned_revision": "26d88823410a2c5486950fb5632e73eda636783f",
       "framework": "swiftui",
       "bundle_identifier": "org.thliu21.uistatecompiler.swiftuifixture",
       "screenshot": {
-        "path": "pilot/paired-fixture-20260808/swiftui/long_list.png",
-        "sha256": "169d878de2254d80fc5197aeaadbcbb6c917ca1e1a019ffe16a429af0a61bcc9",
-        "captured_at": "2026-08-08T22:12:25Z",
-        "source": "synthetic_fixture"
+        "path": "pilot/swiftui-matrix-20260808-26d8882/ios-ui-state-compiler-swiftui-matrix-26d8882-20260808T231553Z-attachments-host/8B1E7570-37A0-44D2-9DBC-891A7676D18A.png",
+        "sha256": "bb512275f82a141e012c76e06e251273d0f100f619b41718436785546797ebe8",
+        "captured_at": "2026-08-08T23:16:53.069Z",
+        "source": "xcuitest_attachment"
       },
-      "tree": null,
+      "tree": {
+        "path": "pilot/swiftui-matrix-20260808-26d8882/ios-ui-state-compiler-swiftui-matrix-26d8882-20260808T231553Z-attachments-host/446DECA3-177A-4185-A694-D9D1D5A7E4EF.json",
+        "sha256": "2898e95a59619cec696122a4712b6261d48c4105a1486368265a602d913616c8",
+        "captured_at": "2026-08-08T23:16:52.935Z",
+        "source": "xcuitest_snapshot"
+      },
       "annotation_path": "Fixtures/PilotTrial/Annotations/paired-swiftui-long-list.json",
-      "annotation_sha256": "8086076bdff4a9ca12eb720439a172c3bf9c05a1c439f061dbdf6050606e7ced",
+      "annotation_sha256": "2fa818761f05f2b4e6942e7e513d6eaa9f7a3489a957b40258b48940b5fbbe2f",
       "device_type": "iPhone 17 Pro",
       "runtime": "iOS 26.5",
       "viewport_size_points": { "width": 402, "height": 874 },
@@ -191,13 +220,16 @@
       "initial_state_recipe": "Launch with --fixture-screen long_list --fixture-appearance light and -AppleLanguages (en).",
       "split": "development",
       "near_duplicate_group": "paired-long-list",
-      "license_entry_ids": ["paired-fixture-swiftui-screenshots"],
+      "license_entry_ids": [
+        "paired-fixture-swiftui-matrix-screenshots",
+        "paired-fixture-swiftui-matrix-trees"
+      ],
       "redistribution_status": "withheld",
       "review": {
-        "reviewer": "owner-screenshot-review",
-        "reviewed_at": "2026-08-08T22:32:32Z",
-        "state": "single_review",
-        "notes": "Owner confirmed semantic equivalence and matching requested appearance; framework-specific style and interaction differences remain visible, with SwiftUI appearing more modern. Native-tree, element-annotation, and compact-state review remain pending."
+        "reviewer": "xcuitest-matrix-harness",
+        "reviewed_at": "2026-08-08T23:19:51Z",
+        "state": "execution_verified",
+        "notes": "XCUITest verified the direct long-list root; screenshot inspection found the expected English light state without blank, crash, crop, or overlap. Owner semantic-pair review applies to the fixture state; native-tree, element-annotation, and compact-state review remain pending."
       }
     },
     {

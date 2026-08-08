@@ -31,6 +31,12 @@ The pilot manifest and license ledger have offline decoding and semantic checks
 for app-disjoint splits, references, redistribution approval, and frozen-pilot
 coverage.
 
+The exact-device SwiftUI hierarchy matrix now covers all five initial states.
+The four direct-state tests passed 4/4 on the pinned iPhone 17 Pro simulator;
+their raw screenshots, trees, and result bundle remain outside Git under the
+withheld redistribution decision. UIKit structured hierarchy coverage and human
+tree/compact grounding review remain open.
+
 ## Quick start
 
 ```bash
@@ -125,7 +131,8 @@ Scripts/measure-tree-cleaning.sh \
 ```
 
 The summary includes representation bytes and conservative retention gates.
-Single-run timings remain diagnostic and are not benchmark claims.
+Single-run timings remain diagnostic and are not benchmark claims. Reviewed
+aggregate files live in `Benchmarks/`; raw screenshots and hierarchies do not.
 
 For screenshot-only or hybrid input, pass `--screenshot <saved.png>` and an
 optional `--tree <saved-path>`. Representation output is written to stdout.

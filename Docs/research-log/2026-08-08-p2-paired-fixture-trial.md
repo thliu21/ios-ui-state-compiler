@@ -15,6 +15,8 @@ applications are collected?
   `54e545e5e4bed74302472fa6639e5fc411e18f07`.
 - Structured action source revision:
   `6bece16d4afaa099ba3cf068472ffee07ebadc50`.
+- Direct-state matrix source revision:
+  `26d88823410a2c5486950fb5632e73eda636783f`.
 - Toolchain: Xcode 26.5 (17F42), Swift 6.3.2, iOS Simulator 26.5.
 - Device: iPhone 17 Pro, viewport 402 by 874 points at scale 3.
 - Selected device UDID: `3BC2ABB5-651E-429E-8983-8CDBEC035388`.
@@ -31,6 +33,12 @@ The first action trial is in
 screenshots, before/after structured accessibility snapshots, the verified
 action record, and an exported-attachment manifest. These files are also kept
 outside Git.
+
+The four-state direct SwiftUI run is in
+`pilot/swiftui-matrix-20260808-26d8882`. It contains the result bundle and 12
+exported attachments for detail, form, modal, and long list. The Linux target
+was absent before creation; all 87 files in the result bundle and attachment
+directory matched local SHA-256 digests after copying.
 
 ## Implemented trial
 
@@ -95,6 +103,22 @@ revision, device, runtime, viewport, orientation, locale, appearance, Dynamic
 Type, and split match across the action pair. The selected simulator was
 restored to its prior shutdown state after the run.
 
+## Direct SwiftUI initial-state matrix
+
+Four additional exact-destination tests launched detail in Simplified Chinese
+light appearance, form in English dark appearance, modal in Simplified Chinese
+dark appearance, and long list in English light appearance. All four tests
+passed with zero failures. Each attached one structured snapshot, one lossless
+1206 by 2622 screenshot, and one capture metadata record. The detail, form, long
+list, and modal snapshots contained 32, 65, 131, and 20 nodes respectively.
+
+Screenshot inspection found each expected screen and appearance with no blank
+screen, crash, crop, or overlap. The four records are now
+`execution_verified` in the pilot manifest and reference two new
+research-only, non-redistributable license entries. Their element annotations
+remain empty and their native-tree and compact representations still require
+owner grounding review.
+
 A bounded `XCUITestSnapshotParser` now converts the structured JSON attachments
 into the same flattened native-node model used by the synthetic XML baseline.
 It enforces byte, node, and depth limits, uses deterministic tree-path node IDs,
@@ -126,6 +150,15 @@ latency benchmark. Token counts remain unavailable until a tokenizer is pinned,
 and set equality does not replace multiplicity, relation, visual, or human
 grounding review.
 
+The four direct initial-state trees add a broader diagnostic comparison.
+Conservative cleaning changed 248 raw nodes to 149 nodes, collapsed 91 exact
+wrappers, and removed five exact duplicate unknown subtrees containing eight
+nodes. Canonical JSON decreased from 152,842 to 98,782 bytes (35.37%), and
+compact UTF-8 decreased from 63,775 to 40,521 bytes (36.46%). Action-signature,
+native-identifier, and unique-semantic-signature sets were equal in all four
+comparisons. These single-run measurements still do not establish token,
+latency, relation, reading-order, visual-grounding, or task-success gains.
+
 ## Public artifact decision
 
 The application code and fictional content are project-authored and covered by
@@ -135,10 +168,11 @@ property ownership, trademark use, software-license restrictions, and a rights
 request channel, but do not provide a sufficiently explicit basis to relicense
 these rendered captures as public Apache-2.0 dataset assets.
 
-The initial ledger therefore records both screenshot families and the action
-trial's screenshots and native trees as `research_only_isolated`, permits
-research use only, marks commercial compatibility unclear, and withholds public
-redistribution. This is a conservative project decision, not legal advice.
+The ledger therefore records both screenshot families, the action trial, and
+the direct SwiftUI matrix screenshots and native trees as
+`research_only_isolated`, permits research use only, marks commercial
+compatibility unclear, and withholds public redistribution. This is a
+conservative project decision, not legal advice.
 
 Primary materials reviewed:
 
@@ -151,6 +185,9 @@ Primary materials reviewed:
 ## Validation evidence
 
 - Both Xcode targets built for the exact simulator destination.
+- The four direct-state SwiftUI XCUITests passed 4/4 on the exact destination,
+  exported 12 attachments, and left the selected simulator in its prior
+  shutdown state.
 - The shared Swift package built and all tests passed after the fixture work.
 - The structured snapshot parser's focused red/green cycle passed three tests
   covering normalization, malformed input, invalid fields, and resource limits;
@@ -170,6 +207,9 @@ Primary materials reviewed:
   action attachments and their attachment manifest. The action directory was
   verified absent before creation, so no existing Linux artifact was
   overwritten.
+- Local and Linux read-back SHA-256 digests matched for all 87 files in the
+  direct-state result bundle and exported-attachment directory. Its Linux
+  directory was also verified absent before creation.
 - The structured action hashes are:
   - before hierarchy:
     `e00f3b134e5686d4f1e05f2f9a25a42353d61c044e067a1f45c1e9003692ca9b`
@@ -187,18 +227,18 @@ Primary materials reviewed:
 
 ## Known gaps
 
-- Only the SwiftUI home-to-detail transition has structured native hierarchy
-  evidence. The other nine paired screenshot records still have null trees,
-  and UIKit hierarchy coverage has not started.
+- All five initial SwiftUI records now have structured native hierarchy
+  evidence, and the action trial adds a second detail capture after a verified
+  transition. The five UIKit records still have null trees.
 - The 11 committed annotation files still have empty element arrays; they are
   not completed manual annotations. Offline compilation now produces normalized
-  elements from the two action trees, but those outputs have not been reviewed
-  and backfilled into the annotations. The raw dictionaries remain evidence,
-  not visual truth.
-- Cleaning has only two synthetic unit fixtures and two real SwiftUI states.
-  UIKit coverage, broader semantic-recall checks, compact readability review,
-  and token measurements remain open. Raw output is retained for every paired
-  comparison.
+  elements from six structured SwiftUI captures, but those outputs have not
+  been reviewed and backfilled into the annotations. The raw dictionaries
+  remain evidence, not visual truth.
+- Cleaning has two synthetic unit fixtures and six real SwiftUI captures across
+  five states. UIKit coverage, multiplicity and relation retention, compact
+  readability review, and token measurements remain open. Raw output is
+  retained for every paired comparison.
 - Owner review of native-tree evidence, element annotations, and compact states
   remains pending.
 

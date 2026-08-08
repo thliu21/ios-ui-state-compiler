@@ -84,7 +84,8 @@ P0 contracts
 
 ## Phase 3: Deterministic compilers
 
-- [ ] Implement tree normalization, wrapper removal, and deduplication.
+- [x] Implement bounded tree normalization plus conservative wrapper removal
+  and exact unknown-subtree deduplication.
 - [ ] Infer title, section, row, label/value, state, and actions.
 - [ ] Implement current Apple Vision OCR baseline and parameter sweep.
 - [ ] Infer screenshot reading order and conservative action candidates.
@@ -139,8 +140,8 @@ No training task starts unless all four conditions are satisfied.
 
 ## Current open work
 
-- Extend structured hierarchy capture to the remaining SwiftUI states and the
-  UIKit fixture after the adapter contract is tested.
+- Add symmetric structured hierarchy capture for the UIKit fixture; all five
+  initial SwiftUI states now have exact-device XCUITest evidence.
 - Add multiplicity- and relation-aware retention checks before expanding the
   cleaner policy beyond exact wrappers and duplicate unknown subtrees.
 - Complete owner review of representative trees and compact states before

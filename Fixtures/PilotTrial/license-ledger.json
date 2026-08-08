@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1.0",
   "ledger_id": "paired-fixture-license-2026-08-08",
-  "updated_at": "2026-08-08T22:41:58Z",
+  "updated_at": "2026-08-08T23:19:51Z",
   "entries": [
     {
       "artifact_id": "paired-fixture-swiftui-screenshots",
@@ -65,6 +65,44 @@
       "model_weight_license": null,
       "copyright_or_trademark_notes": "The snapshots contain synthetic fixture content plus Apple accessibility element types and platform structure. Public native-tree redistribution rights have not been established.",
       "allowed_uses": ["research"],
+      "redistribution_allowed": false,
+      "commercial_compatibility": "unclear",
+      "reviewer": "automated-initial-review",
+      "review_date": "2026-08-08",
+      "decision": "research_only_isolated"
+    },
+    {
+      "artifact_id": "paired-fixture-swiftui-matrix-screenshots",
+      "artifact_type": "screenshot",
+      "name": "SwiftUI direct initial-state matrix screenshots",
+      "source_url": "https://github.com/thliu21/ios-ui-state-compiler/tree/26d88823410a2c5486950fb5632e73eda636783f/Fixtures/PilotApps",
+      "pinned_revision_or_hash": "26d88823410a2c5486950fb5632e73eda636783f",
+      "source_code_license": "Apache-2.0",
+      "data_or_asset_license": null,
+      "model_weight_license": null,
+      "copyright_or_trademark_notes": "Fixture content is self-authored, but the captures include Apple platform UI rendering and SF Symbols. Public screenshot redistribution rights have not been established.",
+      "allowed_uses": [
+        "research"
+      ],
+      "redistribution_allowed": false,
+      "commercial_compatibility": "unclear",
+      "reviewer": "automated-initial-review",
+      "review_date": "2026-08-08",
+      "decision": "research_only_isolated"
+    },
+    {
+      "artifact_id": "paired-fixture-swiftui-matrix-trees",
+      "artifact_type": "native_tree",
+      "name": "SwiftUI direct initial-state XCUITest accessibility snapshots",
+      "source_url": "https://github.com/thliu21/ios-ui-state-compiler/tree/26d88823410a2c5486950fb5632e73eda636783f/Fixtures/PilotApps",
+      "pinned_revision_or_hash": "26d88823410a2c5486950fb5632e73eda636783f",
+      "source_code_license": "Apache-2.0",
+      "data_or_asset_license": null,
+      "model_weight_license": null,
+      "copyright_or_trademark_notes": "The snapshots contain synthetic fixture content plus Apple accessibility element types and platform structure. Public native-tree redistribution rights have not been established.",
+      "allowed_uses": [
+        "research"
+      ],
       "redistribution_allowed": false,
       "commercial_compatibility": "unclear",
       "reviewer": "automated-initial-review",

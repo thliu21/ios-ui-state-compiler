@@ -26,3 +26,9 @@ The first reviewed aggregate is
 SwiftUI fixture states, exact source-tree hashes, representation sizes, cleaning
 counts, and single-run diagnostic timings. It contains no raw screenshot or
 hierarchy content.
+
+`swiftui-initial-state-tree-cleaning-2026-08-08.json` extends that diagnostic
+comparison to direct detail, form, modal, and long-list captures. The exact
+device tests passed 4/4, all external files matched their Linux mirror, and all
+three retention gates passed for every state. The file still does not establish
+token, latency, reading-order, relation, visual-grounding, or task-success gains.
