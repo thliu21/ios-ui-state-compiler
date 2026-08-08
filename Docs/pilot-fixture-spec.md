@@ -92,6 +92,7 @@ Fixtures/PilotApps/PilotFixtures.xcodeproj
 Fixtures/PilotApps/Shared/            string catalog and shared app data
 Fixtures/PilotApps/SwiftUIFixture/    SwiftUI application target
 Fixtures/PilotApps/UIKitFixture/      UIKit application target
+Fixtures/PilotApps/SwiftUIFixtureUITests/ first hierarchy/action evidence
 ```
 
 The shared support module contains no framework UI code and remains testable
@@ -112,6 +113,25 @@ Implementation proceeds in independently verifiable increments:
 
 Simulator commands always name the selected device UDID. They must not use a
 global shutdown command or operate an unrelated device.
+
+### Structured hierarchy evidence
+
+The first action trial uses an XCUITest target associated with
+`SwiftUIFixture`. It launches `home` in English and light appearance, resolves
+`fixture.home.open-detail`, records its frame, taps an explicit normalized
+center coordinate, and verifies `fixture.detail.root` before accepting the
+transition.
+
+Before and after the action, the test records a lossless screenshot and
+`XCUIElement.snapshot().dictionaryRepresentation` as result-bundle attachments.
+The structured snapshot exposes standard accessibility attributes and the
+descendant hierarchy. The harness does not parse `debugDescription`: Apple
+documents that representation as debugging-only and unsupported as a test
+dependency.
+
+The raw snapshot is accessibility evidence, not visual ground truth. It remains
+timestamped, hashed, and separately reviewable before a parser or fusion rule
+uses it.
 
 ## Trial acceptance
 
@@ -137,3 +157,5 @@ decision are represented in the license ledger.
 - [UIKit navigation controller](https://developer.apple.com/documentation/uikit/uinavigationcontroller)
 - [Localizing text with a string catalog](https://developer.apple.com/documentation/xcode/localizing-and-varying-text-with-a-string-catalog)
 - [SwiftUI accessibility fundamentals](https://developer.apple.com/documentation/swiftui/accessibility-fundamentals)
+- [XCUITest `XCUIElement`](https://developer.apple.com/documentation/xcuiautomation/xcuielement)
+- [XCUITest screenshots](https://developer.apple.com/documentation/xcuiautomation/xcuiscreenshotproviding)

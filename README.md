@@ -54,6 +54,23 @@ Build `UIKitFixture` with the same command and destination. After both products
 exist, `Scripts/capture-pilot-fixtures.sh` captures the five paired states. It
 requires an explicit UDID and enforces the local 30 GiB storage reserve.
 
+The `SwiftUIFixture` scheme also contains a narrow UI test for the first
+`home`-to-`detail` action trial. It captures lossless screenshots and structured
+XCUITest accessibility snapshots as result-bundle attachments:
+
+```bash
+xcodebuild test \
+  -project Fixtures/PilotApps/PilotFixtures.xcodeproj \
+  -scheme SwiftUIFixture \
+  -destination 'platform=iOS Simulator,id=<explicit-udid>' \
+  -resultBundlePath /tmp/swiftui-action.xcresult \
+  -only-testing:SwiftUIFixtureUITests/SwiftUIHierarchyActionTests/testHomeToDetailProducesStructuredEvidence
+```
+
+Export the attachments with `xcrun xcresulttool export attachments`. Raw
+screenshots and trees remain outside Git until the license ledger explicitly
+permits redistribution.
+
 Tree-only example using the synthetic fixture:
 
 ```bash
@@ -95,6 +112,7 @@ stderr. Use `--captured-at` and `--screen-id` for reproducible fixtures.
 - `Sources/` — canonical state, geometry, safe XML parser, offline compiler, and CLI.
 - `Tests/` — unit and integration tests.
 - `Fixtures/PilotApps/` — matched, self-authored UIKit and SwiftUI applications.
+- `Fixtures/PilotApps/SwiftUIFixtureUITests/` — exact-element hierarchy and action evidence.
 - `Tests/UIStateCoreTests/Fixtures/` — redistributable synthetic fixtures.
 - `Scripts/` — explicit-device collection helpers and capacity gates.
 - `Benchmarks/` — benchmark harnesses and reproducible measurement outputs.
