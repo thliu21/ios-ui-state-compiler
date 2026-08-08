@@ -1,5 +1,5 @@
 /// Stable identities for the five paired UIKit and SwiftUI fixture states.
-public enum FixtureScreen: String, CaseIterable, Codable, Sendable {
+public enum FixtureScreen: String, CaseIterable, Codable, Hashable, Sendable {
   case home
   case detail
   case form

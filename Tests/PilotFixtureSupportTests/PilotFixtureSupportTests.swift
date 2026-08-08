@@ -57,4 +57,14 @@ struct PilotFixtureSupportTests {
     #expect(Set(FixtureContent.listItems.map(\.id)).count == 12)
     #expect(FixtureContent.listItems.allSatisfy { !$0.titleKey.isEmpty })
   }
+
+  @Test("Accessibility identifiers are framework-neutral and stable")
+  func accessibilityIdentifiersAreStable() {
+    #expect(FixtureAccessibilityID.root(for: .home) == "fixture.home.root")
+    #expect(FixtureAccessibilityID.homeOpenDetail == "fixture.home.open-detail")
+    #expect(FixtureAccessibilityID.formSubmit == "fixture.form.submit")
+    #expect(
+      FixtureAccessibilityID.listRow(itemID: "item-1")
+        == "fixture.long-list.row.item-1")
+  }
 }

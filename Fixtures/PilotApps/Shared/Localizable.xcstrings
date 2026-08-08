@@ -1,0 +1,210 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "fixture.detail.primary-action" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Mark reviewed" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "标记为已审核" } }
+      }
+    },
+    "fixture.detail.source.label" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Source" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "来源" } }
+      }
+    },
+    "fixture.detail.source.value" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Synthetic fixture" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "合成夹具" } }
+      }
+    },
+    "fixture.detail.state.label" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "State" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "状态" } }
+      }
+    },
+    "fixture.detail.state.value" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Ready for review" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "等待审核" } }
+      }
+    },
+    "fixture.detail.summary" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "A deterministic record with paired metadata." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "一条包含配对元数据的确定性记录。" } }
+      }
+    },
+    "fixture.detail.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Record detail" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "记录详情" } }
+      }
+    },
+    "fixture.form.name.label" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Display name" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "显示名称" } }
+      }
+    },
+    "fixture.form.name.placeholder" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Enter a fixture name" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "输入夹具名称" } }
+      }
+    },
+    "fixture.form.notifications" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Review reminders" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "审核提醒" } }
+      }
+    },
+    "fixture.form.priority" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Priority" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "优先级" } }
+      }
+    },
+    "fixture.form.priority.high" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "High" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "高" } }
+      }
+    },
+    "fixture.form.priority.normal" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Normal" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "普通" } }
+      }
+    },
+    "fixture.form.section.profile" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Profile" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "资料" } }
+      }
+    },
+    "fixture.form.submit" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Save fixture" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "保存夹具" } }
+      }
+    },
+    "fixture.form.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Fixture form" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "夹具表单" } }
+      }
+    },
+    "fixture.home.open-detail" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Open record detail" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "打开记录详情" } }
+      }
+    },
+    "fixture.home.open-form" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Open fixture form" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "打开夹具表单" } }
+      }
+    },
+    "fixture.home.open-long-list" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Open long list" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "打开长列表" } }
+      }
+    },
+    "fixture.home.open-modal" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Present review sheet" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "显示审核表单" } }
+      }
+    },
+    "fixture.home.status.capture" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Capture" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "采集" } }
+      }
+    },
+    "fixture.home.status.capture.value" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Ready" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "就绪" } }
+      }
+    },
+    "fixture.home.status.review" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Human review" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "人工审核" } }
+      }
+    },
+    "fixture.home.status.review.value" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Pending" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "待处理" } }
+      }
+    },
+    "fixture.home.status.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Pilot status" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "试点状态" } }
+      }
+    },
+    "fixture.home.summary" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Five controlled states, one shared contract." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "五个受控状态，一份共享契约。" } }
+      }
+    },
+    "fixture.home.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Pilot fixture" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "试点夹具" } }
+      }
+    },
+    "fixture.list.item.01" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Capture recipe" } }, "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "采集方案" } } } },
+    "fixture.list.item.02" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Screenshot evidence" } }, "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "截图证据" } } } },
+    "fixture.list.item.03" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Native hierarchy" } }, "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "原生层级" } } } },
+    "fixture.list.item.04" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Coordinate check" } }, "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "坐标检查" } } } },
+    "fixture.list.item.05" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "License decision" } }, "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "许可决定" } } } },
+    "fixture.list.item.06" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Locale variant" } }, "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "区域变体" } } } },
+    "fixture.list.item.07" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Appearance variant" } }, "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "外观变体" } } } },
+    "fixture.list.item.08" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Action target" } }, "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "操作目标" } } } },
+    "fixture.list.item.09" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Review note" } }, "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "审核备注" } } } },
+    "fixture.list.item.10" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Manifest record" } }, "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "清单记录" } } } },
+    "fixture.list.item.11" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Hash verification" } }, "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "哈希验证" } } } },
+    "fixture.list.item.12" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Human checkpoint" } }, "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "人工检查点" } } } },
+    "fixture.list.status.ready" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Ready" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "就绪" } }
+      }
+    },
+    "fixture.list.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Collection queue" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "采集队列" } }
+      }
+    },
+    "fixture.modal.dismiss" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Dismiss" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "关闭" } }
+      }
+    },
+    "fixture.modal.message" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Review the evidence before freezing this record." } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "冻结记录前，请审核相关证据。" } }
+      }
+    },
+    "fixture.modal.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Review sheet" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "审核表单" } }
+      }
+    }
+  },
+  "version" : "1.0"
+}
