@@ -84,8 +84,9 @@ P0 contracts
 
 ## Phase 3: Deterministic compilers
 
-- [x] Implement bounded tree normalization plus conservative wrapper removal
-  and exact unknown-subtree deduplication.
+- [x] Implement bounded tree normalization, conservative wrapper removal,
+  semantic-empty unknown-subtree deduplication, and multiplicity-/hierarchy-aware
+  retention gates.
 - [ ] Infer title, section, row, label/value, state, and actions.
 - [ ] Implement current Apple Vision OCR baseline and parameter sweep.
 - [ ] Infer screenshot reading order and conservative action candidates.

@@ -153,13 +153,13 @@ struct CLIIntegrationTests {
     )
     let cleaning = try #require(telemetry["tree_cleaning"] as? [String: Any])
 
-    #expect(state.elements.count == 4)
+    #expect(state.elements.count == 6)
     #expect(cleaning["mode"] as? String == "conservative")
     #expect(cleaning["input_node_count"] as? Int == 7)
-    #expect(cleaning["output_node_count"] as? Int == 4)
+    #expect(cleaning["output_node_count"] as? Int == 6)
     #expect(cleaning["collapsed_wrapper_count"] as? Int == 1)
-    #expect(cleaning["removed_duplicate_subtree_count"] as? Int == 1)
-    #expect(cleaning["removed_duplicate_node_count"] as? Int == 2)
+    #expect(cleaning["removed_duplicate_subtree_count"] as? Int == 0)
+    #expect(cleaning["removed_duplicate_node_count"] as? Int == 0)
     #expect(telemetry["tree_cleaning_ms"] as? Double ?? -1 >= 0)
   }
 }

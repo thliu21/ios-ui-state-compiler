@@ -142,13 +142,13 @@ struct OfflineCompilerTests {
     #expect(raw.treeCleaning.outputNodeCount == 7)
     #expect(raw.timings.treeCleaningMS == 0)
 
-    #expect(cleaned.state.elements.count == 4)
+    #expect(cleaned.state.elements.count == 6)
     #expect(cleaned.treeCleaning.mode == .conservative)
     #expect(cleaned.treeCleaning.inputNodeCount == 7)
-    #expect(cleaned.treeCleaning.outputNodeCount == 4)
+    #expect(cleaned.treeCleaning.outputNodeCount == 6)
     #expect(cleaned.treeCleaning.collapsedWrapperCount == 1)
-    #expect(cleaned.treeCleaning.removedDuplicateSubtreeCount == 1)
-    #expect(cleaned.treeCleaning.removedDuplicateNodeCount == 2)
+    #expect(cleaned.treeCleaning.removedDuplicateSubtreeCount == 0)
+    #expect(cleaned.treeCleaning.removedDuplicateNodeCount == 0)
     #expect(cleaned.timings.treeCleaningMS >= 0)
   }
 

@@ -92,10 +92,29 @@ Native-tree cleaning is opt-in through `--tree-cleaning conservative`; `raw` is
 the default and remains the comparison baseline. A wrapper is collapsed only
 when it has unknown role, no label, value, or native identifier, no disabling or
 selected state, exactly one child, and an exactly equal frame. Deduplication is
-limited to exact sibling subtrees composed entirely of unknown-role nodes with
-no native identifiers.
+limited to exact sibling subtrees composed entirely of semantic-empty,
+unknown-role nodes with no native identifiers or meaningful state.
 
 Every run reports the mode, input and output node counts, collapsed wrappers,
 removed duplicate subtrees and nodes, and cleaning time. These rules are a
 deterministic baseline, not evidence of semantic or task-success improvement;
 that claim requires the accepted evaluation metrics and human grounding review.
+
+## D-011: Multiplicity- and hierarchy-aware retention gates
+
+Unique-signature set equality is necessary but insufficient: it cannot detect
+deleting one of two identical semantic elements. The measurement harness
+therefore also compares multisets of action signatures, native identifiers, and
+semantic signatures. It compares a multiset of nearest-semantic-parent to child
+edges after ignoring semantic-empty wrapper nodes, so permitted wrapper collapse
+does not create a false failure.
+
+The first red integration fixture exposed two identical labelled scrollbar
+subtrees that the earlier identifier-free rule removed while all three unique
+set gates still passed. The cleaner now preserves any duplicate subtree that
+contains a label, value, native identifier, disabled state, hidden state, or
+selected state. Exact semantic-empty duplicates remain eligible for removal.
+
+These gates are deterministic structural checks, not graph isomorphism or human
+grounding. They do not establish child order, reading order, visual equivalence,
+or task success.

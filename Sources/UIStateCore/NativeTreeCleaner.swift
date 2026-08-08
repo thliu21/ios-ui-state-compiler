@@ -9,7 +9,7 @@ struct NativeTreeCleaningResult: Sendable {
 ///
 /// It collapses only semantic-empty, single-child wrappers whose frame exactly
 /// matches their child. It removes only exact duplicate sibling subtrees made
-/// entirely of unknown-role, identifier-free nodes. Raw compiler output remains
+/// entirely of semantic-empty, unknown-role nodes. Raw compiler output remains
 /// the default baseline.
 struct NativeTreeCleaner: Sendable {
   func clean(_ nodes: [NativeTreeNode]) -> NativeTreeCleaningResult {
@@ -94,7 +94,15 @@ struct NativeTreeCleaner: Sendable {
     _ node: Draft,
     drafts: [String: Draft]
   ) -> Bool {
-    guard node.role == .unknown, node.nativeIdentifier == nil else { return false }
+    guard
+      node.role == .unknown,
+      node.label == nil,
+      node.value == nil,
+      node.nativeIdentifier == nil,
+      node.visible != false,
+      node.enabled != false,
+      node.selected != true
+    else { return false }
     return node.childIDs.allSatisfy { childID in
       guard let child = drafts[childID] else { return false }
       return isDuplicateCandidate(child, drafts: drafts)

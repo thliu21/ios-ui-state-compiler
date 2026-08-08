@@ -111,7 +111,7 @@ swift run ui-compiler compile \
 ```
 
 Raw trees remain the default baseline. The optional conservative cleaner reports
-every collapsed wrapper and removed exact duplicate subtree:
+every collapsed wrapper and removed exact semantic-empty duplicate subtree:
 
 ```bash
 swift run ui-compiler compile \
@@ -135,9 +135,10 @@ Scripts/measure-tree-cleaning.sh \
   --screen-id <stable-id>
 ```
 
-The summary includes representation bytes and conservative retention gates.
-Single-run timings remain diagnostic and are not benchmark claims. Reviewed
-aggregate files live in `Benchmarks/`; raw screenshots and hierarchies do not.
+The summary includes representation bytes plus unique, multiset, and normalized
+semantic parent-child retention gates. Single-run timings remain diagnostic and
+are not benchmark claims. Reviewed aggregate files live in `Benchmarks/`; raw
+screenshots and hierarchies do not.
 
 For screenshot-only or hybrid input, pass `--screenshot <saved.png>` and an
 optional `--tree <saved-path>`. Representation output is written to stdout.

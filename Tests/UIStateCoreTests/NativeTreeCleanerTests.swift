@@ -4,10 +4,9 @@ import Testing
 
 @Suite("Native tree cleaner")
 struct NativeTreeCleanerTests {
-  @Test("Collapses equal-frame empty wrappers and exact unknown duplicate subtrees")
+  @Test("Collapses equal-frame wrappers and exact semantic-empty duplicates")
   func conservativeCleaning() throws {
     let full = try rect(x: 0, y: 0, width: 402, height: 874)
-    let scrollbar = try rect(x: 369, y: 116, width: 30, height: 696)
     let thumb = try rect(x: 396, y: 320, width: 3, height: 489)
     let nodes = [
       NativeTreeNode(
@@ -15,7 +14,7 @@ struct NativeTreeCleanerTests {
         role: .unknown,
         label: "Synthetic app",
         frame: full,
-        childIDs: ["wrapper", "scroll-a", "scroll-b"]
+        childIDs: ["wrapper", "empty-a", "empty-b"]
       ),
       NativeTreeNode(
         id: "wrapper",
@@ -35,6 +34,49 @@ struct NativeTreeCleanerTests {
         enabled: true,
         selected: false,
         parentID: "wrapper"
+      ),
+      NativeTreeNode(
+        id: "empty-a",
+        role: .unknown,
+        frame: thumb,
+        enabled: true,
+        selected: false,
+        parentID: "root"
+      ),
+      NativeTreeNode(
+        id: "empty-b",
+        role: .unknown,
+        frame: thumb,
+        enabled: true,
+        selected: false,
+        parentID: "root"
+      ),
+    ]
+
+    let result = NativeTreeCleaner().clean(nodes)
+    let root = try #require(result.nodes.first { $0.id == "root" })
+    let button = try #require(result.nodes.first { $0.id == "button" })
+
+    #expect(result.nodes.map(\.id) == ["root", "button", "empty-a"])
+    #expect(result.collapsedWrapperCount == 1)
+    #expect(result.removedDuplicateSubtreeCount == 1)
+    #expect(result.removedDuplicateNodeCount == 1)
+    #expect(root.childIDs == ["button", "empty-a"])
+    #expect(button.parentID == "root")
+  }
+
+  @Test("Preserves duplicate unknown subtrees with semantic content")
+  func semanticDuplicateSubtreesRemain() throws {
+    let full = try rect(x: 0, y: 0, width: 402, height: 874)
+    let scrollbar = try rect(x: 369, y: 116, width: 30, height: 696)
+    let thumb = try rect(x: 396, y: 320, width: 3, height: 489)
+    let nodes = [
+      NativeTreeNode(
+        id: "root",
+        role: .unknown,
+        label: "Synthetic app",
+        frame: full,
+        childIDs: ["scroll-a", "scroll-b"]
       ),
       NativeTreeNode(
         id: "scroll-a",
@@ -77,15 +119,10 @@ struct NativeTreeCleanerTests {
     ]
 
     let result = NativeTreeCleaner().clean(nodes)
-    let root = try #require(result.nodes.first { $0.id == "root" })
-    let button = try #require(result.nodes.first { $0.id == "button" })
 
-    #expect(result.nodes.map(\.id) == ["root", "button", "scroll-a", "thumb-a"])
-    #expect(result.collapsedWrapperCount == 1)
-    #expect(result.removedDuplicateSubtreeCount == 1)
-    #expect(result.removedDuplicateNodeCount == 2)
-    #expect(root.childIDs == ["button", "scroll-a"])
-    #expect(button.parentID == "root")
+    #expect(result.nodes == nodes)
+    #expect(result.removedDuplicateSubtreeCount == 0)
+    #expect(result.removedDuplicateNodeCount == 0)
   }
 
   @Test("Preserves wrappers with content, state, or distinct geometry")
