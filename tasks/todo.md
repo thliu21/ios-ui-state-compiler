@@ -166,6 +166,7 @@ trial the P2 capture and annotation contract.
 - [x] Matching elements have matching accessibility identifiers.
 - [x] Both targets build and run on the explicitly selected simulator UDID.
 - [x] English, Simplified Chinese, light, and dark records are represented.
+- [x] Owner review confirms screenshot semantic pairing and appearance coverage.
 - [ ] Ten records and one verified action pair pass manifest and ledger checks.
 - [ ] Human review confirms screenshot, tree, and compact-state grounding.
 

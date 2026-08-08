@@ -51,6 +51,15 @@ Every launch returned a process identifier. Final screenshots were 1206 by
 cropping, or overlap. The first inspection found cramped detail metadata; both
 implementations were corrected and all ten states were recaptured.
 
+## Owner screenshot review
+
+The owner reviewed the paired captures and confirmed that UIKit and SwiftUI
+express the same information and that requested light and dark appearances
+match. The owner also observed framework-specific styling and interaction
+differences, with SwiftUI appearing more modern. These differences remain part
+of the trial evidence; semantic equivalence does not require pixel-identical
+rendering or identical framework interaction behavior.
+
 ## Public artifact decision
 
 The application code and fictional content are project-authored and covered by
@@ -93,8 +102,8 @@ Primary materials reviewed:
   and empty element arrays; they are not completed manual annotations.
 - No coordinate action was executed and checked against an after-state, so
   `action_pairs` remains empty.
-- The owner has not yet completed the required representative readability and
-  grounding review.
+- Owner review of native-tree evidence, element annotations, and compact states
+  remains pending.
 
 The trial therefore proves the paired build, launch, screenshot, storage, hash,
 and draft-manifest path. It does not yet satisfy fixture-trial acceptance or the

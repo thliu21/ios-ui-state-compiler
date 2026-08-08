@@ -38,10 +38,10 @@
       "license_entry_ids": ["paired-fixture-swiftui-screenshots"],
       "redistribution_status": "withheld",
       "review": {
-        "reviewer": "independent-device-smoke",
-        "reviewed_at": "2026-08-08T22:13:00Z",
+        "reviewer": "owner-screenshot-review",
+        "reviewed_at": "2026-08-08T22:32:32Z",
         "state": "single_review",
-        "notes": "Screenshot-only visual smoke passed; owner, native-tree, and annotation review remain pending."
+        "notes": "Owner confirmed semantic equivalence and matching requested appearance; framework-specific style and interaction differences remain visible, with SwiftUI appearing more modern. Native-tree, element-annotation, and compact-state review remain pending."
       }
     },
     {
@@ -75,10 +75,10 @@
       "license_entry_ids": ["paired-fixture-swiftui-screenshots"],
       "redistribution_status": "withheld",
       "review": {
-        "reviewer": "independent-device-smoke",
-        "reviewed_at": "2026-08-08T22:13:00Z",
+        "reviewer": "owner-screenshot-review",
+        "reviewed_at": "2026-08-08T22:32:32Z",
         "state": "single_review",
-        "notes": "Screenshot-only visual smoke passed; owner, native-tree, and annotation review remain pending."
+        "notes": "Owner confirmed semantic equivalence and matching requested appearance; framework-specific style and interaction differences remain visible, with SwiftUI appearing more modern. Native-tree, element-annotation, and compact-state review remain pending."
       }
     },
     {
@@ -112,10 +112,10 @@
       "license_entry_ids": ["paired-fixture-swiftui-screenshots"],
       "redistribution_status": "withheld",
       "review": {
-        "reviewer": "independent-device-smoke",
-        "reviewed_at": "2026-08-08T22:13:00Z",
+        "reviewer": "owner-screenshot-review",
+        "reviewed_at": "2026-08-08T22:32:32Z",
         "state": "single_review",
-        "notes": "Screenshot-only visual smoke passed; owner, native-tree, and annotation review remain pending."
+        "notes": "Owner confirmed semantic equivalence and matching requested appearance; framework-specific style and interaction differences remain visible, with SwiftUI appearing more modern. Native-tree, element-annotation, and compact-state review remain pending."
       }
     },
     {
@@ -149,10 +149,10 @@
       "license_entry_ids": ["paired-fixture-swiftui-screenshots"],
       "redistribution_status": "withheld",
       "review": {
-        "reviewer": "independent-device-smoke",
-        "reviewed_at": "2026-08-08T22:13:00Z",
+        "reviewer": "owner-screenshot-review",
+        "reviewed_at": "2026-08-08T22:32:32Z",
         "state": "single_review",
-        "notes": "Screenshot-only visual smoke passed; owner, native-tree, and annotation review remain pending."
+        "notes": "Owner confirmed semantic equivalence and matching requested appearance; framework-specific style and interaction differences remain visible, with SwiftUI appearing more modern. Native-tree, element-annotation, and compact-state review remain pending."
       }
     },
     {
@@ -186,10 +186,10 @@
       "license_entry_ids": ["paired-fixture-swiftui-screenshots"],
       "redistribution_status": "withheld",
       "review": {
-        "reviewer": "independent-device-smoke",
-        "reviewed_at": "2026-08-08T22:13:00Z",
+        "reviewer": "owner-screenshot-review",
+        "reviewed_at": "2026-08-08T22:32:32Z",
         "state": "single_review",
-        "notes": "Screenshot-only visual smoke passed; owner, native-tree, and annotation review remain pending."
+        "notes": "Owner confirmed semantic equivalence and matching requested appearance; framework-specific style and interaction differences remain visible, with SwiftUI appearing more modern. Native-tree, element-annotation, and compact-state review remain pending."
       }
     },
     {
@@ -223,10 +223,10 @@
       "license_entry_ids": ["paired-fixture-uikit-screenshots"],
       "redistribution_status": "withheld",
       "review": {
-        "reviewer": "independent-device-smoke",
-        "reviewed_at": "2026-08-08T22:13:00Z",
+        "reviewer": "owner-screenshot-review",
+        "reviewed_at": "2026-08-08T22:32:32Z",
         "state": "single_review",
-        "notes": "Screenshot-only visual smoke passed; owner, native-tree, and annotation review remain pending."
+        "notes": "Owner confirmed semantic equivalence and matching requested appearance; framework-specific style and interaction differences remain visible, with SwiftUI appearing more modern. Native-tree, element-annotation, and compact-state review remain pending."
       }
     },
     {
@@ -260,10 +260,10 @@
       "license_entry_ids": ["paired-fixture-uikit-screenshots"],
       "redistribution_status": "withheld",
       "review": {
-        "reviewer": "independent-device-smoke",
-        "reviewed_at": "2026-08-08T22:13:00Z",
+        "reviewer": "owner-screenshot-review",
+        "reviewed_at": "2026-08-08T22:32:32Z",
         "state": "single_review",
-        "notes": "Screenshot-only visual smoke passed; owner, native-tree, and annotation review remain pending."
+        "notes": "Owner confirmed semantic equivalence and matching requested appearance; framework-specific style and interaction differences remain visible, with SwiftUI appearing more modern. Native-tree, element-annotation, and compact-state review remain pending."
       }
     },
     {
@@ -297,10 +297,10 @@
       "license_entry_ids": ["paired-fixture-uikit-screenshots"],
       "redistribution_status": "withheld",
       "review": {
-        "reviewer": "independent-device-smoke",
-        "reviewed_at": "2026-08-08T22:13:00Z",
+        "reviewer": "owner-screenshot-review",
+        "reviewed_at": "2026-08-08T22:32:32Z",
         "state": "single_review",
-        "notes": "Screenshot-only visual smoke passed; owner, native-tree, and annotation review remain pending."
+        "notes": "Owner confirmed semantic equivalence and matching requested appearance; framework-specific style and interaction differences remain visible, with SwiftUI appearing more modern. Native-tree, element-annotation, and compact-state review remain pending."
       }
     },
     {
@@ -334,10 +334,10 @@
       "license_entry_ids": ["paired-fixture-uikit-screenshots"],
       "redistribution_status": "withheld",
       "review": {
-        "reviewer": "independent-device-smoke",
-        "reviewed_at": "2026-08-08T22:13:00Z",
+        "reviewer": "owner-screenshot-review",
+        "reviewed_at": "2026-08-08T22:32:32Z",
         "state": "single_review",
-        "notes": "Screenshot-only visual smoke passed; owner, native-tree, and annotation review remain pending."
+        "notes": "Owner confirmed semantic equivalence and matching requested appearance; framework-specific style and interaction differences remain visible, with SwiftUI appearing more modern. Native-tree, element-annotation, and compact-state review remain pending."
       }
     },
     {
@@ -371,10 +371,10 @@
       "license_entry_ids": ["paired-fixture-uikit-screenshots"],
       "redistribution_status": "withheld",
       "review": {
-        "reviewer": "independent-device-smoke",
-        "reviewed_at": "2026-08-08T22:13:00Z",
+        "reviewer": "owner-screenshot-review",
+        "reviewed_at": "2026-08-08T22:32:32Z",
         "state": "single_review",
-        "notes": "Screenshot-only visual smoke passed; owner, native-tree, and annotation review remain pending."
+        "notes": "Owner confirmed semantic equivalence and matching requested appearance; framework-specific style and interaction differences remain visible, with SwiftUI appearing more modern. Native-tree, element-annotation, and compact-state review remain pending."
       }
     }
   ],

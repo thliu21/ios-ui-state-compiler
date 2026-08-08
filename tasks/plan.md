@@ -141,5 +141,5 @@ No training task starts unless all four conditions are satisfied.
 
 - Select a reliable native-hierarchy capture interface for the paired fixtures.
 - Execute and verify one coordinate-based action-before/action-after pair.
-- Complete owner review of representative screenshots, trees, and compact
-  states before accepting the fixture trial or admitting third-party apps.
+- Complete owner review of representative trees and compact states before
+  accepting the fixture trial or admitting third-party apps.
