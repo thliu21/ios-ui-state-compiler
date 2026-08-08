@@ -19,10 +19,11 @@ cleaned XML, and existing interactive-element summaries?
 
 The project is in **P2: dataset pilot and baselines**. The current Swift package can
 decode screenshot dimensions, safely normalize a synthetic native hierarchy,
-and emit canonical JSON or deterministic compact text. Screenshot OCR, visual
-layout inference, fusion, simulator capture, and planner evaluation are not yet
-implemented. P2 begins with a versioned 50-screen pilot contract and human review.
-Performance thresholds in the research documents remain hypotheses until measured.
+and emit canonical JSON or deterministic compact text. Independent UIKit and
+SwiftUI fixture applications now expose five matched deterministic states for
+the first capture and annotation trial. Screenshot OCR, visual layout inference,
+fusion, and planner evaluation are not yet implemented. Performance thresholds
+in the research documents remain hypotheses until measured.
 
 The pilot manifest and license ledger have offline decoding and semantic checks
 for app-disjoint splits, references, redistribution approval, and frozen-pilot
@@ -35,6 +36,23 @@ swift build
 swift test
 swift run ui-compiler --help
 ```
+
+List and build the two fixture applications without adding dependencies:
+
+```bash
+xcodebuild -project Fixtures/PilotApps/PilotFixtures.xcodeproj -list
+xcodebuild \
+  -project Fixtures/PilotApps/PilotFixtures.xcodeproj \
+  -scheme SwiftUIFixture \
+  -destination 'platform=iOS Simulator,id=<explicit-udid>' \
+  -derivedDataPath /tmp/ios-ui-state-compiler-derived \
+  CODE_SIGNING_ALLOWED=NO \
+  build
+```
+
+Build `UIKitFixture` with the same command and destination. After both products
+exist, `Scripts/capture-pilot-fixtures.sh` captures the five paired states. It
+requires an explicit UDID and enforces the local 30 GiB storage reserve.
 
 Tree-only example using the synthetic fixture:
 
@@ -76,7 +94,9 @@ stderr. Use `--captured-at` and `--screen-id` for reproducible fixtures.
 - `tasks/` — implementation plan and verifiable task list.
 - `Sources/` — canonical state, geometry, safe XML parser, offline compiler, and CLI.
 - `Tests/` — unit and integration tests.
+- `Fixtures/PilotApps/` — matched, self-authored UIKit and SwiftUI applications.
 - `Tests/UIStateCoreTests/Fixtures/` — redistributable synthetic fixtures.
+- `Scripts/` — explicit-device collection helpers and capacity gates.
 - `Benchmarks/` — benchmark harnesses and reproducible measurement outputs.
 - `Models/` — model cards and conversion metadata; no unreviewed weights.
 

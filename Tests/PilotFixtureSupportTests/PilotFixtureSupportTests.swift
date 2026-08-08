@@ -20,6 +20,7 @@ struct PilotFixtureSupportTests {
     let configuration = try FixtureLaunchConfiguration(arguments: ["FixtureApp"])
 
     #expect(configuration.screen == .home)
+    #expect(configuration.appearance == .light)
   }
 
   @Test("Screen argument selects every fixture state", arguments: FixtureScreen.allCases)
@@ -48,6 +49,34 @@ struct PilotFixtureSupportTests {
         ]
       )
     }
+    #expect(throws: FixtureLaunchError.missingAppearanceValue) {
+      try FixtureLaunchConfiguration(arguments: ["FixtureApp", "--fixture-appearance"])
+    }
+    #expect(throws: FixtureLaunchError.unknownAppearance("sepia")) {
+      try FixtureLaunchConfiguration(
+        arguments: ["FixtureApp", "--fixture-appearance", "sepia"]
+      )
+    }
+    #expect(throws: FixtureLaunchError.duplicateAppearanceArgument) {
+      try FixtureLaunchConfiguration(
+        arguments: [
+          "FixtureApp", "--fixture-appearance", "light", "--fixture-appearance", "dark",
+        ]
+      )
+    }
+  }
+
+  @Test("Appearance argument selects light and dark deterministically")
+  func appearanceArgumentSelectsStyle() throws {
+    let light = try FixtureLaunchConfiguration(
+      arguments: ["FixtureApp", "--fixture-appearance", "light"]
+    )
+    let dark = try FixtureLaunchConfiguration(
+      arguments: ["FixtureApp", "--fixture-appearance", "dark"]
+    )
+
+    #expect(light.appearance == .light)
+    #expect(dark.appearance == .dark)
   }
 
   @Test("Synthetic list data has stable, non-personal identities")

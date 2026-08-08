@@ -32,6 +32,9 @@ final class DetailViewController: UIViewController {
     let value = FixtureUI.label(valueKey)
     value.textAlignment = .right
     label.setContentHuggingPriority(.required, for: .horizontal)
-    return FixtureUI.horizontalRow([label, value])
+    let row = FixtureUI.horizontalRow([label, value])
+    row.distribution = .equalSpacing
+    row.spacing = 24
+    return row
   }
 }

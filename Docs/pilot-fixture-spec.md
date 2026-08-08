@@ -51,11 +51,13 @@ Both applications accept:
 
 ```text
 --fixture-screen <home|detail|form|modal|long_list>
+--fixture-appearance <light|dark>
 ```
 
 Missing arguments select `home`. An unknown or incomplete value is a launch
-configuration error in the shared parser; application entry points record the
-error and fall back to `home` so a collection run remains diagnosable.
+configuration error in the shared parser. Appearance defaults to `light` when it
+is omitted. Application entry points record errors and fall back to `home` in
+light appearance so a collection run remains diagnosable.
 
 All seed identities and ordering are constants. The fixtures do not use current
 time, random values, persisted user defaults, or remote data. Relaunching the

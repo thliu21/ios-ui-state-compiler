@@ -37,10 +37,11 @@ private struct MetadataRow: View {
   let value: LocalizedStringKey
 
   var body: some View {
-    HStack(alignment: .firstTextBaseline) {
+    HStack(alignment: .firstTextBaseline, spacing: 16) {
       Text(label)
         .foregroundStyle(.secondary)
-      Spacer()
+        .layoutPriority(1)
+      Spacer(minLength: 24)
       Text(value)
         .multilineTextAlignment(.trailing)
     }

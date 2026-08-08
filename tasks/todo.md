@@ -161,20 +161,20 @@ trial the P2 capture and annotation contract.
 
 **Acceptance criteria:**
 
-- [ ] A tested shared catalog defines exactly five stable screen identities.
-- [ ] Both application targets accept the same direct-launch screen argument.
-- [ ] Matching elements have matching accessibility identifiers.
-- [ ] Both targets build and run on the explicitly selected simulator UDID.
+- [x] A tested shared catalog defines exactly five stable screen identities.
+- [x] Both application targets accept the same direct-launch screen argument.
+- [x] Matching elements have matching accessibility identifiers.
+- [x] Both targets build and run on the explicitly selected simulator UDID.
 - [ ] English, Simplified Chinese, light, and dark records are represented.
 - [ ] Ten records and one verified action pair pass manifest and ledger checks.
 - [ ] Human review confirms screenshot, tree, and compact-state grounding.
 
 **Verification:**
 
-- [ ] Focused fixture-support tests pass.
-- [ ] Full Swift build, tests, and strict format lint pass.
-- [ ] Each Xcode target builds for the selected simulator destination.
-- [ ] Capture verification operates only the selected simulator UDID.
+- [x] Focused fixture-support tests pass.
+- [x] Full Swift build, tests, and strict format lint pass.
+- [x] Each Xcode target builds for the selected simulator destination.
+- [x] Capture verification operates only the selected simulator UDID.
 
 **Dependencies:** Task 7
 **Files likely touched:** fixture specification, shared support module and tests,

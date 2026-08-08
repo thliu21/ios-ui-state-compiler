@@ -11,12 +11,16 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     guard let windowScene = scene as? UIWindowScene else { return }
 
     let initialScreen: FixtureScreen
+    let appearance: FixtureAppearance
     do {
-      initialScreen = try FixtureLaunchConfiguration(
+      let configuration = try FixtureLaunchConfiguration(
         arguments: ProcessInfo.processInfo.arguments
-      ).screen
+      )
+      initialScreen = configuration.screen
+      appearance = configuration.appearance
     } catch {
       initialScreen = .home
+      appearance = .light
       print("Fixture launch configuration error: \(error)")
     }
 
@@ -32,6 +36,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     let window = UIWindow(windowScene: windowScene)
+    window.overrideUserInterfaceStyle = appearance == .dark ? .dark : .light
     window.rootViewController = navigationController
     self.window = window
     window.makeKeyAndVisible()
