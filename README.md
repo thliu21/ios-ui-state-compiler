@@ -56,9 +56,10 @@ Build `UIKitFixture` with the same command and destination. After both products
 exist, `Scripts/capture-pilot-fixtures.sh` captures the five paired states. It
 requires an explicit UDID and enforces the local 30 GiB storage reserve.
 
-The `SwiftUIFixture` scheme also contains a narrow UI test for the first
-`home`-to-`detail` action trial. It captures lossless screenshots and structured
-XCUITest accessibility snapshots as result-bundle attachments:
+The `SwiftUIFixture` scheme contains a narrow UI test for the first
+`home`-to-`detail` action trial plus direct initial-state captures for detail,
+form, modal, and long list. They attach lossless screenshots, structured
+XCUITest accessibility snapshots, and capture metadata to the result bundle:
 
 ```bash
 xcodebuild test \
@@ -68,6 +69,9 @@ xcodebuild test \
   -resultBundlePath /tmp/swiftui-action.xcresult \
   -only-testing:SwiftUIFixtureUITests/SwiftUIHierarchyActionTests/testHomeToDetailProducesStructuredEvidence
 ```
+
+Omit `-only-testing` to execute the full five-state SwiftUI hierarchy matrix on
+an explicitly selected destination.
 
 Export the attachments with `xcrun xcresulttool export attachments`. Raw
 screenshots and trees remain outside Git until the license ledger explicitly

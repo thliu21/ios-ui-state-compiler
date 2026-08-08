@@ -186,6 +186,8 @@ trial the P2 capture and annotation contract.
 - [x] A public two-state aggregate records exact source hashes, JSON/compact
   bytes, raw diagnostic timings, and three passing retention gates without raw
   screenshots or hierarchies.
+- [x] The SwiftUI UI test target builds four additional direct initial-state
+  capture tests for detail, form, modal, and long list on the exact destination.
 
 **Dependencies:** Task 7
 **Files likely touched:** fixture specification, shared support module and tests,
