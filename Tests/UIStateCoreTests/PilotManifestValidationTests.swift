@@ -122,6 +122,24 @@ struct PilotManifestValidationTests {
     }
   }
 
+  @Test("Committed paired fixture bundle identifiers match the Xcode targets")
+  func committedPairedFixtureBundleIdentifiersMatchTargets() throws {
+    let data = try repositoryFixture("Fixtures/PilotTrial/manifest.json")
+    let object = try #require(JSONSerialization.jsonObject(with: data) as? [String: Any])
+    let records = try #require(object["records"] as? [[String: Any]])
+    let expectedIdentifiers = [
+      "swiftui": "org.thliu21.uistatecompiler.swiftuifixture",
+      "uikit": "org.thliu21.uistatecompiler.uikitfixture",
+    ]
+
+    for record in records {
+      let framework = try #require(record["framework"] as? String)
+      let identifier = try #require(record["bundle_identifier"] as? String)
+      let expectedIdentifier = try #require(expectedIdentifiers[framework])
+      #expect(identifier == expectedIdentifier)
+    }
+  }
+
   private func fixture(_ name: String) throws -> Data {
     let url = try #require(Bundle.module.url(forResource: name, withExtension: "json"))
     return try Data(contentsOf: url)

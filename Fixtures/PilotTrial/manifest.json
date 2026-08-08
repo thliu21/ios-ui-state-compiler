@@ -15,7 +15,7 @@
       "repository_url": "https://github.com/thliu21/ios-ui-state-compiler",
       "pinned_revision": "54e545e5e4bed74302472fa6639e5fc411e18f07",
       "framework": "swiftui",
-      "bundle_identifier": "org.iosuistatecompiler.SwiftUIFixture",
+      "bundle_identifier": "org.thliu21.uistatecompiler.swiftuifixture",
       "screenshot": {
         "path": "pilot/paired-fixture-20260808/swiftui/home.png",
         "sha256": "b2358e4501414acbdd814f5bd5678d9b16737f501794a2ebb881d13f1072cedb",
@@ -52,7 +52,7 @@
       "repository_url": "https://github.com/thliu21/ios-ui-state-compiler",
       "pinned_revision": "54e545e5e4bed74302472fa6639e5fc411e18f07",
       "framework": "swiftui",
-      "bundle_identifier": "org.iosuistatecompiler.SwiftUIFixture",
+      "bundle_identifier": "org.thliu21.uistatecompiler.swiftuifixture",
       "screenshot": {
         "path": "pilot/paired-fixture-20260808/swiftui/detail.png",
         "sha256": "d24f73b98e7649ab80e872cca490cea54fa890976dd8c9a537cacfcb058cbd49",
@@ -89,7 +89,7 @@
       "repository_url": "https://github.com/thliu21/ios-ui-state-compiler",
       "pinned_revision": "54e545e5e4bed74302472fa6639e5fc411e18f07",
       "framework": "swiftui",
-      "bundle_identifier": "org.iosuistatecompiler.SwiftUIFixture",
+      "bundle_identifier": "org.thliu21.uistatecompiler.swiftuifixture",
       "screenshot": {
         "path": "pilot/paired-fixture-20260808/swiftui/form.png",
         "sha256": "59f58274e6e1e79218e210efab53d0eb52dec4b6caede43862de71eb457b7ed0",
@@ -126,7 +126,7 @@
       "repository_url": "https://github.com/thliu21/ios-ui-state-compiler",
       "pinned_revision": "54e545e5e4bed74302472fa6639e5fc411e18f07",
       "framework": "swiftui",
-      "bundle_identifier": "org.iosuistatecompiler.SwiftUIFixture",
+      "bundle_identifier": "org.thliu21.uistatecompiler.swiftuifixture",
       "screenshot": {
         "path": "pilot/paired-fixture-20260808/swiftui/modal.png",
         "sha256": "cb979ffca3cae6ecd54a42d4efdf2da63fe1abf4033e38561f2fb6cd4b177be0",
@@ -163,7 +163,7 @@
       "repository_url": "https://github.com/thliu21/ios-ui-state-compiler",
       "pinned_revision": "54e545e5e4bed74302472fa6639e5fc411e18f07",
       "framework": "swiftui",
-      "bundle_identifier": "org.iosuistatecompiler.SwiftUIFixture",
+      "bundle_identifier": "org.thliu21.uistatecompiler.swiftuifixture",
       "screenshot": {
         "path": "pilot/paired-fixture-20260808/swiftui/long_list.png",
         "sha256": "169d878de2254d80fc5197aeaadbcbb6c917ca1e1a019ffe16a429af0a61bcc9",
@@ -200,7 +200,7 @@
       "repository_url": "https://github.com/thliu21/ios-ui-state-compiler",
       "pinned_revision": "54e545e5e4bed74302472fa6639e5fc411e18f07",
       "framework": "uikit",
-      "bundle_identifier": "org.iosuistatecompiler.UIKitFixture",
+      "bundle_identifier": "org.thliu21.uistatecompiler.uikitfixture",
       "screenshot": {
         "path": "pilot/paired-fixture-20260808/uikit/home.png",
         "sha256": "02b758fde60f00ebe37591571031fa4e84bdf0798e47b69d7e865cc453b132f1",
@@ -237,7 +237,7 @@
       "repository_url": "https://github.com/thliu21/ios-ui-state-compiler",
       "pinned_revision": "54e545e5e4bed74302472fa6639e5fc411e18f07",
       "framework": "uikit",
-      "bundle_identifier": "org.iosuistatecompiler.UIKitFixture",
+      "bundle_identifier": "org.thliu21.uistatecompiler.uikitfixture",
       "screenshot": {
         "path": "pilot/paired-fixture-20260808/uikit/detail.png",
         "sha256": "bc1f8475d139358149a3310ab91b8c623d7f9ed85f99e18d13acf359ac709aaa",
@@ -274,7 +274,7 @@
       "repository_url": "https://github.com/thliu21/ios-ui-state-compiler",
       "pinned_revision": "54e545e5e4bed74302472fa6639e5fc411e18f07",
       "framework": "uikit",
-      "bundle_identifier": "org.iosuistatecompiler.UIKitFixture",
+      "bundle_identifier": "org.thliu21.uistatecompiler.uikitfixture",
       "screenshot": {
         "path": "pilot/paired-fixture-20260808/uikit/form.png",
         "sha256": "31bafe452331feb4b90bc8675fc34eb7b10c7f88b68b8561ad3ec02f7ebb89d9",
@@ -311,7 +311,7 @@
       "repository_url": "https://github.com/thliu21/ios-ui-state-compiler",
       "pinned_revision": "54e545e5e4bed74302472fa6639e5fc411e18f07",
       "framework": "uikit",
-      "bundle_identifier": "org.iosuistatecompiler.UIKitFixture",
+      "bundle_identifier": "org.thliu21.uistatecompiler.uikitfixture",
       "screenshot": {
         "path": "pilot/paired-fixture-20260808/uikit/modal.png",
         "sha256": "eb9404f5f493b48d7785eda18decd41a6ff73c12d8e6a50796fa0659352a17fc",
@@ -348,7 +348,7 @@
       "repository_url": "https://github.com/thliu21/ios-ui-state-compiler",
       "pinned_revision": "54e545e5e4bed74302472fa6639e5fc411e18f07",
       "framework": "uikit",
-      "bundle_identifier": "org.iosuistatecompiler.UIKitFixture",
+      "bundle_identifier": "org.thliu21.uistatecompiler.uikitfixture",
       "screenshot": {
         "path": "pilot/paired-fixture-20260808/uikit/long_list.png",
         "sha256": "ec641cc91c99942b8d5c4d5177b2b61692b562a0b8d24424253a6cd0410acfc6",
