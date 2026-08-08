@@ -86,7 +86,7 @@ P0 contracts
 
 - [x] Implement bounded tree normalization, conservative wrapper removal,
   semantic-empty unknown-subtree deduplication, and multiplicity-/hierarchy-aware
-  retention gates.
+  retention gates including normalized semantic sibling order.
 - [ ] Infer title, section, row, label/value, state, and actions.
 - [ ] Implement current Apple Vision OCR baseline and parameter sweep.
 - [ ] Infer screenshot reading order and conservative action candidates.

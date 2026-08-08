@@ -75,6 +75,7 @@ class RetentionChecksTests(unittest.TestCase):
         root = element(
             "root", role="window", label="Fixture", native_identifier="fixture.root"
         )
+        root["child_ids"] = ["wrapper"]
         wrapper = element(
             "wrapper",
             role="unknown",
@@ -82,13 +83,41 @@ class RetentionChecksTests(unittest.TestCase):
             native_identifier=None,
             parent_id="root",
         )
+        wrapper["child_ids"] = ["child"]
         child = element("child", parent_id="wrapper")
         raw = {"elements": [root, wrapper, child]}
-        clean = {"elements": [root, element("child", parent_id="root")]}
+        clean_root = element(
+            "root", role="window", label="Fixture", native_identifier="fixture.root"
+        )
+        clean_root["child_ids"] = ["child"]
+        clean = {"elements": [clean_root, element("child", parent_id="root")]}
 
         checks = summarizer.retention_checks(raw, clean)
 
         self.assertTrue(checks["semantic_parent_child_relation_multisets_equal"])
+
+    def test_sibling_reordering_fails_when_relation_multisets_match(self) -> None:
+        raw_root = element(
+            "root", role="window", label="Fixture", native_identifier="fixture.root"
+        )
+        raw_root["child_ids"] = ["first", "second"]
+        clean_root = element(
+            "root", role="window", label="Fixture", native_identifier="fixture.root"
+        )
+        clean_root["child_ids"] = ["second", "first"]
+        first = element(
+            "first", label="First", native_identifier="fixture.first", parent_id="root"
+        )
+        second = element(
+            "second", label="Second", native_identifier="fixture.second", parent_id="root"
+        )
+        raw = {"elements": [raw_root, first, second]}
+        clean = {"elements": [clean_root, first, second]}
+
+        checks = summarizer.retention_checks(raw, clean)
+
+        self.assertTrue(checks["semantic_parent_child_relation_multisets_equal"])
+        self.assertFalse(checks["semantic_sibling_order_multisets_equal"])
 
     def test_reparenting_fails_when_semantic_elements_stay_equal(self) -> None:
         first_parent = element(

@@ -39,9 +39,10 @@ remain outside Git under the withheld redistribution decision. Human
 tree/compact grounding review remains open.
 
 All 12 real structured captures pass unique and multiset action, identifier,
-semantic, and normalized semantic parent-child retention gates under the pinned
-conservative cleaner. This is structural evidence only; child order, visual
-grounding, and task success still require separate evaluation.
+semantic, normalized semantic parent-child, and semantic sibling-order retention
+gates under the pinned conservative cleaner. This is structural evidence only;
+screenshot reading order, visual grounding, and task success still require
+separate evaluation.
 
 Representative owner review follows the public
 [human grounding review protocol](Docs/human-grounding-review-protocol.md).
@@ -145,10 +146,10 @@ Scripts/measure-tree-cleaning.sh \
   --screen-id <stable-id>
 ```
 
-The summary includes representation bytes plus unique, multiset, and normalized
-semantic parent-child retention gates. Single-run timings remain diagnostic and
-are not benchmark claims. Reviewed aggregate files live in `Benchmarks/`; raw
-screenshots and hierarchies do not.
+The summary includes representation bytes plus unique, multiset, normalized
+semantic parent-child, and semantic sibling-order retention gates. Single-run
+timings remain diagnostic and are not benchmark claims. Reviewed aggregate
+files live in `Benchmarks/`; raw screenshots and hierarchies do not.
 
 For screenshot-only or hybrid input, pass `--screenshot <saved.png>` and an
 optional `--tree <saved-path>`. Representation output is written to stdout.

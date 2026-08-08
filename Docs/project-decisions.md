@@ -109,6 +109,10 @@ semantic signatures. It compares a multiset of nearest-semantic-parent to child
 edges after ignoring semantic-empty wrapper nodes, so permitted wrapper collapse
 does not create a false failure.
 
+The harness also compares a multiset of ordered nearest-semantic child
+sequences for each semantic parent and the normalized root. This detects sibling
+reordering even when element and parent-child relation multisets remain equal.
+
 The first red integration fixture exposed two identical labelled scrollbar
 subtrees that the earlier identifier-free rule removed while all three unique
 set gates still passed. The cleaner now preserves any duplicate subtree that
@@ -116,5 +120,5 @@ contains a label, value, native identifier, disabled state, hidden state, or
 selected state. Exact semantic-empty duplicates remain eligible for removal.
 
 These gates are deterministic structural checks, not graph isomorphism or human
-grounding. They do not establish child order, reading order, visual equivalence,
-or task success.
+grounding. Normalized hierarchy order does not establish screenshot reading
+order, visual equivalence, or task success.

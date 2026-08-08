@@ -130,6 +130,67 @@ def semantic_parent_child_relation_multiset(state: dict) -> Counter[str]:
     return relations
 
 
+def semantic_sibling_order_multiset(state: dict) -> Counter[str]:
+    elements_by_id = {element["id"]: element for element in state["elements"]}
+    semantic_by_id = {
+        element_id: value
+        for element_id, element in elements_by_id.items()
+        if (value := semantic_signature(element)) is not None
+    }
+
+    def nearest_semantic_children(
+        child_ids: list[str], ancestry: frozenset[str]
+    ) -> list[dict]:
+        children = []
+        for child_id in child_ids:
+            if child_id in ancestry:
+                children.append({"boundary": "cycle"})
+                continue
+            child = elements_by_id.get(child_id)
+            if child is None:
+                children.append({"boundary": "missing_child"})
+                continue
+            if child_id in semantic_by_id:
+                children.append({"semantic_signature": semantic_by_id[child_id]})
+                continue
+            children.extend(
+                nearest_semantic_children(
+                    child.get("child_ids") or [], ancestry | {child_id}
+                )
+            )
+        return children
+
+    sequences = Counter()
+    root_ids = [
+        element["id"]
+        for element in state["elements"]
+        if element.get("parent_id") is None
+    ]
+    sequences[
+        signature(
+            {
+                "parent": {"boundary": "root"},
+                "children": nearest_semantic_children(root_ids, frozenset()),
+            }
+        )
+    ] += 1
+
+    for element_id, parent_signature in semantic_by_id.items():
+        element = elements_by_id[element_id]
+        sequences[
+            signature(
+                {
+                    "parent": {"semantic_signature": parent_signature},
+                    "children": nearest_semantic_children(
+                        element.get("child_ids") or [], frozenset({element_id})
+                    ),
+                }
+            )
+        ] += 1
+
+    return sequences
+
+
 def retention_checks(raw: dict, clean: dict) -> dict[str, bool]:
     return {
         "action_signatures_equal": action_signatures(raw) == action_signatures(clean),
@@ -146,6 +207,10 @@ def retention_checks(raw: dict, clean: dict) -> dict[str, bool]:
             semantic_parent_child_relation_multiset(raw)
             == semantic_parent_child_relation_multiset(clean)
         ),
+        "semantic_sibling_order_multisets_equal": (
+            semantic_sibling_order_multiset(raw)
+            == semantic_sibling_order_multiset(clean)
+        ),
     }
 
 
@@ -153,6 +218,7 @@ def representation(path: Path, state: dict) -> dict:
     identifier_multiset = native_identifier_multiset(state)
     semantic_multiset = semantic_signature_multiset(state)
     relation_multiset = semantic_parent_child_relation_multiset(state)
+    sibling_order_multiset = semantic_sibling_order_multiset(state)
     return {
         "bytes": path.stat().st_size,
         "element_count": len(state["elements"]),
@@ -163,6 +229,8 @@ def representation(path: Path, state: dict) -> dict:
         "semantic_element_count": sum(semantic_multiset.values()),
         "semantic_parent_child_relation_count": sum(relation_multiset.values()),
         "unique_semantic_parent_child_relation_count": len(relation_multiset),
+        "semantic_sibling_order_sequence_count": sum(sibling_order_multiset.values()),
+        "unique_semantic_sibling_order_sequence_count": len(sibling_order_multiset),
     }
 
 
