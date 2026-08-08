@@ -179,6 +179,8 @@ trial the P2 capture and annotation contract.
 - [x] Capture verification operates only the selected simulator UDID.
 - [x] One exact-device SwiftUI XCUITest captures structured before/after trees
   and screenshots, executes a center-coordinate tap, and verifies the after root.
+- [x] The exact structured before tree compiles offline through an explicit
+  XCUITest JSON format into 43 canonical elements and the recorded action center.
 
 **Dependencies:** Task 7
 **Files likely touched:** fixture specification, shared support module and tests,

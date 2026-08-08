@@ -3,6 +3,7 @@ import ImageIO
 
 public enum OfflineCompilerError: Error, Equatable, Sendable {
   case missingInput
+  case conflictingNativeTreeInputs
   case missingImageSize
   case invalidImageData
   case screenshotTooLarge(limit: Int)
@@ -33,6 +34,7 @@ public struct OfflineCompileRequest: Sendable {
   public let treeCapturedAt: Date?
   public let screenshotData: Data?
   public let nativeTreeXML: Data?
+  public let xcuiTestSnapshotJSON: Data?
   public let imageSizePixels: UIStateSize?
   public let viewportSizePoints: UIStateSize
   public let orientation: ScreenOrientation
@@ -42,6 +44,7 @@ public struct OfflineCompileRequest: Sendable {
     capturedAt: Date,
     screenshotData: Data? = nil,
     nativeTreeXML: Data? = nil,
+    xcuiTestSnapshotJSON: Data? = nil,
     imageSizePixels: UIStateSize? = nil,
     viewportSizePoints: UIStateSize,
     orientation: ScreenOrientation = .unknown,
@@ -52,6 +55,7 @@ public struct OfflineCompileRequest: Sendable {
     self.treeCapturedAt = treeCapturedAt
     self.screenshotData = screenshotData
     self.nativeTreeXML = nativeTreeXML
+    self.xcuiTestSnapshotJSON = xcuiTestSnapshotJSON
     self.imageSizePixels = imageSizePixels
     self.viewportSizePoints = viewportSizePoints
     self.orientation = orientation
@@ -62,24 +66,38 @@ public struct OfflineCompileRequest: Sendable {
 public struct OfflineCompileTimings: Equatable, Codable, Sendable {
   public let imageDecodeMS: Double
   public let xmlParseMS: Double
+  public let xcuiTestJSONParseMS: Double
   public let serializationMS: Double
   public let totalMS: Double
 
   public init(
     imageDecodeMS: Double,
     xmlParseMS: Double,
+    xcuiTestJSONParseMS: Double = 0,
     serializationMS: Double,
     totalMS: Double
   ) {
     self.imageDecodeMS = imageDecodeMS
     self.xmlParseMS = xmlParseMS
+    self.xcuiTestJSONParseMS = xcuiTestJSONParseMS
     self.serializationMS = serializationMS
     self.totalMS = totalMS
+  }
+
+  public init(from decoder: Decoder) throws {
+    let values = try decoder.container(keyedBy: CodingKeys.self)
+    imageDecodeMS = try values.decode(Double.self, forKey: .imageDecodeMS)
+    xmlParseMS = try values.decode(Double.self, forKey: .xmlParseMS)
+    xcuiTestJSONParseMS =
+      try values.decodeIfPresent(Double.self, forKey: .xcuiTestJSONParseMS) ?? 0
+    serializationMS = try values.decode(Double.self, forKey: .serializationMS)
+    totalMS = try values.decode(Double.self, forKey: .totalMS)
   }
 
   private enum CodingKeys: String, CodingKey {
     case imageDecodeMS = "image_decode_ms"
     case xmlParseMS = "xml_parse_ms"
+    case xcuiTestJSONParseMS = "xcuitest_json_parse_ms"
     case serializationMS = "serialization_ms"
     case totalMS = "total_ms"
   }
@@ -108,21 +126,27 @@ public struct OfflineCompileResult: Sendable {
 /// Compiles saved screenshot and native-tree evidence without simulator or network access.
 public struct OfflineCompiler: Sendable {
   private let nativeTreeParser: NativeTreeParser
+  private let xcuiTestSnapshotParser: XCUITestSnapshotParser
   private let limits: OfflineCompilerLimits
 
   public init(
     nativeTreeParser: NativeTreeParser = NativeTreeParser(),
+    xcuiTestSnapshotParser: XCUITestSnapshotParser = XCUITestSnapshotParser(),
     limits: OfflineCompilerLimits = .default
   ) {
     self.nativeTreeParser = nativeTreeParser
+    self.xcuiTestSnapshotParser = xcuiTestSnapshotParser
     self.limits = limits
   }
 
   public func compile(_ request: OfflineCompileRequest) throws -> OfflineCompileResult {
     let totalStart = ProcessInfo.processInfo.systemUptime
 
-    guard request.screenshotData != nil || request.nativeTreeXML != nil else {
+    guard request.screenshotData != nil || hasNativeTree(request) else {
       throw OfflineCompilerError.missingInput
+    }
+    guard request.nativeTreeXML == nil || request.xcuiTestSnapshotJSON == nil else {
+      throw OfflineCompilerError.conflictingNativeTreeInputs
     }
     guard
       !request.screenID.isEmpty,
@@ -137,8 +161,17 @@ public struct OfflineCompiler: Sendable {
     let imageDecodeMS = elapsedMilliseconds(since: imageDecodeStart)
 
     let xmlParseStart = ProcessInfo.processInfo.systemUptime
-    let nativeNodes = try request.nativeTreeXML.map(nativeTreeParser.parse) ?? []
-    let xmlParseMS = elapsedMilliseconds(since: xmlParseStart)
+    let xmlNodes = try request.nativeTreeXML.map(nativeTreeParser.parse) ?? []
+    let xmlParseMS =
+      request.nativeTreeXML == nil ? 0 : elapsedMilliseconds(since: xmlParseStart)
+
+    let xcuiTestJSONParseStart = ProcessInfo.processInfo.systemUptime
+    let xcuiTestNodes =
+      try request.xcuiTestSnapshotJSON.map(xcuiTestSnapshotParser.parse) ?? []
+    let xcuiTestJSONParseMS =
+      request.xcuiTestSnapshotJSON == nil
+      ? 0 : elapsedMilliseconds(since: xcuiTestJSONParseStart)
+    let nativeNodes = xmlNodes + xcuiTestNodes
 
     let sources = evidenceSources(request)
     let state = UIState(
@@ -162,6 +195,7 @@ public struct OfflineCompiler: Sendable {
     let timings = OfflineCompileTimings(
       imageDecodeMS: imageDecodeMS,
       xmlParseMS: xmlParseMS,
+      xcuiTestJSONParseMS: xcuiTestJSONParseMS,
       serializationMS: serializationMS,
       totalMS: elapsedMilliseconds(since: totalStart)
     )
@@ -226,14 +260,14 @@ public struct OfflineCompiler: Sendable {
     if request.screenshotData != nil {
       sources.append(.screenshot)
     }
-    if request.nativeTreeXML != nil {
+    if hasNativeTree(request) {
       sources.append(.uiTree)
     }
     return sources
   }
 
   private func treeAgeMS(_ request: OfflineCompileRequest) -> Double? {
-    guard request.nativeTreeXML != nil, let treeCapturedAt = request.treeCapturedAt else {
+    guard hasNativeTree(request), let treeCapturedAt = request.treeCapturedAt else {
       return nil
     }
     return max(0, request.capturedAt.timeIntervalSince(treeCapturedAt) * 1_000)
@@ -295,6 +329,10 @@ public struct OfflineCompiler: Sendable {
     default:
       return false
     }
+  }
+
+  private func hasNativeTree(_ request: OfflineCompileRequest) -> Bool {
+    request.nativeTreeXML != nil || request.xcuiTestSnapshotJSON != nil
   }
 
   private func isValid(size: UIStateSize) -> Bool {

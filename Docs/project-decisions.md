@@ -68,3 +68,20 @@ least 80 GiB free after the estimate or an approved external artifact root.
 The Linux workstation may provide artifact storage, but GPU work remains blocked
 by the evidence gate in D-003. Remote storage is inventoried read-only before the
 project writes or mirrors artifacts there.
+
+## D-009: Structured XCUITest hierarchy input
+
+The first structured native-tree adapter uses
+`XCUIElement.snapshot().dictionaryRepresentation`, with screenshot evidence
+captured separately. The implementation follows Apple's public
+[XCUIElement](https://developer.apple.com/documentation/xcuiautomation/xcuielement)
+and
+[XCUIScreenshotProviding](https://developer.apple.com/documentation/xcuiautomation/xcuiscreenshotproviding)
+interfaces and does not depend on the textual debugging description.
+
+The CLI requires `--tree-format xcuitest-json`; it does not guess from file
+contents. Numeric element types are mapped only where the pinned Xcode SDK enum
+has a known canonical role, and unknown values remain `unknown`. Accessibility
+structure is evidence, not visual truth: the adapter does not infer visibility
+from frames. XML and XCUITest JSON parse timings remain separate, and older XML
+timing records remain decodable.

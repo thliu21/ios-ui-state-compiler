@@ -27,7 +27,8 @@ struct UICompilerCLI {
           screenID: options.screenID,
           capturedAt: options.capturedAt,
           screenshotData: screenshotData,
-          nativeTreeXML: treeData,
+          nativeTreeXML: options.treeFormat == .xml ? treeData : nil,
+          xcuiTestSnapshotJSON: options.treeFormat == .xcuiTestJSON ? treeData : nil,
           imageSizePixels: options.imageSize,
           viewportSizePoints: try options.requiredViewportSize,
           orientation: options.orientation,
@@ -78,6 +79,11 @@ private struct CompileOptions {
     case compact
   }
 
+  enum TreeFormat: String {
+    case xml
+    case xcuiTestJSON = "xcuitest-json"
+  }
+
   var screenshotPath: String?
   var treePath: String?
   var imageSize: UIStateSize?
@@ -87,6 +93,7 @@ private struct CompileOptions {
   var screenID = "screen"
   var orientation = ScreenOrientation.unknown
   var format = OutputFormat.json
+  var treeFormat = TreeFormat.xml
 
   var requiredViewportSize: UIStateSize {
     get throws {
@@ -110,6 +117,11 @@ private struct CompileOptions {
         options.screenshotPath = value
       case "--tree":
         options.treePath = value
+      case "--tree-format":
+        guard let format = TreeFormat(rawValue: value) else {
+          throw CompileArgumentError("tree format must be xml or xcuitest-json")
+        }
+        options.treeFormat = format
       case "--image-size":
         options.imageSize = try parseSize(value)
       case "--viewport-size":
@@ -182,6 +194,11 @@ private struct CompileOptions {
 
   private static func parseDate(_ rawValue: String) throws -> Date {
     let formatter = ISO8601DateFormatter()
+    if let date = formatter.date(from: rawValue) {
+      return date
+    }
+
+    formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
     guard let date = formatter.date(from: rawValue) else {
       throw CompileArgumentError("timestamp must be ISO-8601")
     }

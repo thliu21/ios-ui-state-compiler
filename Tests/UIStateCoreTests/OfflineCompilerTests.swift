@@ -45,4 +45,77 @@ struct OfflineCompilerTests {
       try OfflineCompiler(limits: limits).compile(request)
     }
   }
+
+  @Test("Structured XCUITest JSON compiles through the native-tree model")
+  func xcuiTestJSONCompiles() throws {
+    let request = OfflineCompileRequest(
+      screenID: "xcuitest-json",
+      capturedAt: Date(timeIntervalSince1970: 1),
+      xcuiTestSnapshotJSON: try snapshotFixture(),
+      imageSizePixels: UIStateSize(width: 1_206, height: 2_622),
+      viewportSizePoints: UIStateSize(width: 402, height: 874),
+      treeCapturedAt: Date(timeIntervalSince1970: 0)
+    )
+
+    let result = try OfflineCompiler().compile(request)
+    let button = try #require(
+      result.state.elements.first {
+        $0.nativeIdentifier == "fixture.home.open-detail"
+      }
+    )
+
+    #expect(result.state.screen.sources == [.uiTree])
+    #expect(result.state.screen.treeAgeMS == 1_000)
+    #expect(result.state.elements.count == 3)
+    #expect(button.role == .button)
+    #expect(button.actions.first?.target?.x == 201)
+    #expect(button.actions.first?.target?.y == 408.5)
+    #expect(result.timings.xcuiTestJSONParseMS >= 0)
+    #expect(result.timings.xmlParseMS == 0)
+  }
+
+  @Test("Two native-tree formats fail instead of silently choosing one")
+  func conflictingNativeTreeInputsFail() throws {
+    let request = OfflineCompileRequest(
+      screenID: "conflicting-tree-inputs",
+      capturedAt: Date(timeIntervalSince1970: 0),
+      nativeTreeXML: Data("<Application/>".utf8),
+      xcuiTestSnapshotJSON: try snapshotFixture(),
+      imageSizePixels: UIStateSize(width: 1_206, height: 2_622),
+      viewportSizePoints: UIStateSize(width: 402, height: 874)
+    )
+
+    #expect(throws: OfflineCompilerError.conflictingNativeTreeInputs) {
+      try OfflineCompiler().compile(request)
+    }
+  }
+
+  @Test("Timing decoder preserves measurements written before JSON tree support")
+  func olderTimingDataDecodes() throws {
+    let data = Data(
+      """
+      {
+        "image_decode_ms": 1,
+        "xml_parse_ms": 2,
+        "serialization_ms": 3,
+        "total_ms": 6
+      }
+      """.utf8
+    )
+
+    let timing = try JSONDecoder().decode(OfflineCompileTimings.self, from: data)
+
+    #expect(timing.imageDecodeMS == 1)
+    #expect(timing.xmlParseMS == 2)
+    #expect(timing.xcuiTestJSONParseMS == 0)
+    #expect(timing.serializationMS == 3)
+    #expect(timing.totalMS == 6)
+  }
+
+  private func snapshotFixture() throws -> Data {
+    let url = try #require(
+      Bundle.module.url(forResource: "xcuitest-snapshot", withExtension: "json")
+    )
+    return try Data(contentsOf: url)
+  }
 }

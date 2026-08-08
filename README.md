@@ -18,12 +18,13 @@ cleaned XML, and existing interactive-element summaries?
 ## Status
 
 The project is in **P2: dataset pilot and baselines**. The current Swift package can
-decode screenshot dimensions, safely normalize a synthetic native hierarchy,
-and emit canonical JSON or deterministic compact text. Independent UIKit and
-SwiftUI fixture applications now expose five matched deterministic states for
-the first capture and annotation trial. Screenshot OCR, visual layout inference,
-fusion, and planner evaluation are not yet implemented. Performance thresholds
-in the research documents remain hypotheses until measured.
+decode screenshot dimensions, safely normalize synthetic XML or structured
+XCUITest JSON hierarchies, and emit canonical JSON or deterministic compact
+text. Independent UIKit and SwiftUI fixture applications now expose five matched
+deterministic states for the first capture and annotation trial. Screenshot OCR,
+visual layout inference, fusion, and planner evaluation are not yet implemented.
+Performance thresholds in the research documents remain hypotheses until
+measured.
 
 The pilot manifest and license ledger have offline decoding and semantic checks
 for app-disjoint splits, references, redistribution approval, and frozen-pilot
@@ -81,10 +82,23 @@ swift run ui-compiler compile \
   --format compact
 ```
 
+Structured XCUITest snapshot JSON uses an explicit format instead of content
+auto-detection:
+
+```bash
+swift run ui-compiler compile \
+  --tree Tests/UIStateCoreTests/Fixtures/xcuitest-snapshot.json \
+  --tree-format xcuitest-json \
+  --image-size 1206x2622 \
+  --viewport-size 402x874 \
+  --format compact
+```
+
 For screenshot-only or hybrid input, pass `--screenshot <saved.png>` and an
-optional `--tree <saved.xml>`. Representation output is written to stdout;
-image-decode, XML-parse, serialization, and total timings are written as JSON to
-stderr. Use `--captured-at` and `--screen-id` for reproducible fixtures.
+optional `--tree <saved-path>`. Representation output is written to stdout.
+Image decode, XML parse, XCUITest JSON parse, serialization, and total timings
+are separate JSON fields on stderr. Use `--captured-at`, including fractional
+ISO-8601 seconds from capture tools, and `--screen-id` for reproducible fixtures.
 
 ## Initial environment
 

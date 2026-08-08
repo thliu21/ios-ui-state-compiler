@@ -133,6 +133,11 @@ Primary materials reviewed:
   covering normalization, malformed input, invalid fields, and resource limits;
   both exact action attachments also parsed successfully outside the test
   fixture.
+- The offline compiler and CLI accept the JSON through explicit
+  `--tree-format xcuitest-json`; the exact before attachment produced 43
+  canonical elements, 121 ms snapshot age, and the recorded action center
+  `(201, 408.8333333333333)`. The one-run parse timing is diagnostic evidence,
+  not a performance result.
 - The committed test suite decodes the draft manifest, ledger, and all ten
   paired canonical states plus the action after-state, then runs semantic
   validation over all 11 records and the action pair.
@@ -162,12 +167,14 @@ Primary materials reviewed:
 - Only the SwiftUI home-to-detail transition has structured native hierarchy
   evidence. The other nine paired screenshot records still have null trees,
   and UIKit hierarchy coverage has not started.
-- The 11 canonical states have metadata and empty element arrays; they are not
-  completed manual annotations. The XCUITest dictionaries remain raw evidence
-  and are not yet normalized compiler output or visual truth.
-- The structured parser is available in `UIStateCore`, but the offline compile
-  request and CLI still accept only XML tree input. Wrapper removal,
-  deduplication, and XCUITest JSON end-to-end compilation remain open.
+- The 11 committed annotation files still have empty element arrays; they are
+  not completed manual annotations. Offline compilation now produces normalized
+  elements from the two action trees, but those outputs have not been reviewed
+  and backfilled into the annotations. The raw dictionaries remain evidence,
+  not visual truth.
+- Wrapper removal and structural deduplication remain open. The raw 43-node and
+  32-node states are deliberately retained as the comparison baseline before
+  any cleaning policy is introduced.
 - Owner review of native-tree evidence, element annotations, and compact states
   remains pending.
 

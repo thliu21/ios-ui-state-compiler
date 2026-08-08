@@ -19,11 +19,12 @@ public enum CLIText {
       Usage:
         ui-compiler --help
         ui-compiler --version
-        ui-compiler compile (--screenshot <png> | --tree <xml>) --viewport-size <WxH> [options]
+        ui-compiler compile (--screenshot <png> | --tree <path>) --viewport-size <WxH> [options]
 
       Compile options:
         --screenshot <png>       Saved screenshot input
-        --tree <xml>             Optional native hierarchy input
+        --tree <path>            Optional native hierarchy input
+        --tree-format <value>    xml (default) or xcuitest-json
         --image-size <WxH>       Required for tree-only input
         --viewport-size <WxH>    Logical viewport in points
         --captured-at <ISO-8601> Capture timestamp; defaults to now

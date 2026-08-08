@@ -139,8 +139,8 @@ No training task starts unless all four conditions are satisfied.
 
 ## Current open work
 
-- Wire the bounded structured XCUITest parser into the offline compiler and CLI
-  with an explicit input-format contract.
+- Implement a conservative wrapper-removal and structural-deduplication baseline
+  while retaining raw XCUITest JSON output for paired comparison.
 - Extend structured hierarchy capture to the remaining SwiftUI states and the
   UIKit fixture after the adapter contract is tested.
 - Complete owner review of representative trees and compact states before

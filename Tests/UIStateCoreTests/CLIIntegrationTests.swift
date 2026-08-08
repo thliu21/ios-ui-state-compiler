@@ -12,28 +12,50 @@ struct CLIIntegrationTests {
     let screenshot = temporaryDirectory.appendingPathComponent("one-pixel.png")
     try onePixelPNG().write(to: screenshot)
     let tree = try fixtureURL(named: "native-tree", extension: "xml")
+    let xcuiTestTree = try fixtureURL(named: "xcuitest-snapshot", extension: "json")
 
-    let modes: [(name: String, arguments: [String], sources: [EvidenceSource], elementCount: Int)] =
-      [
-        (
-          "screenshot-only",
-          ["--screenshot", screenshot.path],
-          [.screenshot],
-          0
-        ),
-        (
-          "tree-only",
-          ["--tree", tree.path, "--image-size", "1170x2532"],
-          [.uiTree],
-          3
-        ),
-        (
-          "hybrid",
-          ["--screenshot", screenshot.path, "--tree", tree.path],
-          [.screenshot, .uiTree],
-          3
-        ),
-      ]
+    let modes:
+      [(
+        name: String,
+        arguments: [String],
+        sources: [EvidenceSource],
+        elementCount: Int,
+        imageSize: UIStateSize
+      )] =
+        [
+          (
+            "screenshot-only",
+            ["--screenshot", screenshot.path],
+            [.screenshot],
+            0,
+            UIStateSize(width: 1, height: 1)
+          ),
+          (
+            "tree-only",
+            ["--tree", tree.path, "--image-size", "1170x2532"],
+            [.uiTree],
+            3,
+            UIStateSize(width: 1_170, height: 2_532)
+          ),
+          (
+            "hybrid",
+            ["--screenshot", screenshot.path, "--tree", tree.path],
+            [.screenshot, .uiTree],
+            3,
+            UIStateSize(width: 1, height: 1)
+          ),
+          (
+            "xcuitest-json-tree-only",
+            [
+              "--tree", xcuiTestTree.path,
+              "--tree-format", "xcuitest-json",
+              "--image-size", "1206x2622",
+            ],
+            [.uiTree],
+            3,
+            UIStateSize(width: 1_206, height: 2_622)
+          ),
+        ]
 
     for mode in modes {
       let result = try runCLI(
@@ -52,15 +74,12 @@ struct CLIIntegrationTests {
       #expect(state.elements.count == mode.elementCount)
       #expect(timing.imageDecodeMS >= 0)
       #expect(timing.xmlParseMS >= 0)
+      #expect(timing.xcuiTestJSONParseMS >= 0)
       #expect(timing.serializationMS >= 0)
       #expect(timing.totalMS >= 0)
       #expect(!result.standardOutput.contains("serialization_ms"))
 
-      if mode.name == "screenshot-only" || mode.name == "hybrid" {
-        #expect(state.screen.imageSizePixels == UIStateSize(width: 1, height: 1))
-      } else {
-        #expect(state.screen.imageSizePixels == UIStateSize(width: 1_170, height: 2_532))
-      }
+      #expect(state.screen.imageSizePixels == mode.imageSize)
     }
   }
 
@@ -95,6 +114,24 @@ struct CLIIntegrationTests {
     #expect(first.standardOutput.contains("ui_state|schema=0.1.0"))
     #expect(first.standardOutput.contains("element|id=continue-button|role=button"))
   }
+
+  @Test("Unknown native-tree formats fail instead of being guessed")
+  func unknownTreeFormatFails() throws {
+    let tree = try fixtureURL(named: "xcuitest-snapshot", extension: "json")
+    let result = try runCLI(
+      commonCompileArguments(screenID: "unknown-tree-format") + [
+        "--tree", tree.path,
+        "--tree-format", "json",
+        "--image-size", "1206x2622",
+      ]
+    )
+
+    #expect(result.status == 2)
+    #expect(
+      result.standardError == "error: invalid arguments: tree format must be xml or xcuitest-json\n"
+    )
+    #expect(result.standardOutput.isEmpty)
+  }
 }
 
 private struct CLIResult {
@@ -107,7 +144,7 @@ private func commonCompileArguments(screenID: String) -> [String] {
   [
     "compile",
     "--viewport-size", "390x844",
-    "--captured-at", "2026-08-06T20:00:00Z",
+    "--captured-at", "2026-08-06T20:00:00.123Z",
     "--screen-id", screenID,
   ]
 }
@@ -138,14 +175,21 @@ private func runCLI(_ arguments: [String]) throws -> CLIResult {
 }
 
 private func executableURL() throws -> URL {
-  var directory = Bundle.main.bundleURL
+  let searchRoots =
+    Bundle.allBundles.map(\.bundleURL) + [
+      URL(fileURLWithPath: CommandLine.arguments[0]).deletingLastPathComponent(),
+      Bundle.main.bundleURL,
+    ]
 
-  for _ in 0..<8 {
-    let candidate = directory.appendingPathComponent("ui-compiler")
-    if FileManager.default.isExecutableFile(atPath: candidate.path) {
-      return candidate
+  for root in searchRoots {
+    var directory = root
+    for _ in 0..<8 {
+      let candidate = directory.appendingPathComponent("ui-compiler")
+      if FileManager.default.isExecutableFile(atPath: candidate.path) {
+        return candidate
+      }
+      directory.deleteLastPathComponent()
     }
-    directory.deleteLastPathComponent()
   }
 
   let packageRoot = URL(fileURLWithPath: #filePath)
