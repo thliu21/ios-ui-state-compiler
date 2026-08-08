@@ -1,0 +1,41 @@
+{
+  "schema_version": "0.1.0",
+  "ledger_id": "paired-fixture-license-2026-08-08",
+  "updated_at": "2026-08-08T22:30:00Z",
+  "entries": [
+    {
+      "artifact_id": "paired-fixture-swiftui-screenshots",
+      "artifact_type": "screenshot",
+      "name": "Paired SwiftUI fixture screenshots",
+      "source_url": "https://github.com/thliu21/ios-ui-state-compiler/tree/54e545e5e4bed74302472fa6639e5fc411e18f07/Fixtures/PilotApps",
+      "pinned_revision_or_hash": "54e545e5e4bed74302472fa6639e5fc411e18f07",
+      "source_code_license": "Apache-2.0",
+      "data_or_asset_license": null,
+      "model_weight_license": null,
+      "copyright_or_trademark_notes": "Fixture content is self-authored, but the captures include Apple platform UI rendering and SF Symbols. Public screenshot redistribution rights have not been established.",
+      "allowed_uses": ["research"],
+      "redistribution_allowed": false,
+      "commercial_compatibility": "unclear",
+      "reviewer": "automated-initial-review",
+      "review_date": "2026-08-08",
+      "decision": "research_only_isolated"
+    },
+    {
+      "artifact_id": "paired-fixture-uikit-screenshots",
+      "artifact_type": "screenshot",
+      "name": "Paired UIKit fixture screenshots",
+      "source_url": "https://github.com/thliu21/ios-ui-state-compiler/tree/54e545e5e4bed74302472fa6639e5fc411e18f07/Fixtures/PilotApps",
+      "pinned_revision_or_hash": "54e545e5e4bed74302472fa6639e5fc411e18f07",
+      "source_code_license": "Apache-2.0",
+      "data_or_asset_license": null,
+      "model_weight_license": null,
+      "copyright_or_trademark_notes": "Fixture content is self-authored, but the captures include Apple platform UI rendering and SF Symbols. Public screenshot redistribution rights have not been established.",
+      "allowed_uses": ["research"],
+      "redistribution_allowed": false,
+      "commercial_compatibility": "unclear",
+      "reviewer": "automated-initial-review",
+      "review_date": "2026-08-08",
+      "decision": "research_only_isolated"
+    }
+  ]
+}

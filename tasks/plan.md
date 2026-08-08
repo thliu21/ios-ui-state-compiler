@@ -139,7 +139,7 @@ No training task starts unless all four conditions are satisfied.
 
 ## Current open work
 
-- Implement the shared five-state fixture contract and launch parser.
-- Build the independent SwiftUI and UIKit fixture applications.
-- Capture and review the ten paired synthetic records before selecting an
-  annotation tool or admitting third-party applications.
+- Select a reliable native-hierarchy capture interface for the paired fixtures.
+- Execute and verify one coordinate-based action-before/action-after pair.
+- Complete owner review of representative screenshots, trees, and compact
+  states before accepting the fixture trial or admitting third-party apps.

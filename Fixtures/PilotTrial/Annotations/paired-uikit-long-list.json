@@ -1,0 +1,14 @@
+{
+  "schema_version": "0.1.0",
+  "screen": {
+    "id": "paired-uikit-long-list",
+    "captured_at": "2026-08-08T22:12:39Z",
+    "image_size_pixels": { "width": 1206, "height": 2622 },
+    "viewport_size_points": { "width": 402, "height": 874 },
+    "orientation": "portrait",
+    "sources": ["screenshot"]
+  },
+  "elements": [],
+  "relations": [],
+  "changes": []
+}

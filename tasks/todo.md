@@ -165,7 +165,7 @@ trial the P2 capture and annotation contract.
 - [x] Both application targets accept the same direct-launch screen argument.
 - [x] Matching elements have matching accessibility identifiers.
 - [x] Both targets build and run on the explicitly selected simulator UDID.
-- [ ] English, Simplified Chinese, light, and dark records are represented.
+- [x] English, Simplified Chinese, light, and dark records are represented.
 - [ ] Ten records and one verified action pair pass manifest and ledger checks.
 - [ ] Human review confirms screenshot, tree, and compact-state grounding.
 

@@ -93,8 +93,45 @@ struct PilotManifestValidationTests {
     }
   }
 
+  @Test("Committed paired fixture draft and annotations decode and validate")
+  func committedPairedFixtureDraftPasses() throws {
+    let manifest = try PilotManifestCodec.decodeManifest(
+      try repositoryFixture("Fixtures/PilotTrial/manifest.json")
+    )
+    let ledger = try PilotManifestCodec.decodeLicenseLedger(
+      try repositoryFixture("Fixtures/PilotTrial/license-ledger.json")
+    )
+
+    #expect(PilotManifestValidator.validate(manifest: manifest, licenseLedger: ledger).isEmpty)
+
+    for annotation in [
+      "paired-swiftui-home",
+      "paired-swiftui-detail",
+      "paired-swiftui-form",
+      "paired-swiftui-modal",
+      "paired-swiftui-long-list",
+      "paired-uikit-home",
+      "paired-uikit-detail",
+      "paired-uikit-form",
+      "paired-uikit-modal",
+      "paired-uikit-long-list",
+    ] {
+      _ = try UIStateCodec.decode(
+        try repositoryFixture("Fixtures/PilotTrial/Annotations/\(annotation).json")
+      )
+    }
+  }
+
   private func fixture(_ name: String) throws -> Data {
     let url = try #require(Bundle.module.url(forResource: name, withExtension: "json"))
     return try Data(contentsOf: url)
+  }
+
+  private func repositoryFixture(_ path: String) throws -> Data {
+    let repositoryRoot = URL(fileURLWithPath: #filePath)
+      .deletingLastPathComponent()
+      .deletingLastPathComponent()
+      .deletingLastPathComponent()
+    return try Data(contentsOf: repositoryRoot.appendingPathComponent(path))
   }
 }
