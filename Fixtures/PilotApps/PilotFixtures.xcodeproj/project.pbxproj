@@ -19,6 +19,19 @@
 		B0000000000000000000000A /* FixtureLaunchConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000000A /* FixtureLaunchConfiguration.swift */; };
 		B0000000000000000000000B /* FixtureContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000000B /* FixtureContent.swift */; };
 		B0000000000000000000000C /* FixtureAccessibilityID.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000000C /* FixtureAccessibilityID.swift */; };
+		B0000000000000000000000D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000000E /* AppDelegate.swift */; };
+		B0000000000000000000000E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000000F /* SceneDelegate.swift */; };
+		B0000000000000000000000F /* FixtureUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000010 /* FixtureUI.swift */; };
+		B00000000000000000000010 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000011 /* HomeViewController.swift */; };
+		B00000000000000000000011 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000012 /* DetailViewController.swift */; };
+		B00000000000000000000012 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000013 /* FormViewController.swift */; };
+		B00000000000000000000013 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000014 /* ModalViewController.swift */; };
+		B00000000000000000000014 /* LongListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000015 /* LongListViewController.swift */; };
+		B00000000000000000000015 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000008 /* Localizable.xcstrings */; };
+		B00000000000000000000016 /* FixtureScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000009 /* FixtureScreen.swift */; };
+		B00000000000000000000017 /* FixtureLaunchConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000000A /* FixtureLaunchConfiguration.swift */; };
+		B00000000000000000000018 /* FixtureContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000000B /* FixtureContent.swift */; };
+		B00000000000000000000019 /* FixtureAccessibilityID.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000000C /* FixtureAccessibilityID.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,10 +48,26 @@
 		A0000000000000000000000B /* FixtureContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureContent.swift; sourceTree = "<group>"; };
 		A0000000000000000000000C /* FixtureAccessibilityID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureAccessibilityID.swift; sourceTree = "<group>"; };
 		A0000000000000000000000D /* SwiftUIFixture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIFixture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0000000000000000000000E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A0000000000000000000000F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A00000000000000000000010 /* FixtureUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureUI.swift; sourceTree = "<group>"; };
+		A00000000000000000000011 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A00000000000000000000012 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A00000000000000000000013 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		A00000000000000000000014 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		A00000000000000000000015 /* LongListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongListViewController.swift; sourceTree = "<group>"; };
+		A00000000000000000000016 /* UIKitFixture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitFixture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D00000000000000000000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D00000000000000000000005 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -52,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				C00000000000000000000002 /* SwiftUIFixture */,
+				C00000000000000000000006 /* UIKitFixture */,
 				C00000000000000000000003 /* Shared */,
 				C00000000000000000000004 /* PilotFixtureSupport */,
 				C00000000000000000000005 /* Products */,
@@ -95,8 +125,24 @@
 			isa = PBXGroup;
 			children = (
 				A0000000000000000000000D /* SwiftUIFixture.app */,
+				A00000000000000000000016 /* UIKitFixture.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C00000000000000000000006 /* UIKitFixture */ = {
+			isa = PBXGroup;
+			children = (
+				A0000000000000000000000E /* AppDelegate.swift */,
+				A0000000000000000000000F /* SceneDelegate.swift */,
+				A00000000000000000000010 /* FixtureUI.swift */,
+				A00000000000000000000011 /* HomeViewController.swift */,
+				A00000000000000000000012 /* DetailViewController.swift */,
+				A00000000000000000000013 /* FormViewController.swift */,
+				A00000000000000000000014 /* ModalViewController.swift */,
+				A00000000000000000000015 /* LongListViewController.swift */,
+			);
+			path = UIKitFixture;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,6 +167,25 @@
 			productReference = A0000000000000000000000D /* SwiftUIFixture.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E00000000000000000000002 /* UIKitFixture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = I00000000000000000000003 /* Build configuration list for PBXNativeTarget "UIKitFixture" */;
+			buildPhases = (
+				D00000000000000000000004 /* Sources */,
+				D00000000000000000000005 /* Frameworks */,
+				D00000000000000000000006 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UIKitFixture;
+			packageProductDependencies = (
+			);
+			productName = UIKitFixture;
+			productReference = A00000000000000000000016 /* UIKitFixture.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -132,6 +197,9 @@
 				LastUpgradeCheck = 2650;
 				TargetAttributes = {
 					E00000000000000000000001 = {
+						CreatedOnToolsVersion = 26.5;
+					};
+					E00000000000000000000002 = {
 						CreatedOnToolsVersion = 26.5;
 					};
 				};
@@ -152,6 +220,7 @@
 			projectRoot = "";
 			targets = (
 				E00000000000000000000001 /* SwiftUIFixture */,
+				E00000000000000000000002 /* UIKitFixture */,
 			);
 		};
 /* End PBXProject section */
@@ -162,6 +231,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B00000000000000000000008 /* Localizable.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D00000000000000000000006 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B00000000000000000000015 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +260,25 @@
 				B0000000000000000000000A /* FixtureLaunchConfiguration.swift in Sources */,
 				B0000000000000000000000B /* FixtureContent.swift in Sources */,
 				B0000000000000000000000C /* FixtureAccessibilityID.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D00000000000000000000004 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0000000000000000000000D /* AppDelegate.swift in Sources */,
+				B0000000000000000000000E /* SceneDelegate.swift in Sources */,
+				B0000000000000000000000F /* FixtureUI.swift in Sources */,
+				B00000000000000000000010 /* HomeViewController.swift in Sources */,
+				B00000000000000000000011 /* DetailViewController.swift in Sources */,
+				B00000000000000000000012 /* FormViewController.swift in Sources */,
+				B00000000000000000000013 /* ModalViewController.swift in Sources */,
+				B00000000000000000000014 /* LongListViewController.swift in Sources */,
+				B00000000000000000000016 /* FixtureScreen.swift in Sources */,
+				B00000000000000000000017 /* FixtureLaunchConfiguration.swift in Sources */,
+				B00000000000000000000018 /* FixtureContent.swift in Sources */,
+				B00000000000000000000019 /* FixtureAccessibilityID.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +344,64 @@
 			};
 			name = Release;
 		};
+		G00000000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "UIKit Fixture";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.thliu21.uistatecompiler.uikitfixture;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		G00000000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "UIKit Fixture";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.thliu21.uistatecompiler.uikitfixture;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		H00000000000000000000001 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -300,6 +454,15 @@
 			buildConfigurations = (
 				G00000000000000000000001 /* Debug */,
 				G00000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		I00000000000000000000003 /* Build configuration list for PBXNativeTarget "UIKitFixture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				G00000000000000000000003 /* Debug */,
+				G00000000000000000000004 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
