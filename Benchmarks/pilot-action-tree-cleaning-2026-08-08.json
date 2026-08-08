@@ -1,0 +1,139 @@
+{
+  "schema_version": "0.1.0",
+  "status": "diagnostic_two_state_trial",
+  "generated_at": "2026-08-08T23:10:43Z",
+  "compiler_revision": "84811fbcd22838b251c8d28047eab7b029242b1c",
+  "fixture_revision": "6bece16d4afaa099ba3cf068472ffee07ebadc50",
+  "toolchain": {
+    "xcode": "26.5 (17F42)",
+    "swift": "6.3.2",
+    "host": "Apple M1 Pro"
+  },
+  "scope": {
+    "screens": 2,
+    "input_format": "xcuitest-json",
+    "raw_is_default": true,
+    "timings_are_diagnostic_only": true,
+    "token_counts_available": false,
+    "human_grounding_review_complete": false
+  },
+  "aggregate": {
+    "raw_canonical_json_bytes": 46291,
+    "conservative_canonical_json_bytes": 33698,
+    "canonical_json_reduction_percent": 27.20,
+    "raw_compact_bytes": 19137,
+    "conservative_compact_bytes": 14053,
+    "compact_reduction_percent": 26.57,
+    "all_action_signatures_equal": true,
+    "all_native_identifiers_equal": true,
+    "all_semantic_signature_sets_equal": true
+  },
+  "records": [
+    {
+      "screen_id": "paired-swiftui-home",
+      "source_tree_sha256": "e00f3b134e5686d4f1e05f2f9a25a42353d61c044e067a1f45c1e9003692ca9b",
+      "raw": {
+        "canonical_json": {
+          "bytes": 27056,
+          "element_count": 43,
+          "action_count": 4,
+          "native_identifier_count": 10,
+          "semantic_signature_count": 23
+        },
+        "compact_bytes": 11194,
+        "timings_ms": {
+          "image_decode_ms": 0.00016667763702571392,
+          "xml_parse_ms": 0,
+          "xcuitest_json_parse_ms": 1.5004583401605487,
+          "tree_cleaning_ms": 0,
+          "serialization_ms": 6.759708339814097,
+          "total_ms": 8.371458359761164
+        }
+      },
+      "conservative": {
+        "canonical_json": {
+          "bytes": 20774,
+          "element_count": 31,
+          "action_count": 4,
+          "native_identifier_count": 10,
+          "semantic_signature_count": 23
+        },
+        "compact_bytes": 8665,
+        "timings_ms": {
+          "image_decode_ms": 0.00012500095181167126,
+          "xml_parse_ms": 0,
+          "xcuitest_json_parse_ms": 0.8936249942053109,
+          "tree_cleaning_ms": 0.23624999448657036,
+          "serialization_ms": 4.884375026449561,
+          "total_ms": 6.071458337828517
+        },
+        "tree_cleaning": {
+          "mode": "conservative",
+          "input_node_count": 43,
+          "output_node_count": 31,
+          "collapsed_wrapper_count": 10,
+          "removed_duplicate_subtree_count": 1,
+          "removed_duplicate_node_count": 2
+        }
+      },
+      "retention": {
+        "action_signatures_equal": true,
+        "native_identifiers_equal": true,
+        "semantic_signature_sets_equal": true
+      }
+    },
+    {
+      "screen_id": "paired-swiftui-detail-after-home-action",
+      "source_tree_sha256": "bc4ff5d1a2f4abc68a0171c84ae854f7f4754b3b522f81527dd7fc8435339b2d",
+      "raw": {
+        "canonical_json": {
+          "bytes": 19235,
+          "element_count": 32,
+          "action_count": 2,
+          "native_identifier_count": 4,
+          "semantic_signature_count": 12
+        },
+        "compact_bytes": 7943,
+        "timings_ms": {
+          "image_decode_ms": 0.00012500095181167126,
+          "xml_parse_ms": 0,
+          "xcuitest_json_parse_ms": 1.0222500131931156,
+          "tree_cleaning_ms": 0,
+          "serialization_ms": 4.879583313595504,
+          "total_ms": 5.9654583455994725
+        }
+      },
+      "conservative": {
+        "canonical_json": {
+          "bytes": 12924,
+          "element_count": 20,
+          "action_count": 2,
+          "native_identifier_count": 4,
+          "semantic_signature_count": 12
+        },
+        "compact_bytes": 5388,
+        "timings_ms": {
+          "image_decode_ms": 0.00012500095181167126,
+          "xml_parse_ms": 0,
+          "xcuitest_json_parse_ms": 0.7232500065583736,
+          "tree_cleaning_ms": 0.19225000869482756,
+          "serialization_ms": 3.281416662503034,
+          "total_ms": 4.248749988619238
+        },
+        "tree_cleaning": {
+          "mode": "conservative",
+          "input_node_count": 32,
+          "output_node_count": 20,
+          "collapsed_wrapper_count": 10,
+          "removed_duplicate_subtree_count": 1,
+          "removed_duplicate_node_count": 2
+        }
+      },
+      "retention": {
+        "action_signatures_equal": true,
+        "native_identifiers_equal": true,
+        "semantic_signature_sets_equal": true
+      }
+    }
+  ]
+}

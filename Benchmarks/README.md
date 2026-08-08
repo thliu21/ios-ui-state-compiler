@@ -20,3 +20,9 @@ in `Docs/evaluation-contract.md`.
 Raw screenshots and hierarchy files remain outside Git unless the license ledger
 permits redistribution. Aggregate summaries may be committed only after their
 source hashes and privacy boundary are reviewed.
+
+The first reviewed aggregate is
+`pilot-action-tree-cleaning-2026-08-08.json`. It contains two self-authored
+SwiftUI fixture states, exact source-tree hashes, representation sizes, cleaning
+counts, and single-run diagnostic timings. It contains no raw screenshot or
+hierarchy content.

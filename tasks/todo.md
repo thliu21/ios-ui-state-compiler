@@ -183,6 +183,9 @@ trial the P2 capture and annotation contract.
   XCUITest JSON format into 43 canonical elements and the recorded action center.
 - [x] Raw remains the default; conservative cleaning reports node removals and
   preserves the recorded home action and detail primary-action centers.
+- [x] A public two-state aggregate records exact source hashes, JSON/compact
+  bytes, raw diagnostic timings, and three passing retention gates without raw
+  screenshots or hierarchies.
 
 **Dependencies:** Task 7
 **Files likely touched:** fixture specification, shared support module and tests,

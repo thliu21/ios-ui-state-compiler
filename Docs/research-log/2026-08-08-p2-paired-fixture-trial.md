@@ -117,6 +117,15 @@ two-node subtree. The home action target stayed at
 `(83.5, 358.5)`. These two states demonstrate deterministic behavior; they do
 not establish recall, token, latency, or task-success improvement.
 
+The committed two-state measurement reports canonical JSON decreasing from
+46,291 to 33,698 bytes (27.20%) and compact UTF-8 decreasing from 19,137 to
+14,053 bytes (26.57%). Action signatures, native-identifier sets, and unique
+semantic-signature sets were equal in both paired comparisons. Exact timings
+are retained as raw diagnostic measurements, but two warm invocations are not a
+latency benchmark. Token counts remain unavailable until a tokenizer is pinned,
+and set equality does not replace multiplicity, relation, visual, or human
+grounding review.
+
 ## Public artifact decision
 
 The application code and fictional content are project-authored and covered by
@@ -188,8 +197,8 @@ Primary materials reviewed:
   not visual truth.
 - Cleaning has only two synthetic unit fixtures and two real SwiftUI states.
   UIKit coverage, broader semantic-recall checks, compact readability review,
-  and representation byte/token measurements remain open. Raw output is
-  retained for every paired comparison.
+  and token measurements remain open. Raw output is retained for every paired
+  comparison.
 - Owner review of native-tree evidence, element annotations, and compact states
   remains pending.
 

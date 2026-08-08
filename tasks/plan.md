@@ -141,7 +141,7 @@ No training task starts unless all four conditions are satisfied.
 
 - Extend structured hierarchy capture to the remaining SwiftUI states and the
   UIKit fixture after the adapter contract is tested.
-- Measure raw versus conservative JSON/compact bytes and semantic-node retention
-  on the two action states before expanding the cleaner policy.
+- Add multiplicity- and relation-aware retention checks before expanding the
+  cleaner policy beyond exact wrappers and duplicate unknown subtrees.
 - Complete owner review of representative trees and compact states before
   accepting the fixture trial or admitting third-party apps.
