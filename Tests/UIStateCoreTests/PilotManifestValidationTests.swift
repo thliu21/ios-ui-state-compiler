@@ -95,8 +95,9 @@ struct PilotManifestValidationTests {
 
   @Test("Committed paired fixture draft and annotations decode and validate")
   func committedPairedFixtureDraftPasses() throws {
+    let manifestData = try repositoryFixture("Fixtures/PilotTrial/manifest.json")
     let manifest = try PilotManifestCodec.decodeManifest(
-      try repositoryFixture("Fixtures/PilotTrial/manifest.json")
+      manifestData
     )
     let ledger = try PilotManifestCodec.decodeLicenseLedger(
       try repositoryFixture("Fixtures/PilotTrial/license-ledger.json")
@@ -104,9 +105,14 @@ struct PilotManifestValidationTests {
 
     #expect(PilotManifestValidator.validate(manifest: manifest, licenseLedger: ledger).isEmpty)
 
+    let object = try #require(JSONSerialization.jsonObject(with: manifestData) as? [String: Any])
+    #expect((object["records"] as? [[String: Any]])?.count == 11)
+    #expect((object["action_pairs"] as? [[String: Any]])?.count == 1)
+
     for annotation in [
       "paired-swiftui-home",
       "paired-swiftui-detail",
+      "paired-swiftui-detail-after-home-action",
       "paired-swiftui-form",
       "paired-swiftui-modal",
       "paired-swiftui-long-list",

@@ -167,7 +167,8 @@ trial the P2 capture and annotation contract.
 - [x] Both targets build and run on the explicitly selected simulator UDID.
 - [x] English, Simplified Chinese, light, and dark records are represented.
 - [x] Owner review confirms screenshot semantic pairing and appearance coverage.
-- [ ] Ten records and one verified action pair pass manifest and ledger checks.
+- [x] Ten paired records plus one action after-state and one verified action pair
+  pass manifest and ledger checks.
 - [ ] Human review confirms screenshot, tree, and compact-state grounding.
 
 **Verification:**
@@ -176,6 +177,8 @@ trial the P2 capture and annotation contract.
 - [x] Full Swift build, tests, and strict format lint pass.
 - [x] Each Xcode target builds for the selected simulator destination.
 - [x] Capture verification operates only the selected simulator UDID.
+- [x] One exact-device SwiftUI XCUITest captures structured before/after trees
+  and screenshots, executes a center-coordinate tap, and verifies the after root.
 
 **Dependencies:** Task 7
 **Files likely touched:** fixture specification, shared support module and tests,

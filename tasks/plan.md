@@ -69,7 +69,7 @@ P0 contracts
 
 - [x] Define annotation guide and manifest schema.
 - [x] Implement manifest and license-ledger semantic validation.
-- [ ] Trial five matched synthetic states in UIKit and SwiftUI.
+- [x] Trial five matched synthetic states in UIKit and SwiftUI.
 - [ ] Review the ten paired fixture records and one verified action pair.
 - [ ] Build a 50-screen UIKit/SwiftUI pilot.
 - [ ] Freeze app-disjoint pilot splits and license ledger.
@@ -139,7 +139,9 @@ No training task starts unless all four conditions are satisfied.
 
 ## Current open work
 
-- Select a reliable native-hierarchy capture interface for the paired fixtures.
-- Execute and verify one coordinate-based action-before/action-after pair.
+- Normalize structured XCUITest dictionaries into the compiler's native-tree
+  model without treating accessibility evidence as visual truth.
+- Extend structured hierarchy capture to the remaining SwiftUI states and the
+  UIKit fixture after the adapter contract is tested.
 - Complete owner review of representative trees and compact states before
   accepting the fixture trial or admitting third-party apps.

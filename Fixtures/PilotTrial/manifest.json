@@ -13,18 +13,23 @@
       "app_family_id": "paired-native-fixture-family",
       "app_name": "Paired SwiftUI Fixture",
       "repository_url": "https://github.com/thliu21/ios-ui-state-compiler",
-      "pinned_revision": "54e545e5e4bed74302472fa6639e5fc411e18f07",
+      "pinned_revision": "6bece16d4afaa099ba3cf068472ffee07ebadc50",
       "framework": "swiftui",
       "bundle_identifier": "org.thliu21.uistatecompiler.swiftuifixture",
       "screenshot": {
-        "path": "pilot/paired-fixture-20260808/swiftui/home.png",
-        "sha256": "b2358e4501414acbdd814f5bd5678d9b16737f501794a2ebb881d13f1072cedb",
-        "captured_at": "2026-08-08T22:12:00Z",
-        "source": "synthetic_fixture"
+        "path": "pilot/paired-fixture-action-20260808-6bece16/before-home-screenshot.png",
+        "sha256": "43e324a403faebc275d7d8e78d048d734c51a7441fb6c4a8eee442591f56e264",
+        "captured_at": "2026-08-08T22:41:55.790Z",
+        "source": "xcuitest_attachment"
       },
-      "tree": null,
+      "tree": {
+        "path": "pilot/paired-fixture-action-20260808-6bece16/before-home-hierarchy.json",
+        "sha256": "e00f3b134e5686d4f1e05f2f9a25a42353d61c044e067a1f45c1e9003692ca9b",
+        "captured_at": "2026-08-08T22:41:55.669Z",
+        "source": "xcuitest_snapshot"
+      },
       "annotation_path": "Fixtures/PilotTrial/Annotations/paired-swiftui-home.json",
-      "annotation_sha256": "08e83c5d742ff45911784eefdc02b563e90caa50171f41f570fa3972a0a5dcc9",
+      "annotation_sha256": "49b551033edde2b43073d77e87f2e30b7f0251abba661da194da6c55715f587a",
       "device_type": "iPhone 17 Pro",
       "runtime": "iOS 26.5",
       "viewport_size_points": { "width": 402, "height": 874 },
@@ -32,16 +37,19 @@
       "locale": "en",
       "appearance": "light",
       "dynamic_type": "large",
-      "initial_state_recipe": "Launch with --fixture-screen home --fixture-appearance light and -AppleLanguages (en).",
+      "initial_state_recipe": "Launch with --fixture-screen home --fixture-appearance light, -AppleLanguages (en), and -AppleLocale en.",
       "split": "development",
       "near_duplicate_group": "paired-home",
-      "license_entry_ids": ["paired-fixture-swiftui-screenshots"],
+      "license_entry_ids": [
+        "paired-fixture-swiftui-action-screenshots",
+        "paired-fixture-swiftui-action-trees"
+      ],
       "redistribution_status": "withheld",
       "review": {
-        "reviewer": "owner-screenshot-review",
-        "reviewed_at": "2026-08-08T22:32:32Z",
-        "state": "single_review",
-        "notes": "Owner confirmed semantic equivalence and matching requested appearance; framework-specific style and interaction differences remain visible, with SwiftUI appearing more modern. Native-tree, element-annotation, and compact-state review remain pending."
+        "reviewer": "xcuitest-action-harness",
+        "reviewed_at": "2026-08-08T22:41:58Z",
+        "state": "execution_verified",
+        "notes": "XCUITest verified the home root and action target. Human review of this exact recapture, native tree, element annotation, and compact state remains pending."
       }
     },
     {
@@ -376,7 +384,67 @@
         "state": "single_review",
         "notes": "Owner confirmed semantic equivalence and matching requested appearance; framework-specific style and interaction differences remain visible, with SwiftUI appearing more modern. Native-tree, element-annotation, and compact-state review remain pending."
       }
+    },
+    {
+      "record_id": "paired-swiftui-detail-after-home-action",
+      "app_id": "paired-swiftui-fixture",
+      "app_family_id": "paired-native-fixture-family",
+      "app_name": "Paired SwiftUI Fixture",
+      "repository_url": "https://github.com/thliu21/ios-ui-state-compiler",
+      "pinned_revision": "6bece16d4afaa099ba3cf068472ffee07ebadc50",
+      "framework": "swiftui",
+      "bundle_identifier": "org.thliu21.uistatecompiler.swiftuifixture",
+      "screenshot": {
+        "path": "pilot/paired-fixture-action-20260808-6bece16/after-detail-screenshot.png",
+        "sha256": "a34e08a42d1e119747bc9ea31bd403b638c4bbac3b37426cf71dca0dbbb1216f",
+        "captured_at": "2026-08-08T22:41:58.511Z",
+        "source": "xcuitest_attachment"
+      },
+      "tree": {
+        "path": "pilot/paired-fixture-action-20260808-6bece16/after-detail-hierarchy.json",
+        "sha256": "bc4ff5d1a2f4abc68a0171c84ae854f7f4754b3b522f81527dd7fc8435339b2d",
+        "captured_at": "2026-08-08T22:41:58.400Z",
+        "source": "xcuitest_snapshot"
+      },
+      "annotation_path": "Fixtures/PilotTrial/Annotations/paired-swiftui-detail-after-home-action.json",
+      "annotation_sha256": "ec6cb59aa4500648885bb25456a24f2009467c67912c2848a16a39a01cd37268",
+      "device_type": "iPhone 17 Pro",
+      "runtime": "iOS 26.5",
+      "viewport_size_points": { "width": 402, "height": 874 },
+      "orientation": "portrait",
+      "locale": "en",
+      "appearance": "light",
+      "dynamic_type": "large",
+      "initial_state_recipe": "Launch with --fixture-screen home --fixture-appearance light, -AppleLanguages (en), and -AppleLocale en.",
+      "split": "development",
+      "near_duplicate_group": "paired-detail-action-en",
+      "license_entry_ids": [
+        "paired-fixture-swiftui-action-screenshots",
+        "paired-fixture-swiftui-action-trees"
+      ],
+      "redistribution_status": "withheld",
+      "review": {
+        "reviewer": "xcuitest-action-harness",
+        "reviewed_at": "2026-08-08T22:41:58Z",
+        "state": "execution_verified",
+        "notes": "XCUITest verified fixture.detail.root after the center-coordinate tap. Human native-tree, element-annotation, and compact-state review remain pending."
+      }
     }
   ],
-  "action_pairs": []
+  "action_pairs": [
+    {
+      "pair_id": "swiftui-home-to-detail",
+      "before_record_id": "paired-swiftui-home",
+      "after_record_id": "paired-swiftui-detail-after-home-action",
+      "action_type": "tap",
+      "target": {
+        "x": 201,
+        "y": 408.83333333333337,
+        "coordinate_space": "screen_points"
+      },
+      "outcome": "fixture.detail.root appeared after tapping fixture.home.open-detail at its recorded center.",
+      "reviewer": "xcuitest-action-harness",
+      "verified_at": "2026-08-08T22:41:58Z"
+    }
+  ]
 }
