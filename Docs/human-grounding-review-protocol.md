@@ -46,7 +46,8 @@ each criterion; do not convert uncertainty into a pass.
 4. **Semantic hierarchy:** the nearest meaningful parent-child grouping is
    consistent with the screenshot. Empty framework wrappers may differ.
 5. **Reading order:** compact output is usable in the screenshot's apparent
-   reading order. The automated parent-child gate does not check this.
+   reading order. Automated normalized sibling order does not establish visual
+   reading order.
 6. **Compact readability:** the compact form is unambiguous enough to identify
    the relevant content and action without consulting canonical JSON.
 7. **Raw-to-clean preservation:** conservative output introduces no material

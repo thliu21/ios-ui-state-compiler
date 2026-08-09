@@ -1,8 +1,8 @@
 {
   "schema_version": "0.1.0",
   "status": "diagnostic_six_capture_matrix",
-  "generated_at": "2026-08-08T23:49:13Z",
-  "compiler_revision": "67a4987033887cbd97b238da388d4cdefb127843",
+  "generated_at": "2026-08-09T00:00:07Z",
+  "compiler_revision": "a82d4f12e247115c28121b8c687f1298dc20570e",
   "fixture_revision": "fdf29a1c831c45250825718ad16d25500ece4eeb",
   "toolchain": {
     "xcode": "26.5 (17F42)",
@@ -43,7 +43,8 @@
     "all_action_signature_multisets_equal": true,
     "all_native_identifier_multisets_equal": true,
     "all_semantic_signature_multisets_equal": true,
-    "all_semantic_parent_child_relation_multisets_equal": true
+    "all_semantic_parent_child_relation_multisets_equal": true,
+    "all_semantic_sibling_order_multisets_equal": true
   },
   "records": [
     {
@@ -56,16 +57,18 @@
           "native_identifier_occurrence_count": 4,
           "semantic_element_count": 17,
           "semantic_parent_child_relation_count": 17,
+          "semantic_sibling_order_sequence_count": 18,
           "semantic_signature_count": 15,
-          "unique_semantic_parent_child_relation_count": 15
+          "unique_semantic_parent_child_relation_count": 15,
+          "unique_semantic_sibling_order_sequence_count": 16
         },
         "compact_bytes": 7114,
         "timings_ms": {
-          "image_decode_ms": 0.00020832521840929985,
-          "serialization_ms": 4.327416681917384,
-          "total_ms": 5.324375000782311,
-          "tree_cleaning_ms": 0.2165833138860762,
-          "xcuitest_json_parse_ms": 0.7255833188537508,
+          "image_decode_ms": 0.0001666485331952572,
+          "serialization_ms": 4.16287497500889,
+          "total_ms": 5.151291668880731,
+          "tree_cleaning_ms": 0.21150000975467265,
+          "xcuitest_json_parse_ms": 0.7232500065583736,
           "xml_parse_ms": 0
         },
         "tree_cleaning": {
@@ -86,16 +89,18 @@
           "native_identifier_occurrence_count": 4,
           "semantic_element_count": 17,
           "semantic_parent_child_relation_count": 17,
+          "semantic_sibling_order_sequence_count": 18,
           "semantic_signature_count": 15,
-          "unique_semantic_parent_child_relation_count": 15
+          "unique_semantic_parent_child_relation_count": 15,
+          "unique_semantic_sibling_order_sequence_count": 16
         },
         "compact_bytes": 8254,
         "timings_ms": {
-          "image_decode_ms": 0.00029164948500692844,
-          "serialization_ms": 5.03000000026077,
-          "total_ms": 5.849916691659018,
+          "image_decode_ms": 0.0002500019036233425,
+          "serialization_ms": 5.157333333045244,
+          "total_ms": 5.9636250080075115,
           "tree_cleaning_ms": 0,
-          "xcuitest_json_parse_ms": 0.7524166721850634,
+          "xcuitest_json_parse_ms": 0.739458337193355,
           "xml_parse_ms": 0
         }
       },
@@ -105,6 +110,7 @@
         "native_identifier_multisets_equal": true,
         "native_identifiers_equal": true,
         "semantic_parent_child_relation_multisets_equal": true,
+        "semantic_sibling_order_multisets_equal": true,
         "semantic_signature_multisets_equal": true,
         "semantic_signature_sets_equal": true
       },
@@ -122,16 +128,18 @@
           "native_identifier_occurrence_count": 7,
           "semantic_element_count": 20,
           "semantic_parent_child_relation_count": 20,
+          "semantic_sibling_order_sequence_count": 21,
           "semantic_signature_count": 18,
-          "unique_semantic_parent_child_relation_count": 18
+          "unique_semantic_parent_child_relation_count": 18,
+          "unique_semantic_sibling_order_sequence_count": 19
         },
         "compact_bytes": 7287,
         "timings_ms": {
           "image_decode_ms": 0.0002500019036233425,
-          "serialization_ms": 4.837374988710508,
-          "total_ms": 5.946000019321218,
-          "tree_cleaning_ms": 0.22558335331268609,
-          "xcuitest_json_parse_ms": 0.8217916474677622,
+          "serialization_ms": 4.55600002896972,
+          "total_ms": 5.598333314992487,
+          "tree_cleaning_ms": 0.21395832300186157,
+          "xcuitest_json_parse_ms": 0.7695833337493241,
           "xml_parse_ms": 0
         },
         "tree_cleaning": {
@@ -152,16 +160,18 @@
           "native_identifier_occurrence_count": 7,
           "semantic_element_count": 20,
           "semantic_parent_child_relation_count": 20,
+          "semantic_sibling_order_sequence_count": 21,
           "semantic_signature_count": 18,
-          "unique_semantic_parent_child_relation_count": 18
+          "unique_semantic_parent_child_relation_count": 18,
+          "unique_semantic_sibling_order_sequence_count": 19
         },
         "compact_bytes": 8427,
         "timings_ms": {
-          "image_decode_ms": 0.00020832521840929985,
-          "serialization_ms": 5.461749999085441,
-          "total_ms": 6.398708326742053,
+          "image_decode_ms": 0.0002500019036233425,
+          "serialization_ms": 5.50066665164195,
+          "total_ms": 6.39770831912756,
           "tree_cleaning_ms": 0,
-          "xcuitest_json_parse_ms": 0.8613749814685434,
+          "xcuitest_json_parse_ms": 0.8230416860897094,
           "xml_parse_ms": 0
         }
       },
@@ -171,6 +181,7 @@
         "native_identifier_multisets_equal": true,
         "native_identifiers_equal": true,
         "semantic_parent_child_relation_multisets_equal": true,
+        "semantic_sibling_order_multisets_equal": true,
         "semantic_signature_multisets_equal": true,
         "semantic_signature_sets_equal": true
       },
@@ -188,16 +199,18 @@
           "native_identifier_occurrence_count": 7,
           "semantic_element_count": 24,
           "semantic_parent_child_relation_count": 24,
+          "semantic_sibling_order_sequence_count": 25,
           "semantic_signature_count": 22,
-          "unique_semantic_parent_child_relation_count": 22
+          "unique_semantic_parent_child_relation_count": 22,
+          "unique_semantic_sibling_order_sequence_count": 23
         },
         "compact_bytes": 9389,
         "timings_ms": {
-          "image_decode_ms": 0.00020832521840929985,
-          "serialization_ms": 5.475624988321215,
-          "total_ms": 6.70237498707138,
-          "tree_cleaning_ms": 0.2629999944474548,
-          "xcuitest_json_parse_ms": 0.9017916745506227,
+          "image_decode_ms": 0.0002500019036233425,
+          "serialization_ms": 5.288624990498647,
+          "total_ms": 6.452416651882231,
+          "tree_cleaning_ms": 0.25745833409018815,
+          "xcuitest_json_parse_ms": 0.8482499979436398,
           "xml_parse_ms": 0
         },
         "tree_cleaning": {
@@ -218,16 +231,18 @@
           "native_identifier_occurrence_count": 7,
           "semantic_element_count": 24,
           "semantic_parent_child_relation_count": 24,
+          "semantic_sibling_order_sequence_count": 25,
           "semantic_signature_count": 22,
-          "unique_semantic_parent_child_relation_count": 22
+          "unique_semantic_parent_child_relation_count": 22,
+          "unique_semantic_sibling_order_sequence_count": 23
         },
         "compact_bytes": 10529,
         "timings_ms": {
-          "image_decode_ms": 0.0002500019036233425,
-          "serialization_ms": 6.1590833065565675,
-          "total_ms": 7.123249990399927,
+          "image_decode_ms": 0.00020832521840929985,
+          "serialization_ms": 6.093916657846421,
+          "total_ms": 7.05004166229628,
           "tree_cleaning_ms": 0,
-          "xcuitest_json_parse_ms": 0.8928333118092269,
+          "xcuitest_json_parse_ms": 0.8854583138599992,
           "xml_parse_ms": 0
         }
       },
@@ -237,6 +252,7 @@
         "native_identifier_multisets_equal": true,
         "native_identifiers_equal": true,
         "semantic_parent_child_relation_multisets_equal": true,
+        "semantic_sibling_order_multisets_equal": true,
         "semantic_signature_multisets_equal": true,
         "semantic_signature_sets_equal": true
       },
@@ -254,16 +270,18 @@
           "native_identifier_occurrence_count": 4,
           "semantic_element_count": 17,
           "semantic_parent_child_relation_count": 17,
+          "semantic_sibling_order_sequence_count": 18,
           "semantic_signature_count": 15,
-          "unique_semantic_parent_child_relation_count": 15
+          "unique_semantic_parent_child_relation_count": 15,
+          "unique_semantic_sibling_order_sequence_count": 16
         },
         "compact_bytes": 7150,
         "timings_ms": {
-          "image_decode_ms": 0.0002500019036233425,
-          "serialization_ms": 4.399333352921531,
-          "total_ms": 5.467249982757494,
-          "tree_cleaning_ms": 0.23283332120627165,
-          "xcuitest_json_parse_ms": 0.7752916717436165,
+          "image_decode_ms": 0.00020835432223975658,
+          "serialization_ms": 4.1755416605155915,
+          "total_ms": 5.174999998416752,
+          "tree_cleaning_ms": 0.21700002253055573,
+          "xcuitest_json_parse_ms": 0.7257499964907765,
           "xml_parse_ms": 0
         },
         "tree_cleaning": {
@@ -284,16 +302,18 @@
           "native_identifier_occurrence_count": 4,
           "semantic_element_count": 17,
           "semantic_parent_child_relation_count": 17,
+          "semantic_sibling_order_sequence_count": 18,
           "semantic_signature_count": 15,
-          "unique_semantic_parent_child_relation_count": 15
+          "unique_semantic_parent_child_relation_count": 15,
+          "unique_semantic_sibling_order_sequence_count": 16
         },
         "compact_bytes": 8290,
         "timings_ms": {
-          "image_decode_ms": 0.0002500019036233425,
-          "serialization_ms": 4.942875006236136,
-          "total_ms": 5.762416665675119,
+          "image_decode_ms": 0.0002916785888373852,
+          "serialization_ms": 4.954125004587695,
+          "total_ms": 5.848875007359311,
           "tree_cleaning_ms": 0,
-          "xcuitest_json_parse_ms": 0.751791667426005,
+          "xcuitest_json_parse_ms": 0.825958326458931,
           "xml_parse_ms": 0
         }
       },
@@ -303,6 +323,7 @@
         "native_identifier_multisets_equal": true,
         "native_identifiers_equal": true,
         "semantic_parent_child_relation_multisets_equal": true,
+        "semantic_sibling_order_multisets_equal": true,
         "semantic_signature_multisets_equal": true,
         "semantic_signature_sets_equal": true
       },
@@ -320,16 +341,18 @@
           "native_identifier_occurrence_count": 15,
           "semantic_element_count": 43,
           "semantic_parent_child_relation_count": 43,
+          "semantic_sibling_order_sequence_count": 44,
           "semantic_signature_count": 43,
-          "unique_semantic_parent_child_relation_count": 43
+          "unique_semantic_parent_child_relation_count": 43,
+          "unique_semantic_sibling_order_sequence_count": 44
         },
         "compact_bytes": 17825,
         "timings_ms": {
-          "image_decode_ms": 0.00020832521840929985,
-          "serialization_ms": 10.615083330776542,
-          "total_ms": 12.800666649127379,
-          "tree_cleaning_ms": 0.4096666525583714,
-          "xcuitest_json_parse_ms": 1.6859166789799929,
+          "image_decode_ms": 0.0003333261702209711,
+          "serialization_ms": 10.679666680516675,
+          "total_ms": 12.811916647478938,
+          "tree_cleaning_ms": 0.4252500075381249,
+          "xcuitest_json_parse_ms": 1.6155416669789702,
           "xml_parse_ms": 0
         },
         "tree_cleaning": {
@@ -350,16 +373,18 @@
           "native_identifier_occurrence_count": 15,
           "semantic_element_count": 43,
           "semantic_parent_child_relation_count": 43,
+          "semantic_sibling_order_sequence_count": 44,
           "semantic_signature_count": 43,
-          "unique_semantic_parent_child_relation_count": 43
+          "unique_semantic_parent_child_relation_count": 43,
+          "unique_semantic_sibling_order_sequence_count": 44
         },
         "compact_bytes": 21647,
         "timings_ms": {
           "image_decode_ms": 0.0002500019036233425,
-          "serialization_ms": 12.581541639519855,
-          "total_ms": 14.261291682487354,
+          "serialization_ms": 13.498708343831822,
+          "total_ms": 15.236708335578442,
           "tree_cleaning_ms": 0,
-          "xcuitest_json_parse_ms": 1.5710000006947666,
+          "xcuitest_json_parse_ms": 1.6260416887234896,
           "xml_parse_ms": 0
         }
       },
@@ -369,6 +394,7 @@
         "native_identifier_multisets_equal": true,
         "native_identifiers_equal": true,
         "semantic_parent_child_relation_multisets_equal": true,
+        "semantic_sibling_order_multisets_equal": true,
         "semantic_signature_multisets_equal": true,
         "semantic_signature_sets_equal": true
       },
@@ -386,16 +412,18 @@
           "native_identifier_occurrence_count": 3,
           "semantic_element_count": 12,
           "semantic_parent_child_relation_count": 12,
+          "semantic_sibling_order_sequence_count": 13,
           "semantic_signature_count": 10,
-          "unique_semantic_parent_child_relation_count": 10
+          "unique_semantic_parent_child_relation_count": 10,
+          "unique_semantic_sibling_order_sequence_count": 11
         },
         "compact_bytes": 5194,
         "timings_ms": {
-          "image_decode_ms": 0.00020832521840929985,
-          "serialization_ms": 3.362083312822506,
-          "total_ms": 4.238083347445354,
-          "tree_cleaning_ms": 0.18808332970365882,
-          "xcuitest_json_parse_ms": 0.6369166658259928,
+          "image_decode_ms": 0.0002500019036233425,
+          "serialization_ms": 3.3844166609924287,
+          "total_ms": 4.320166684919968,
+          "tree_cleaning_ms": 0.21137500880286098,
+          "xcuitest_json_parse_ms": 0.6725833518430591,
           "xml_parse_ms": 0
         },
         "tree_cleaning": {
@@ -416,16 +444,18 @@
           "native_identifier_occurrence_count": 3,
           "semantic_element_count": 12,
           "semantic_parent_child_relation_count": 12,
+          "semantic_sibling_order_sequence_count": 13,
           "semantic_signature_count": 10,
-          "unique_semantic_parent_child_relation_count": 10
+          "unique_semantic_parent_child_relation_count": 10,
+          "unique_semantic_sibling_order_sequence_count": 11
         },
         "compact_bytes": 6586,
         "timings_ms": {
-          "image_decode_ms": 0.0002500019036233425,
-          "serialization_ms": 4.199124989099801,
-          "total_ms": 4.939083330100402,
+          "image_decode_ms": 0.00020835432223975658,
+          "serialization_ms": 4.26570832496509,
+          "total_ms": 5.018583324272186,
           "tree_cleaning_ms": 0,
-          "xcuitest_json_parse_ms": 0.6770000036340207,
+          "xcuitest_json_parse_ms": 0.6895833357702941,
           "xml_parse_ms": 0
         }
       },
@@ -435,6 +465,7 @@
         "native_identifier_multisets_equal": true,
         "native_identifiers_equal": true,
         "semantic_parent_child_relation_multisets_equal": true,
+        "semantic_sibling_order_multisets_equal": true,
         "semantic_signature_multisets_equal": true,
         "semantic_signature_sets_equal": true
       },

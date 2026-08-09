@@ -1,8 +1,8 @@
 {
   "schema_version": "0.1.0",
   "status": "diagnostic_four_state_matrix",
-  "generated_at": "2026-08-08T23:49:13Z",
-  "compiler_revision": "67a4987033887cbd97b238da388d4cdefb127843",
+  "generated_at": "2026-08-09T00:00:07Z",
+  "compiler_revision": "a82d4f12e247115c28121b8c687f1298dc20570e",
   "fixture_revision": "26d88823410a2c5486950fb5632e73eda636783f",
   "toolchain": {
     "xcode": "26.5 (17F42)",
@@ -41,7 +41,8 @@
     "all_action_signature_multisets_equal": true,
     "all_native_identifier_multisets_equal": true,
     "all_semantic_signature_multisets_equal": true,
-    "all_semantic_parent_child_relation_multisets_equal": true
+    "all_semantic_parent_child_relation_multisets_equal": true,
+    "all_semantic_sibling_order_multisets_equal": true
   },
   "records": [
     {
@@ -54,16 +55,18 @@
           "native_identifier_occurrence_count": 4,
           "semantic_element_count": 13,
           "semantic_parent_child_relation_count": 13,
+          "semantic_sibling_order_sequence_count": 14,
           "semantic_signature_count": 12,
-          "unique_semantic_parent_child_relation_count": 12
+          "unique_semantic_parent_child_relation_count": 12,
+          "unique_semantic_sibling_order_sequence_count": 13
         },
         "compact_bytes": 5901,
         "timings_ms": {
-          "image_decode_ms": 0.00029164948500692844,
-          "serialization_ms": 3.612708329455927,
-          "total_ms": 4.608958319295198,
-          "tree_cleaning_ms": 0.19424999481998384,
-          "xcuitest_json_parse_ms": 0.7476249884348363,
+          "image_decode_ms": 0.0002500019036233425,
+          "serialization_ms": 3.4772083163261414,
+          "total_ms": 4.415000003064051,
+          "tree_cleaning_ms": 0.1802083570510149,
+          "xcuitest_json_parse_ms": 0.7039583288133144,
           "xml_parse_ms": 0
         },
         "tree_cleaning": {
@@ -84,16 +87,18 @@
           "native_identifier_occurrence_count": 4,
           "semantic_element_count": 13,
           "semantic_parent_child_relation_count": 13,
+          "semantic_sibling_order_sequence_count": 14,
           "semantic_signature_count": 12,
-          "unique_semantic_parent_child_relation_count": 12
+          "unique_semantic_parent_child_relation_count": 12,
+          "unique_semantic_sibling_order_sequence_count": 13
         },
         "compact_bytes": 7917,
         "timings_ms": {
           "image_decode_ms": 0.00020832521840929985,
-          "serialization_ms": 4.939333332004026,
-          "total_ms": 5.778208316769451,
+          "serialization_ms": 4.714999988209456,
+          "total_ms": 5.514249991392717,
           "tree_cleaning_ms": 0,
-          "xcuitest_json_parse_ms": 0.7687083270866424,
+          "xcuitest_json_parse_ms": 0.7305833278223872,
           "xml_parse_ms": 0
         }
       },
@@ -103,6 +108,7 @@
         "native_identifier_multisets_equal": true,
         "native_identifiers_equal": true,
         "semantic_parent_child_relation_multisets_equal": true,
+        "semantic_sibling_order_multisets_equal": true,
         "semantic_signature_multisets_equal": true,
         "semantic_signature_sets_equal": true
       },
@@ -120,16 +126,18 @@
           "native_identifier_occurrence_count": 7,
           "semantic_element_count": 21,
           "semantic_parent_child_relation_count": 21,
+          "semantic_sibling_order_sequence_count": 22,
           "semantic_signature_count": 20,
-          "unique_semantic_parent_child_relation_count": 20
+          "unique_semantic_parent_child_relation_count": 20,
+          "unique_semantic_sibling_order_sequence_count": 21
         },
         "compact_bytes": 10712,
         "timings_ms": {
-          "image_decode_ms": 0.0002500019036233425,
-          "serialization_ms": 6.100208323914558,
-          "total_ms": 7.746083341771737,
-          "tree_cleaning_ms": 0.30141667230054736,
-          "xcuitest_json_parse_ms": 1.275208342121914,
+          "image_decode_ms": 0.00020832521840929985,
+          "serialization_ms": 6.029208336258307,
+          "total_ms": 7.718333334196359,
+          "tree_cleaning_ms": 0.3112083359155804,
+          "xcuitest_json_parse_ms": 1.307458325754851,
           "xml_parse_ms": 0
         },
         "tree_cleaning": {
@@ -150,16 +158,18 @@
           "native_identifier_occurrence_count": 7,
           "semantic_element_count": 21,
           "semantic_parent_child_relation_count": 21,
+          "semantic_sibling_order_sequence_count": 22,
           "semantic_signature_count": 20,
-          "unique_semantic_parent_child_relation_count": 20
+          "unique_semantic_parent_child_relation_count": 20,
+          "unique_semantic_sibling_order_sequence_count": 21
         },
         "compact_bytes": 16949,
         "timings_ms": {
           "image_decode_ms": 0.0002500019036233425,
-          "serialization_ms": 9.304541657911614,
-          "total_ms": 10.715291660744697,
+          "serialization_ms": 9.189208329189569,
+          "total_ms": 10.544208314968273,
           "tree_cleaning_ms": 0,
-          "xcuitest_json_parse_ms": 1.3164166593924165,
+          "xcuitest_json_parse_ms": 1.2655416794586927,
           "xml_parse_ms": 0
         }
       },
@@ -169,6 +179,7 @@
         "native_identifier_multisets_equal": true,
         "native_identifiers_equal": true,
         "semantic_parent_child_relation_multisets_equal": true,
+        "semantic_sibling_order_multisets_equal": true,
         "semantic_signature_multisets_equal": true,
         "semantic_signature_sets_equal": true
       },
@@ -186,16 +197,18 @@
           "native_identifier_occurrence_count": 27,
           "semantic_element_count": 43,
           "semantic_parent_child_relation_count": 43,
+          "semantic_sibling_order_sequence_count": 44,
           "semantic_signature_count": 42,
-          "unique_semantic_parent_child_relation_count": 42
+          "unique_semantic_parent_child_relation_count": 42,
+          "unique_semantic_sibling_order_sequence_count": 43
         },
         "compact_bytes": 22982,
         "timings_ms": {
-          "image_decode_ms": 0.0002500019036233425,
-          "serialization_ms": 11.881250014994293,
-          "total_ms": 14.86125000519678,
-          "tree_cleaning_ms": 0.5435833299998194,
-          "xcuitest_json_parse_ms": 2.335291646886617,
+          "image_decode_ms": 0.00016667763702571392,
+          "serialization_ms": 11.928458319744095,
+          "total_ms": 14.814083348028362,
+          "tree_cleaning_ms": 0.5389583529904485,
+          "xcuitest_json_parse_ms": 2.254333347082138,
           "xml_parse_ms": 0
         },
         "tree_cleaning": {
@@ -216,16 +229,18 @@
           "native_identifier_occurrence_count": 27,
           "semantic_element_count": 43,
           "semantic_parent_child_relation_count": 43,
+          "semantic_sibling_order_sequence_count": 44,
           "semantic_signature_count": 42,
-          "unique_semantic_parent_child_relation_count": 42
+          "unique_semantic_parent_child_relation_count": 42,
+          "unique_semantic_sibling_order_sequence_count": 43
         },
         "compact_bytes": 34309,
         "timings_ms": {
           "image_decode_ms": 0.0002500019036233425,
-          "serialization_ms": 17.91250001406297,
-          "total_ms": 20.447624992812052,
+          "serialization_ms": 17.515541665488854,
+          "total_ms": 20.02133335918188,
           "tree_cleaning_ms": 0,
-          "xcuitest_json_parse_ms": 2.3981250124052167,
+          "xcuitest_json_parse_ms": 2.370791684370488,
           "xml_parse_ms": 0
         }
       },
@@ -235,6 +250,7 @@
         "native_identifier_multisets_equal": true,
         "native_identifiers_equal": true,
         "semantic_parent_child_relation_multisets_equal": true,
+        "semantic_sibling_order_multisets_equal": true,
         "semantic_signature_multisets_equal": true,
         "semantic_signature_sets_equal": true
       },
@@ -252,16 +268,18 @@
           "native_identifier_occurrence_count": 3,
           "semantic_element_count": 5,
           "semantic_parent_child_relation_count": 5,
+          "semantic_sibling_order_sequence_count": 6,
           "semantic_signature_count": 5,
-          "unique_semantic_parent_child_relation_count": 5
+          "unique_semantic_parent_child_relation_count": 5,
+          "unique_semantic_sibling_order_sequence_count": 6
         },
         "compact_bytes": 2521,
         "timings_ms": {
-          "image_decode_ms": 0.0001666485331952572,
-          "serialization_ms": 2.0031666790600866,
-          "total_ms": 2.7603333292063326,
-          "tree_cleaning_ms": 0.2026666479650885,
-          "xcuitest_json_parse_ms": 0.5098749825265259,
+          "image_decode_ms": 0.00016667763702571392,
+          "serialization_ms": 1.8502500024624169,
+          "total_ms": 2.507958357455209,
+          "tree_cleaning_ms": 0.17095834482461214,
+          "xcuitest_json_parse_ms": 0.4472500004339963,
           "xml_parse_ms": 0
         },
         "tree_cleaning": {
@@ -282,16 +300,18 @@
           "native_identifier_occurrence_count": 3,
           "semantic_element_count": 5,
           "semantic_parent_child_relation_count": 5,
+          "semantic_sibling_order_sequence_count": 6,
           "semantic_signature_count": 5,
-          "unique_semantic_parent_child_relation_count": 5
+          "unique_semantic_parent_child_relation_count": 5,
+          "unique_semantic_sibling_order_sequence_count": 6
         },
         "compact_bytes": 4600,
         "timings_ms": {
           "image_decode_ms": 0.00020832521840929985,
-          "serialization_ms": 3.2483749964740127,
-          "total_ms": 3.843333339318633,
+          "serialization_ms": 3.138458327157423,
+          "total_ms": 3.7202083331067115,
           "tree_cleaning_ms": 0,
-          "xcuitest_json_parse_ms": 0.4774999979417771,
+          "xcuitest_json_parse_ms": 0.4670833295676857,
           "xml_parse_ms": 0
         }
       },
@@ -301,6 +321,7 @@
         "native_identifier_multisets_equal": true,
         "native_identifiers_equal": true,
         "semantic_parent_child_relation_multisets_equal": true,
+        "semantic_sibling_order_multisets_equal": true,
         "semantic_signature_multisets_equal": true,
         "semantic_signature_sets_equal": true
       },
